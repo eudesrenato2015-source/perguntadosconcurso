@@ -1,0 +1,118 @@
+:root{
+  --paper-0:#0b1018;
+  --paper-1:#111a2b;
+  --paper-2:#18233a;
+
+  --ink-900:#f5f7ff;
+  --ink-700:#d5def4;
+  --ink-500:#a7b4d6;
+
+  --line-200:rgba(255,255,255,.12);
+  --line-300:rgba(255,255,255,.22);
+
+  --brand-500:#18d2a3;
+  --brand-700:#0ea37c;
+  --accent-500:#ff9f1c;
+  --accent-700:#f77f00;
+
+  --ok-500:#34d399;
+  --bad-500:#fb7185;
+  --warn-500:#fbbf24;
+  --info-500:#60a5fa;
+
+  --cat-port:#ff4d6d;
+  --cat-const:#48bfe3;
+  --cat-adm:#4ade80;
+  --cat-penal:#f9c74f;
+  --cat-dh:#9b5de5;
+  --cat-ti:#00bbf9;
+
+  --shadow-1: 0 10px 25px rgba(0,0,0,.35);
+  --shadow-2: 0 18px 55px rgba(0,0,0,.45);
+
+  --r-1:14px;
+  --r-2:20px;
+  --r-3:26px;
+
+  --pad-1:12px;
+  --pad-2:16px;
+  --pad-3:24px;
+
+  --font-sans:"Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display:"Sora", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-theme="light"]{
+  --paper-0:#f7f9ff;
+  --paper-1:#ffffff;
+  --paper-2:#eef3ff;
+
+  --ink-900:#0f172a;
+  --ink-700:#1f2937;
+  --ink-500:#475569;
+
+  --line-200:rgba(15,23,42,.12);
+  --line-300:rgba(15,23,42,.18);
+
+  --brand-500:#1f7ae0;
+  --brand-700:#155bb4;
+  --accent-500:#ff8c42;
+  --accent-700:#e76f51;
+
+  --shadow-1: 0 10px 25px rgba(15,23,42,.10);
+  --shadow-2: 0 18px 55px rgba(15,23,42,.14);
+}
+
+[data-theme="neon"]{
+  --paper-0:#07060d;
+  --paper-1:#0d0b1b;
+  --paper-2:#15132a;
+
+  --ink-900:#f5f3ff;
+  --ink-700:#d8d3ff;
+  --ink-500:#a39ee6;
+
+  --line-200:rgba(255,255,255,.16);
+  --line-300:rgba(255,255,255,.24);
+
+  --brand-500:#00f5d4;
+  --brand-700:#06b6d4;
+  --accent-500:#f15bb5;
+  --accent-700:#e11d48;
+}
+
+[data-theme="sunset"]{
+  --paper-0:#1a0f12;
+  --paper-1:#241318;
+  --paper-2:#2f1820;
+
+  --ink-900:#fff2e9;
+  --ink-700:#f6d5c2;
+  --ink-500:#e2b6a1;
+
+  --line-200:rgba(255,255,255,.14);
+  --line-300:rgba(255,255,255,.24);
+
+  --brand-500:#ff8c42;
+  --brand-700:#f3722c;
+  --accent-500:#f94144;
+  --accent-700:#d62828;
+}
+
+[data-theme="oasis"]{
+  --paper-0:#071a2c;
+  --paper-1:#0b2236;
+  --paper-2:#0f2b44;
+
+  --ink-900:#f0f8ff;
+  --ink-700:#c7e3f5;
+  --ink-500:#a0c8e4;
+
+  --line-200:rgba(255,255,255,.14);
+  --line-300:rgba(255,255,255,.24);
+
+  --brand-500:#4cc9f0;
+  --brand-700:#3a86ff;
+  --accent-500:#90dbf4;
+  --accent-700:#56cfe1;
+}
