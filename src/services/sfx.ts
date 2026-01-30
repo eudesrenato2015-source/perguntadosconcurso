@@ -56,6 +56,11 @@ export const sfx = {
     if (!unlocked) return;
     playTone(600, 0.08, "square", 0.04);
   },
+  turn(){
+    if (!unlocked) return;
+    playTone(520, 0.08, "triangle", 0.05);
+    playTone(720, 0.12, "triangle", 0.04);
+  },
   win(){
     if (!unlocked) return;
     playTone(880, 0.12, "triangle", 0.06);

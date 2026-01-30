@@ -166,6 +166,33 @@ button{font-family:inherit}
   100%{box-shadow: 0 0 0 rgba(24,210,163,.0), 0 12px 30px rgba(24,210,163,.25)}
 }
 
+@keyframes crownPop{
+  0%{transform: scale(.4) translateY(20px); opacity:0}
+  50%{transform: scale(1.05) translateY(0); opacity:1}
+  100%{transform: scale(1) translateY(-10px); opacity:0}
+}
+
+.crownBurst{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 70;
+  pointer-events: none;
+  animation: floatIn .3s ease;
+}
+.crownBurst .crownBadge{
+  font-size: 72px;
+  filter: drop-shadow(0 0 14px rgba(255,159,28,.35));
+  animation: crownPop 1.6s ease forwards;
+}
+.crownBurst .crownText{
+  margin-top: 8px;
+  font-weight: 900;
+  color: var(--accent-500);
+  text-shadow: 0 6px 16px rgba(255,159,28,.35);
+}
+
 @media (prefers-reduced-motion: reduce){
   .card{animation:none}
   .btn, .navItem{transition:none}

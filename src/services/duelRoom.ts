@@ -19,6 +19,7 @@ export type DuelState = {
   current?: { questionId: string; category: Discipline; crown: boolean; player: "host"|"guest" };
   used: string[];
   pendingCrown?: { player: "host"|"guest"; reason: "streak"|"wheel" };
+  chat?: { id: string; role: "host"|"guest"; text: string; at: number }[];
   powers: {
     host: { bomb: number; extraTime: number; skip: number; double: number };
     guest: { bomb: number; extraTime: number; skip: number; double: number };
@@ -67,6 +68,7 @@ function initialState(): DuelState{
     current: undefined,
     used: [],
     pendingCrown: undefined,
+    chat: [],
     powers: {
       host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
       guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }

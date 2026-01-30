@@ -32,6 +32,7 @@ export default function QuestionView({
   const [timedOut, setTimedOut] = useState(false);
   const [retryNotice, setRetryNotice] = useState<string | null>(null);
   const timeoutFiredRef = useRef(false);
+  const correctOption = q.options.find(o => o.key === q.correctKey);
 
   const defaultKeys: Array<"A"|"B"|"C"|"D"|"E"> = ["A","B","C","D","E"];
   const showKeys: Array<"A"|"B"|"C"|"D"|"E"> = q.type === "TF"
@@ -176,6 +177,18 @@ export default function QuestionView({
       </div>
       {retryNotice && (
         <div className="pill" style={{ marginTop: 10, color:"var(--warn-500)" }}>{retryNotice}</div>
+      )}
+      {submitted && (
+        <div className="card" style={{ marginTop: 10, padding: 12 }}>
+          <div style={{ fontWeight: 900, color: correct ? "var(--ok-500)" : "var(--warn-500)" }}>
+            {timedOut ? "Tempo esgotado!" : (correct ? "Resposta correta!" : "Resposta incorreta")}
+          </div>
+          {!correct && (
+            <div style={{ marginTop: 6, color:"var(--ink-700)" }}>
+              Correta: <b>{q.correctKey}</b> — {correctOption?.text ?? ""}
+            </div>
+          )}
+        </div>
       )}
 
       {submitted && (

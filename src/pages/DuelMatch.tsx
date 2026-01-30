@@ -42,6 +42,7 @@ export default function DuelMatch(){
   const [retryUsed, setRetryUsed] = useState(false);
   const awaitingGhostRef = useRef(false);
   const lastTurnRef = useRef<"none"|"turn"|"crown">("none");
+  const crownCountRef = useRef(0);
   const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
   const winSfxRef = useRef(false);
   const [notifyEnabled, setNotifyEnabled] = useState(() => {
@@ -49,6 +50,9 @@ export default function DuelMatch(){
     if (!("Notification" in window)) return false;
     return Notification.permission === "granted";
   });
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [chatText, setChatText] = useState("");
+  const [crownAnim, setCrownAnim] = useState(false);
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
@@ -68,6 +72,7 @@ export default function DuelMatch(){
   const myQuestion = current?.player === me;
   const winnerId = isOnline ? room?.winner_id ?? null : null;
   const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
+  const chat = state?.chat ?? [];
 
   const addRoomToList = (roomCode: string) => {
     const raw = localStorage.getItem(roomsKey);
@@ -109,19 +114,38 @@ export default function DuelMatch(){
     let cleanup: null | (()=>void) = null;
     (async () => {
       try {
+        setLoadError(null);
         const channel = await connectRoomChannel(code, (next) => setRoom(next));
         await channel.waitForSubscribed();
         cleanup = channel.unsubscribe;
         const latest = await fetchRoomRecord(code);
         if (latest) setRoom(latest);
+        if (!latest){
+          setLoadError("Sala não encontrada ou expirada.");
+        }
         if (latest?.code) localStorage.setItem(resumeKey, latest.code);
         if (latest?.code) addRoomToList(latest.code);
       } catch (err: any){
         console.error("[duel] connect failed", err?.message ?? err);
         setNotice("Falha ao conectar na sala.");
+        setLoadError("Falha ao conectar. Verifique sua internet e tente novamente.");
       }
     })();
     return () => cleanup?.();
+  }, [isOnline, code]);
+
+  useEffect(() => {
+    if (!isOnline || !code) return;
+    const id = window.setInterval(async () => {
+      if (document.visibilityState !== "visible") return;
+      try {
+        const latest = await fetchRoomRecord(code);
+        if (latest) setRoom(latest);
+      } catch {
+        // ignore, realtime will still handle
+      }
+    }, 5000);
+    return () => window.clearInterval(id);
   }, [isOnline, code]);
 
   useEffect(() => {
@@ -139,6 +163,9 @@ export default function DuelMatch(){
     if (!isOnline || !state) return;
     const isMyTurn = state.turn === me && !state.current && !state.pendingCrown;
     const isMyCrown = state.pendingCrown?.player === me;
+    if (isMyTurn && lastTurnRef.current !== "turn" && sfxEnabled){
+      sfx.turn();
+    }
     if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "granted"){
       if (isMyTurn && lastTurnRef.current !== "turn"){
         new Notification("Sua vez no duelo", { body: "Gire a roleta para continuar." });
@@ -152,7 +179,18 @@ export default function DuelMatch(){
     } else if (!isMyTurn && !isMyCrown) {
       lastTurnRef.current = "none";
     }
-  }, [isOnline, state?.turn, state?.current, state?.pendingCrown?.player, me]);
+  }, [isOnline, state?.turn, state?.current, state?.pendingCrown?.player, me, sfxEnabled]);
+
+  useEffect(() => {
+    if (!state) return;
+    const count = countCrowns(state, me);
+    if (count > crownCountRef.current){
+      setCrownAnim(true);
+      if (sfxEnabled) sfx.crown();
+      window.setTimeout(() => setCrownAnim(false), 1600);
+    }
+    crownCountRef.current = count;
+  }, [state?.crowns, sfxEnabled, me]);
 
   useEffect(() => {
     if (!isOnline || !room) return;
@@ -166,12 +204,13 @@ export default function DuelMatch(){
   useEffect(() => {
     if (!isOnline || !room?.state) return;
     const st = room.state;
-    if (st.stats && st.bags && st.recent) return;
+    if (st.stats && st.bags && st.recent && st.chat) return;
     const patched: DuelState = {
       ...st,
       stats: st.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
       bags: st.bags ?? { host: [], guest: [] },
-      recent: st.recent ?? { host: [], guest: [] }
+      recent: st.recent ?? { host: [], guest: [] },
+      chat: st.chat ?? []
     };
     updateRoomState(room.code, patched, room.version).then((next) => setRoom(next)).catch(() => {});
   }, [isOnline, room?.state]);
@@ -203,6 +242,26 @@ export default function DuelMatch(){
       console.error("[duel] state update failed", err?.message ?? err);
       const latest = await fetchRoomRecord(room.code);
       if (latest) setRoom(latest);
+    }
+  };
+
+  const sendChat = async () => {
+    if (!isOnline || !state || !room) return;
+    const text = chatText.trim();
+    if (!text) return;
+    const message = { id: uid("msg"), role: me, text: text.slice(0, 220), at: Date.now() };
+    const nextChat = [...(state.chat ?? []), message].slice(-30);
+    setChatText("");
+    try {
+      await updateState({ ...state, chat: nextChat });
+    } catch (err){
+      try {
+        const latest = await fetchRoomRecord(room.code);
+        if (latest?.state){
+          const merged = [...(latest.state.chat ?? []), message].slice(-30);
+          await updateState({ ...latest.state, chat: merged });
+        }
+      } catch {}
     }
   };
 
@@ -438,6 +497,18 @@ export default function DuelMatch(){
   }, [mode, current?.questionId, current?.player]);
 
   if (!state){
+    if (loadError){
+      return (
+        <div style={{ padding: 16 }}>
+          <div className="h2">Não foi possível carregar a sala</div>
+          <div className="sub">{loadError}</div>
+          <div className="row" style={{ marginTop: 10, flexWrap:"wrap" }}>
+            <button className="btn btnPrimary" onClick={() => nav("/duelo")}>Voltar</button>
+            <button className="btn" onClick={() => nav(`/duelo/jogo?code=${code}`)}>Tentar novamente</button>
+          </div>
+        </div>
+      );
+    }
     return (
       <div style={{ padding: 16 }}>
         <div className="h3">Carregando duelo...</div>
@@ -523,6 +594,13 @@ export default function DuelMatch(){
       </div>
 
       <div className="sep" />
+
+      {crownAnim && (
+        <div className="crownBurst">
+          <div className="crownBadge">👑</div>
+          <div className="crownText">Coroa conquistada!</div>
+        </div>
+      )}
 
       <div className="grid" style={{ gridTemplateColumns:"repeat(12,1fr)" }}>
         <div className="kpi" style={{ gridColumn:"span 12" }}>
@@ -648,6 +726,45 @@ export default function DuelMatch(){
         />
       )}
 
+      {isOnline && (
+        <div style={{ marginTop: 16 }} className="card">
+          <div style={{ padding: 14 }}>
+            <div style={{ fontWeight: 900 }}>Chat da sala</div>
+            <div style={{ marginTop: 8, display:"grid", gap: 8, maxHeight: 220, overflowY:"auto" }}>
+              {chat.length === 0 && <div className="sub">Sem mensagens ainda.</div>}
+              {chat.map(msg => (
+                <div key={msg.id} className="pill" style={{ display:"flex", gap: 8, justifyContent:"space-between" }}>
+                  <span>
+                    <b>{msg.role === me ? "Você" : "Oponente"}:</b> {msg.text}
+                  </span>
+                  <span style={{ color:"var(--ink-500)" }}>
+                    {new Date(msg.at).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="row" style={{ marginTop: 10, flexWrap:"wrap" }}>
+              <input
+                className="input"
+                style={{ flex: 1, minWidth: 200 }}
+                placeholder="Digite uma mensagem..."
+                value={chatText}
+                onChange={(e) => setChatText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter"){
+                    e.preventDefault();
+                    sendChat();
+                  }
+                }}
+              />
+              <button className="btn btnPrimary" onClick={sendChat} disabled={!chatText.trim()}>
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {spinOpen && (
         <div style={{
           position: "fixed",
@@ -702,17 +819,18 @@ function PowerBtn({ label, count, onClick, disabled, icon }: { label: string; co
 function initialLocalState(): DuelState{
   const crowns = {} as DuelState["crowns"];
   DISCIPLINES.forEach((d) => { crowns[d] = { host: false, guest: false }; });
-  const base = {
-    turn: "host" as Role,
-    streak: { host: 0, guest: 0 },
-    crowns,
-    current: undefined,
-    used: [],
-    pendingCrown: undefined,
-    powers: {
-      host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
-      guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }
-    },
+    const base = {
+      turn: "host" as Role,
+      streak: { host: 0, guest: 0 },
+      crowns,
+      current: undefined,
+      used: [],
+      pendingCrown: undefined,
+      chat: [],
+      powers: {
+        host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
+        guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }
+      },
     stats: { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
     bags: { host: [], guest: [] },
     recent: { host: [], guest: [] }
