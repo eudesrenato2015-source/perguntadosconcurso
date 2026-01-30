@@ -99,8 +99,23 @@ export default function DuelMatch(){
 
   const requestNotification = async () => {
     if (typeof window === "undefined" || !("Notification" in window)) return;
-    const permission = await Notification.requestPermission();
-    setNotifyEnabled(permission === "granted");
+    try {
+      const permission = await Notification.requestPermission();
+      setNotifyEnabled(permission === "granted");
+    } catch {
+      setNotifyEnabled(false);
+    }
+  };
+
+  const safeNotify = (title: string, body: string) => {
+    if (typeof window === "undefined") return;
+    if (!("Notification" in window)) return;
+    if (Notification.permission !== "granted") return;
+    try {
+      new Notification(title, { body });
+    } catch {
+      // Some mobile browsers block Notification constructor
+    }
   };
 
   useEffect(() => {
@@ -175,16 +190,12 @@ export default function DuelMatch(){
     if (isMyTurn && lastTurnRef.current !== "turn" && sfxEnabled){
       sfx.turn();
     }
-    if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "granted"){
-      if (isMyTurn && lastTurnRef.current !== "turn"){
-        new Notification("Sua vez no duelo", { body: "Gire a roleta para continuar." });
-        lastTurnRef.current = "turn";
-      } else if (isMyCrown && lastTurnRef.current !== "crown"){
-        new Notification("Coroa disponível!", { body: "Escolha a categoria para disputar a coroa." });
-        lastTurnRef.current = "crown";
-      } else if (!isMyTurn && !isMyCrown) {
-        lastTurnRef.current = "none";
-      }
+    if (isMyTurn && lastTurnRef.current !== "turn"){
+      safeNotify("Sua vez no duelo", "Gire a roleta para continuar.");
+      lastTurnRef.current = "turn";
+    } else if (isMyCrown && lastTurnRef.current !== "crown"){
+      safeNotify("Coroa disponível!", "Escolha a categoria para disputar a coroa.");
+      lastTurnRef.current = "crown";
     } else if (!isMyTurn && !isMyCrown) {
       lastTurnRef.current = "none";
     }
