@@ -98,6 +98,15 @@ export default function DuelMatch(){
 
   useEffect(() => {
     if (!isOnline || !room) return;
+    if (room.status === "ended"){
+      localStorage.removeItem(resumeKey);
+      return;
+    }
+    localStorage.setItem(resumeKey, room.code);
+  }, [isOnline, room?.code, room?.status]);
+
+  useEffect(() => {
+    if (!isOnline || !room) return;
     if (room.state) return;
     const init = initialLocalState();
     updateRoomState(room.code, init, room.version).then((next) => setRoom(next)).catch((err: any) => {

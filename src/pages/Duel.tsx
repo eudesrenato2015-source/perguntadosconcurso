@@ -64,8 +64,18 @@ export default function Duel(){
 
   useEffect(() => {
     const saved = localStorage.getItem("rota190:lastRoomCode");
-    if (saved) setLastRoomCode(saved);
-  }, []);
+    if (!saved) return;
+    setLastRoomCode(saved);
+    if (!online) return;
+    fetchRoomRecord(saved).then((existing) => {
+      if (!existing || existing.status === "ended"){
+        localStorage.removeItem("rota190:lastRoomCode");
+        setLastRoomCode(null);
+        return;
+      }
+      setRoom(existing);
+    }).catch(() => {});
+  }, [online]);
 
   const clearRoomTimeout = () => {
     if (timeoutRef.current){
@@ -312,6 +322,9 @@ export default function Duel(){
               </div>
               {roomCode && (
                 <div className="pill">Sala: <b>{roomCode}</b> • Status: {status}</div>
+              )}
+              {lastRoomCode && !roomCode && (
+                <div className="pill">Sala salva: <b>{lastRoomCode}</b></div>
               )}
               {room && isHost && room.status !== "started" && (
                 <div className="row" style={{ justifyContent:"flex-end" }}>
