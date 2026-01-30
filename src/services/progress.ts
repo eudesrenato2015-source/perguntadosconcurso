@@ -1,3 +1,6 @@
+﻿import { addXp } from "./profile";
+import { onlineEnabled } from "./online";
+
 export type PlayerState = {
   xp: number;
   xpSpent: number;
@@ -77,6 +80,7 @@ export function awardBonusXp(amount: number){
   state.xp += gain;
   state.level = levelForXp(state.xp);
   writeState(state);
+  if (onlineEnabled()) void addXp(gain);
   return { gain, state };
 }
 
@@ -106,6 +110,7 @@ export function awardAttemptXP({ isCorrect, timeSpentMs }: { isCorrect: boolean;
   state.level = levelForXp(state.xp);
 
   writeState(state);
+  if (onlineEnabled()) void addXp(gain);
   return { gain, state };
 }
 

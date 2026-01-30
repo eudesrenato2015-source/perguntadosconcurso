@@ -4,7 +4,9 @@
   | "Administrativo"
   | "Penal/Proc Penal"
   | "DH/Criminologia"
-  | "Informática/RLM";
+  | "Informática/RLM"
+  | "Segurança Orgânica"
+  | "História";
 
 export type PackDiscipline = Discipline | "Misto";
 
@@ -83,4 +85,3 @@ export type SRItem = {
 
 export type Notebook = { id: string; name: string; createdAt: number; questionIds: string[] };
 export type Note = { id: string; questionId: string; text: string; createdAt: number; updatedAt: number };
-

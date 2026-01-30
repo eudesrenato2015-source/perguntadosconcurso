@@ -18,7 +18,9 @@ const disciplines: Discipline[] = [
   "Administrativo",
   "Penal/Proc Penal",
   "DH/Criminologia",
-  "Informática/RLM"
+  "Informática/RLM",
+  "Segurança Orgânica",
+  "História"
 ];
 
 function blankProgress(): CampaignState{
@@ -91,5 +93,3 @@ export function recordCampaignResult({
   writeState(state);
   return { state, leveledUp, bossUnlocked, bossDefeated };
 }
-
-

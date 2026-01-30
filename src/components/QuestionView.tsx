@@ -4,17 +4,22 @@ import Mascot from "./Mascot";
 import { fmtMs } from "../lib/time";
 
 export default function QuestionView({
-  q, mode, onSubmit, onNext, onMark, note, onSaveNote, timeLimitMs
+  q, mode, onSubmit, onNext, onMark, note, onSaveNote, timeLimitMs, hiddenKeys, disabledKeys, headerSlot, showNext
 }: {
   q: Question;
   mode: RunMode;
-  onSubmit: (payload: { selectedKey: string; timeSpentMs: number; markedForReview: boolean; confidence?: 1|2|3|4|5 }) => Promise<{ isCorrect: boolean }>;
+  onSubmit: (payload: { selectedKey: string; timeSpentMs: number; markedForReview: boolean; confidence?: 1|2|3|4|5 }) => Promise<{ isCorrect: boolean; retry?: boolean }>;
   onNext: () => void;
   onMark: (marked: boolean) => void;
   note: string;
   onSaveNote: (text: string) => Promise<void>;
   timeLimitMs?: number;
+  hiddenKeys?: Array<"A"|"B"|"C"|"D"|"E">;
+  disabledKeys?: Array<"A"|"B"|"C"|"D"|"E">;
+  headerSlot?: React.ReactNode;
+  showNext?: boolean;
 }){
+  const showNextSection = showNext !== false;
   const startRef = useRef<number>(Date.now());
   const [selected, setSelected] = useState<"A"|"B"|"C"|"D"|"E"|null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -25,9 +30,12 @@ export default function QuestionView({
   const [noteText, setNoteText] = useState(note);
   const [timeLeft, setTimeLeft] = useState<number | null>(timeLimitMs ?? null);
   const [timedOut, setTimedOut] = useState(false);
+  const [retryNotice, setRetryNotice] = useState<string | null>(null);
   const timeoutFiredRef = useRef(false);
 
   const showKeys = q.type === "TF" ? (["A","B"] as const) : (["A","B","C","D","E"] as const);
+  const hidden = new Set(hiddenKeys ?? []);
+  const disabled = new Set(disabledKeys ?? []);
 
   const stateFor = (k: "A"|"B"|"C"|"D"|"E") => {
     if (!submitted){
@@ -43,6 +51,15 @@ export default function QuestionView({
     if (!selected || submitted) return;
     const timeSpentMs = Date.now() - startRef.current;
     const res = await onSubmit({ selectedKey: selected, timeSpentMs, markedForReview: marked, confidence });
+    if (res.retry){
+      setRetryNotice("Você ganhou uma segunda chance!");
+      setSelected(null);
+      setSubmitted(false);
+      setCorrect(false);
+      startRef.current = Date.now();
+      return;
+    }
+    setRetryNotice(null);
     setSubmitted(true);
     setCorrect(res.isCorrect);
   };
@@ -52,6 +69,15 @@ export default function QuestionView({
     timeoutFiredRef.current = true;
     const timeSpentMs = timeLimitMs ?? (Date.now() - startRef.current);
     const res = await onSubmit({ selectedKey: "", timeSpentMs, markedForReview: marked, confidence });
+    if (res.retry){
+      setRetryNotice("Tempo estourou, mas você ganhou uma segunda chance!");
+      setSelected(null);
+      setSubmitted(false);
+      setCorrect(false);
+      startRef.current = Date.now();
+      return;
+    }
+    setRetryNotice(null);
     setSubmitted(true);
     setCorrect(res.isCorrect);
     setTimedOut(true);
@@ -89,6 +115,7 @@ export default function QuestionView({
               </span>
             )}
           </div>
+          {headerSlot}
 
           <div className="card" style={{ padding: 14, borderRadius: 22 }}>
             <div style={{ fontWeight: 900, marginBottom: 8 }}>Enunciado</div>
@@ -105,15 +132,19 @@ export default function QuestionView({
       <div className="sep" />
 
       <div style={{ display:"grid", gap: 10 }}>
-        {showKeys.map((k) => (
-          <Option
-            key={k}
-            label={k}
-            text={q.options.find(o => o.key === k)?.text ?? ""}
-            state={stateFor(k)}
-            onClick={() => !submitted && setSelected(k)}
-          />
-        ))}
+        {showKeys.map((k) => {
+          if (hidden.has(k)) return null;
+          return (
+            <Option
+              key={k}
+              label={k}
+              text={q.options.find(o => o.key === k)?.text ?? ""}
+              state={stateFor(k)}
+              disabled={disabled.has(k)}
+              onClick={() => !submitted && !disabled.has(k) && setSelected(k)}
+            />
+          );
+        })}
       </div>
 
       <div className="row" style={{ marginTop: 12, flexWrap:"wrap" }}>
@@ -140,6 +171,9 @@ export default function QuestionView({
           ))}
         </div>
       </div>
+      {retryNotice && (
+        <div className="pill" style={{ marginTop: 10, color:"var(--warn-500)" }}>{retryNotice}</div>
+      )}
 
       {submitted && (
         <div style={{ marginTop: 14 }} className="card">
@@ -178,34 +212,37 @@ export default function QuestionView({
               </ul>
             </div>
 
-            <div className="sep" />
-
-            <div className="row" style={{ alignItems:"stretch", flexWrap:"wrap" }}>
-              <button className="btn btnPrimary" onClick={onNext}>Próxima</button>
-              <div style={{ flex: 1 }} />
-              <div style={{ minWidth: 260, flex: 1 }}>
-                <div style={{ fontWeight: 850, marginBottom: 6 }}>Anotação</div>
-                <textarea
-                  value={noteText}
-                  onChange={(e)=>setNoteText(e.target.value)}
-                  className="input"
-                  style={{ minHeight: 92, resize:"vertical" }}
-                  placeholder="Escreva um macete, exceção, pegadinha..."
-                />
-                <div className="row" style={{ justifyContent:"flex-end", marginTop: 8 }}>
-                  <button
-                    className="btn"
-                    onClick={async () => {
-                      setSavingNote(true);
-                      try { await onSaveNote(noteText); } finally { setSavingNote(false); }
-                    }}
-                    disabled={savingNote}
-                  >
-                    {savingNote ? "Salvando..." : "Salvar anotação"}
-                  </button>
+            {showNextSection && (
+              <>
+                <div className="sep" />
+                <div className="row" style={{ alignItems:"stretch", flexWrap:"wrap" }}>
+                  <button className="btn btnPrimary" onClick={onNext}>Próxima</button>
+                  <div style={{ flex: 1 }} />
+                  <div style={{ minWidth: 260, flex: 1 }}>
+                    <div style={{ fontWeight: 850, marginBottom: 6 }}>Anotação</div>
+                    <textarea
+                      value={noteText}
+                      onChange={(e)=>setNoteText(e.target.value)}
+                      className="input"
+                      style={{ minHeight: 92, resize:"vertical" }}
+                      placeholder="Escreva um macete, exceção, pegadinha..."
+                    />
+                    <div className="row" style={{ justifyContent:"flex-end", marginTop: 8 }}>
+                      <button
+                        className="btn"
+                        onClick={async () => {
+                          setSavingNote(true);
+                          try { await onSaveNote(noteText); } finally { setSavingNote(false); }
+                        }}
+                        disabled={savingNote}
+                      >
+                        {savingNote ? "Salvando..." : "Salvar anotação"}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
 
           </div>
         </div>
@@ -214,7 +251,7 @@ export default function QuestionView({
   );
 }
 
-function Option({ label, text, state, onClick }: { label: string; text: string; state: "idle"|"selected"|"correct"|"wrong"|"disabled"; onClick: ()=>void }){
+function Option({ label, text, state, onClick, disabled }: { label: string; text: string; state: "idle"|"selected"|"correct"|"wrong"|"disabled"; onClick: ()=>void; disabled?: boolean }){
   const styles: Record<string, React.CSSProperties> = {
     idle: { background:"rgba(255,255,255,.06)", border:"1px solid var(--line-200)" },
     selected: { background:"rgba(24,210,163,.18)", border:"1px solid rgba(24,210,163,.55)" },
@@ -226,7 +263,7 @@ function Option({ label, text, state, onClick }: { label: string; text: string; 
     <button
       className="btn"
       onClick={onClick}
-      disabled={state === "disabled" || state === "correct" || state === "wrong"}
+      disabled={disabled || state === "disabled" || state === "correct" || state === "wrong"}
       style={{
         textAlign:"left",
         borderRadius: 18,

@@ -1,4 +1,4 @@
-:root{
+﻿:root{
   --paper-0:#0b1018;
   --paper-1:#111a2b;
   --paper-2:#18233a;
@@ -26,6 +26,8 @@
   --cat-penal:#f9c74f;
   --cat-dh:#9b5de5;
   --cat-ti:#00bbf9;
+  --cat-seg:#ff922b;
+  --cat-hist:#ffd166;
 
   --shadow-1: 0 10px 25px rgba(0,0,0,.35);
   --shadow-2: 0 18px 55px rgba(0,0,0,.45);

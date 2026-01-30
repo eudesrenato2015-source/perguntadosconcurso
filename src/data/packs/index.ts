@@ -5,6 +5,8 @@ import { penalPack } from "./penal";
 import { dhPack } from "./dh";
 import { informaticaPack } from "./informatica";
 import { alegoPolicialPack } from "./alegoPolicial";
+import { segurancaOrganicaPack } from "./segurancaOrganica";
+import { historiaPack } from "./historia";
 
 export const questionPacks = [
   portuguesPack,
@@ -13,5 +15,7 @@ export const questionPacks = [
   penalPack,
   dhPack,
   informaticaPack,
+  segurancaOrganicaPack,
+  historiaPack,
   alegoPolicialPack
 ];

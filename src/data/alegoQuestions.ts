@@ -405,6 +405,34 @@ const accessWrong: Choice[] = [
   { text: "Controle de acesso é incompatível com a legalidade administrativa.", reason: "Controle é legítimo e proporcional." }
 ];
 
+const secOrgCorrect: Choice[] = [
+  { text: "Segurança orgânica integra pessoas, procedimentos e tecnologia.", reason: "A proteção é sistêmica, não só tecnológica." },
+  { text: "Controle de acesso envolve identificação, credenciamento e registro.", reason: "Procedimentos formais são exigidos." },
+  { text: "Perímetro seguro reduz vulnerabilidades e orienta a vigilância.", reason: "Gestão de perímetro é medida preventiva." },
+  { text: "Vistorias e rondas reduzem riscos e detectam anomalias.", reason: "Inspeções são medidas de prevenção." }
+];
+
+const secOrgWrong: Choice[] = [
+  { text: "Segurança orgânica se restringe a câmeras e alarmes.", reason: "Procedimentos e pessoal são essenciais." },
+  { text: "Controle de acesso é apenas visual, sem registros.", reason: "Registro é parte do processo." },
+  { text: "A segurança de perímetro é irrelevante em órgãos públicos.", reason: "Perímetro é crítico para prevenção." },
+  { text: "Rondas devem ocorrer apenas após incidentes.", reason: "Rondas são preventivas." }
+];
+
+const historyCorrect: Choice[] = [
+  { text: "A Proclamação da República ocorreu em 1889.", reason: "Marco fundamental da história brasileira." },
+  { text: "A Era Vargas se estendeu de 1930 a 1945.", reason: "Período clássico da história política." },
+  { text: "A Constituição de 1988 consolidou direitos e a redemocratização.", reason: "Texto de referência da Nova República." },
+  { text: "A mudança da capital federal para Brasília ocorreu em 1960.", reason: "Marco da interiorização." }
+];
+
+const historyWrong: Choice[] = [
+  { text: "A República foi proclamada em 1822.", reason: "1822 marca a Independência, não a República." },
+  { text: "A Era Vargas ocorreu entre 1950 e 1964.", reason: "O período correto é 1930-1945." },
+  { text: "A Constituição de 1988 inaugurou o Estado Novo.", reason: "Estado Novo é de 1937." },
+  { text: "Brasília foi inaugurada em 1970.", reason: "A inauguração foi em 1960." }
+];
+
 const incidentCorrect: Choice[] = [
   { text: "A negociação busca reduzir risco e preservar vidas.", reason: "Prioridade é contenção e segurança." },
   { text: "Isolamento de área e comando unificado são medidas críticas.", reason: "Coordenação evita decisões conflitantes." },
@@ -719,6 +747,36 @@ const templates: Template[] = [
     )
   },
   {
+    id: "seg-organica",
+    discipline: "Segurança Orgânica",
+    subject: "Segurança Orgânica",
+    topics: ["procedimentos", "perímetro", "controle de acesso", "rondas"],
+    type: "MCQ",
+    make: ({ rng, topic }) => mcqFromPools(
+      rng,
+      `(ALEGO) Em ${topic}, assinale a alternativa correta:`,
+      secOrgCorrect,
+      secOrgWrong,
+      "Segurança orgânica exige medidas preventivas e procedimentos.",
+      ["Controle de acesso exige registros.", "Perímetro seguro reduz riscos."]
+    )
+  },
+  {
+    id: "hist-br",
+    discipline: "História",
+    subject: "História do Brasil",
+    topics: ["República", "Era Vargas", "Constituição de 1988", "Brasília"],
+    type: "MCQ",
+    make: ({ rng, topic }) => mcqFromPools(
+      rng,
+      `(ALEGO) Em ${topic}, assinale a alternativa correta:`,
+      historyCorrect,
+      historyWrong,
+      "A banca cobra marcos da história política brasileira.",
+      ["Atenção a datas-chave.", "Evite confundir Império e República."]
+    )
+  },
+  {
     id: "policial-ordem",
     discipline: "Penal/Proc Penal",
     subject: "Polícia Legislativa",
@@ -799,7 +857,7 @@ export const alegoQuestions: Question[] = (() => {
   const rng = mulberry32(1901);
   const out: Question[] = [];
   let n = 1;
-  const perTemplate = 8;
+  const perTemplate = 12;
 
   for (const template of templates){
     for (let i=0;i<perTemplate;i++){

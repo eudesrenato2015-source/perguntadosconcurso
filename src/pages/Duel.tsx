@@ -1,8 +1,7 @@
 ﻿import React, { useEffect, useMemo, useRef, useState } from "react";
 import Wheel from "../components/Wheel";
-import { newSession } from "../services/session";
 import { useNavigate } from "react-router-dom";
-import { getActiveQuestions, getAllQuestions } from "../services/packs";
+import { getActiveQuestions } from "../services/packs";
 import type { Discipline } from "../types";
 import { onlineEnabled } from "../services/online";
 import {
@@ -15,6 +14,7 @@ import {
   type DuelRoom,
   type DuelRoomConfig
 } from "../services/duelRoom";
+import { getAuthUser, onAuthChange } from "../services/auth";
 
 type GhostProfile = "Rápido"|"Preciso"|"Equilibrado";
 
@@ -31,15 +31,15 @@ export default function Duel(){
   const [mixMode, setMixMode] = useState(true);
   const [room, setRoom] = useState<DuelRoom | null>(null);
   const online = onlineEnabled();
+  const [authReady, setAuthReady] = useState(false);
+  const [authOk, setAuthOk] = useState(false);
   const clientId = useMemo(() => getDuelClientId(), []);
   const channelCleanupRef = useRef<null | (()=>void)>(null);
-  const startedRef = useRef(false);
   const startRequestedRef = useRef(false);
   const timeoutRef = useRef<number | null>(null);
   const isHost = room?.host_id === clientId;
 
   const activePool = useMemo(() => getActiveQuestions(), []);
-  const fullPool = useMemo(() => getAllQuestions(), []);
   const availableDisciplines = useMemo(() => {
     const set = new Set(activePool.map(q => q.discipline));
     return Array.from(set.values());
@@ -49,6 +49,17 @@ export default function Duel(){
     setPicked(d);
     setNotice(null);
   };
+
+  useEffect(() => {
+    getAuthUser().then((u) => {
+      setAuthOk(Boolean(u?.emailConfirmed));
+      setAuthReady(true);
+    });
+    return onAuthChange((u) => {
+      setAuthOk(Boolean(u?.emailConfirmed));
+      setAuthReady(true);
+    });
+  }, []);
 
   const clearRoomTimeout = () => {
     if (timeoutRef.current){
@@ -65,7 +76,7 @@ export default function Duel(){
         if (latest){
           setRoom(latest);
           if (latest.status === "started" && latest.config){
-            startOnlineMatch(latest.config, code, fullPool, nav, startedRef);
+            nav(`/duelo/jogo?code=${code}`);
           }
         }
       } catch (err: any){
@@ -75,37 +86,29 @@ export default function Duel(){
   };
 
   const startGhost = () => {
-    if (!picked){
-      setNotice("Gire a roleta para sortear a disciplina.");
-      return;
-    }
-    const queue = buildQueue(activePool, picked, 10, undefined, mixMode);
-    if (!queue.length){
-      setNotice("Sem questões ativas para essa disciplina.");
-      return;
-    }
-    const ghost = makeGhost(profile, queue.length);
-    const modeLabel = mixMode ? "Misto" : "Foco";
-    newSession("duel", queue, { discipline: picked, label: `Duelo • ${modeLabel} • Fantasma (${profile}) • ${picked}` }, { ghost, mixMode });
-    nav("/questao");
+    nav(`/duelo/jogo?mode=ghost&ghost=${encodeURIComponent(profile)}`);
   };
 
   const createRoom = async () => {
-    if (!picked){
-      setNotice("Gire a roleta antes de criar a sala.");
+    if (!online) return;
+    if (!authOk){
+      setNotice("Faça login e confirme o email para jogar online.");
       return;
     }
-    if (!online) return;
+    const chosen = picked ?? availableDisciplines[Math.floor(Math.random() * availableDisciplines.length)];
+    if (!chosen){
+      setNotice("Sem disciplinas ativas.");
+      return;
+    }
     const code = makeRoomCode();
-    const seed = hashString(code + picked);
+    const seed = hashString(code + chosen);
     const length = 12;
     setRoomCode(code);
-    const cfg: DuelRoomConfig = { discipline: picked, seed, length, mix: mixMode };
+    const cfg: DuelRoomConfig = { discipline: chosen, seed, length, mix: mixMode };
     setConfig(cfg);
     setStatus("hosting");
     setNotice(null);
     setRoom(null);
-    startedRef.current = false;
     startRequestedRef.current = false;
     try {
       channelCleanupRef.current?.();
@@ -124,11 +127,14 @@ export default function Duel(){
     const code = roomCode.trim().toUpperCase();
     if (!code) return;
     if (!online) return;
+    if (!authOk){
+      setNotice("Faça login e confirme o email para jogar online.");
+      return;
+    }
     setRoomCode(code);
     setStatus("joining");
     setNotice(null);
     setRoom(null);
-    startedRef.current = false;
     startRequestedRef.current = false;
     try {
       channelCleanupRef.current?.();
@@ -144,7 +150,7 @@ export default function Duel(){
       setConfig(existing.config);
       setPicked(existing.config?.discipline ?? null);
       if (existing.status === "started"){
-        startOnlineMatch(existing.config, code, fullPool, nav, startedRef);
+        nav(`/duelo/jogo?code=${code}`);
         setStatus("ready");
         return;
       }
@@ -169,11 +175,9 @@ export default function Duel(){
       setStatus(isHost ? "hosting" : "waiting");
     } else if (room.status === "started"){
       setStatus("ready");
-      if (room.config){
-        startOnlineMatch(room.config, room.code, fullPool, nav, startedRef);
-      }
+      nav(`/duelo/jogo?code=${room.code}`);
     }
-  }, [room, fullPool, nav, isHost]);
+  }, [room, nav, isHost]);
 
   useEffect(() => {
     if (!room || !config) return;
@@ -277,8 +281,11 @@ export default function Duel(){
 
           {online && (
             <div style={{ marginTop: 10, display:"grid", gap: 10 }}>
+              {!authOk && authReady && (
+                <div className="pill" style={{ color:"var(--warn-500)" }}>Login com email confirmado é obrigatório.</div>
+              )}
               <div className="row" style={{ flexWrap:"wrap" }}>
-                <button className="btn" onClick={createRoom}>Criar sala</button>
+                <button className="btn" onClick={createRoom} disabled={!authOk}>Criar sala</button>
                 <input
                   className="input"
                   style={{ maxWidth: 220 }}
@@ -286,7 +293,7 @@ export default function Duel(){
                   placeholder="Código da sala"
                   onChange={(e)=>setRoomCode(e.target.value.toUpperCase())}
                 />
-                <button className="btn btnPrimary" onClick={joinRoom}>Entrar</button>
+                <button className="btn btnPrimary" onClick={joinRoom} disabled={!authOk}>Entrar</button>
               </div>
               {roomCode && (
                 <div className="pill">Sala: <b>{roomCode}</b> • Status: {status}</div>
@@ -310,22 +317,6 @@ export default function Duel(){
   );
 }
 
-function makeGhost(profile: GhostProfile, n: number){
-  const baseAcc = profile === "Preciso" ? 0.80 : profile === "Rápido" ? 0.62 : 0.72;
-  const baseTime = profile === "Rápido" ? 5500 : profile === "Preciso" ? 9800 : 7600;
-
-  let score = 0;
-  const perQ: { isCorrect: boolean; timeSpentMs: number }[] = [];
-  for (let i=0;i<n;i++){
-    const isCorrect = Math.random() < baseAcc;
-    const timeSpentMs = Math.round(baseTime * (0.7 + Math.random()*0.8));
-    const bonus = Math.max(0, Math.round((12000 - timeSpentMs) / 600));
-    score += (isCorrect ? 100 : 0) + (isCorrect ? bonus : 0);
-    perQ.push({ isCorrect, timeSpentMs });
-  }
-  return { profile, score, perQ };
-}
-
 function makeRoomCode(){
   const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
   let out = "";
@@ -340,89 +331,4 @@ function hashString(input: string){
     h = Math.imul(h, 16777619);
   }
   return h >>> 0;
-}
-
-function mulberry32(seed: number){
-  return function(){
-    let t = (seed += 0x6D2B79F5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffleSeeded<T>(arr: T[], seed: number): T[]{
-  const rng = mulberry32(seed);
-  const out = [...arr];
-  for (let i = out.length - 1; i > 0; i--){
-    const j = Math.floor(rng() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
-}
-
-function shuffleWithRng<T>(arr: T[], rng: ()=>number): T[]{
-  const out = [...arr];
-  for (let i = out.length - 1; i > 0; i--){
-    const j = Math.floor(rng() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
-}
-
-function pickUnique<T>(arr: T[], n: number, rng: ()=>number): T[]{
-  return shuffleWithRng(arr, rng).slice(0, Math.min(n, arr.length));
-}
-
-function buildQueue(
-  pool: { id: string; discipline: Discipline }[],
-  discipline: Discipline,
-  length: number,
-  seed?: number,
-  mixMode = false
-){
-  if (!pool.length) return [];
-  if (!mixMode){
-    const filtered = pool.filter(q => q.discipline === discipline);
-    if (!filtered.length) return [];
-    const list = seed != null ? shuffleSeeded(filtered, seed) : [...filtered].sort(()=>Math.random()-0.5);
-    return list.slice(0, length).map(q => q.id);
-  }
-
-  const rng = seed != null ? mulberry32(seed) : Math.random;
-  const focus = pool.filter(q => q.discipline === discipline);
-  const others = pool.filter(q => q.discipline !== discipline);
-  const focusTarget = Math.min(focus.length, Math.max(0, Math.round(length * 0.6)));
-  const otherTarget = Math.min(others.length, Math.max(0, length - focusTarget));
-  const picked = [...pickUnique(focus, focusTarget, rng), ...pickUnique(others, otherTarget, rng)];
-  const pickedIds = new Set(picked.map(q => q.id));
-  const remaining = pool.filter(q => !pickedIds.has(q.id));
-  while (picked.length < length && remaining.length){
-    const next = pickUnique(remaining, 1, rng)[0];
-    if (!next) break;
-    picked.push(next);
-    pickedIds.add(next.id);
-  }
-  const final = shuffleWithRng(picked, rng);
-  return final.slice(0, length).map(q => q.id);
-}
-
-function startOnlineMatch(
-  config: DuelRoomConfig,
-  code: string,
-  pool: { id: string; discipline: Discipline }[],
-  nav: (path: string)=>void,
-  startedRef: React.MutableRefObject<boolean>
-){
-  if (startedRef.current) return;
-  startedRef.current = true;
-  const queue = buildQueue(pool, config.discipline, config.length, config.seed, config.mix);
-  const modeLabel = config.mix ? "Misto" : "Foco";
-  newSession(
-    "duel",
-    queue,
-    { discipline: config.discipline, label: `Duelo • ${modeLabel} • Online • ${config.discipline}` },
-    { onlineCode: code, myScore: 0, peerScore: 0, mixMode: config.mix }
-  );
-  nav("/questao");
 }

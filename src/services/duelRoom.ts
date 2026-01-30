@@ -1,6 +1,7 @@
-import type { Discipline } from "../types";
+﻿import type { Discipline } from "../types";
 import { uid } from "../lib/uid";
 import { getSupabase, onlineEnabled } from "./online";
+import { DISCIPLINES } from "../data/disciplines";
 
 export type DuelRoomStatus = "waiting" | "ready" | "started" | "ended";
 
@@ -11,12 +12,28 @@ export type DuelRoomConfig = {
   mix: boolean;
 };
 
+export type DuelState = {
+  turn: "host" | "guest";
+  streak: { host: number; guest: number };
+  crowns: Record<Discipline, { host: boolean; guest: boolean }>;
+  current?: { questionId: string; category: Discipline; crown: boolean; player: "host"|"guest" };
+  used: string[];
+  pendingCrown?: { player: "host"|"guest"; reason: "streak"|"wheel" };
+  powers: {
+    host: { bomb: number; extraTime: number; skip: number; double: number };
+    guest: { bomb: number; extraTime: number; skip: number; double: number };
+  };
+};
+
 export type DuelRoom = {
   code: string;
   host_id: string;
   guest_id: string | null;
   status: DuelRoomStatus;
   config: DuelRoomConfig;
+  state: DuelState | null;
+  version: number;
+  winner_id?: string | null;
   created_at?: string;
   updated_at?: string;
   started_at?: string | null;
@@ -37,6 +54,23 @@ export function getDuelClientId(){
   return next;
 }
 
+function initialState(): DuelState{
+  const crowns = {} as Record<Discipline, { host: boolean; guest: boolean }>;
+  DISCIPLINES.forEach(d => { crowns[d] = { host: false, guest: false }; });
+  return {
+    turn: "host",
+    streak: { host: 0, guest: 0 },
+    crowns,
+    current: undefined,
+    used: [],
+    pendingCrown: undefined,
+    powers: {
+      host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
+      guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }
+    }
+  };
+}
+
 async function ensureOnline(){
   if (!onlineEnabled()) throw new Error("Duelo online desativado (env vars ausentes).");
   const supa = getSupabase();
@@ -48,7 +82,7 @@ export async function createRoomRecord(code: string, config: DuelRoomConfig, hos
   const supa = await ensureOnline();
   const { data, error } = await supa
     .from("duel_rooms")
-    .upsert({ code, host_id: hostId, guest_id: null, status: "waiting", config }, { onConflict: "code" })
+    .upsert({ code, host_id: hostId, guest_id: null, status: "waiting", config, state: initialState(), version: 0 }, { onConflict: "code" })
     .select()
     .single();
   if (error) throw error;
@@ -79,6 +113,22 @@ export async function startRoomRecord(code: string){
     .single();
   if (error) throw error;
   logDebug("room:start", data);
+  return data as DuelRoom;
+}
+
+export async function updateRoomState(code: string, state: DuelState, version: number, winnerId?: string | null){
+  const supa = await ensureOnline();
+  const patch: any = { state, version: version + 1 };
+  if (winnerId) patch.winner_id = winnerId, patch.status = "ended";
+  const { data, error } = await supa
+    .from("duel_rooms")
+    .update(patch)
+    .eq("code", code)
+    .eq("version", version)
+    .select()
+    .single();
+  if (error) throw error;
+  logDebug("room:update", data);
   return data as DuelRoom;
 }
 

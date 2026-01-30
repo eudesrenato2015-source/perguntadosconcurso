@@ -1123,6 +1123,62 @@ const templates: Template[] = [
       "A função SE não aceita valores lógicos.",
       "SOMA concatena textos em vez de somar."
     ]
+  }),
+  makeMCQTemplate({
+    id: "seg-organica",
+    discipline: "Segurança Orgânica",
+    subject: "Segurança Orgânica",
+    topic: "procedimentos e perímetro",
+    difficulty: 3,
+    styles: ["FGV","VUNESP","FCC"],
+    summary: "Segurança orgânica envolve procedimentos, pessoas e tecnologia.",
+    tips: [
+      "Controle de acesso exige registro e credenciamento.",
+      "Perímetro e rondas reduzem vulnerabilidades.",
+      "Segurança não é só equipamento."
+    ],
+    correctTexts: [
+      "Controle de acesso inclui identificação, credenciamento e registro.",
+      "Rondas e vistorias são medidas preventivas.",
+      "Segurança orgânica integra pessoas, processos e tecnologia.",
+      "Perímetro seguro reduz a exposição a riscos.",
+      "Planos de contingência devem ser conhecidos pela equipe."
+    ],
+    wrongTexts: [
+      "Segurança orgânica se restringe a câmeras e alarmes.",
+      "Controle de acesso dispensa registros formais.",
+      "Rondas são feitas apenas após incidentes.",
+      "Perímetro é irrelevante em ambientes públicos.",
+      "Planos de contingência não precisam ser divulgados."
+    ]
+  }),
+  makeMCQTemplate({
+    id: "hist-brasil",
+    discipline: "História",
+    subject: "História do Brasil",
+    topic: "República e Nova República",
+    difficulty: 3,
+    styles: ["FGV","VUNESP","FCC"],
+    summary: "A banca cobra marcos da história política brasileira.",
+    tips: [
+      "A República foi proclamada em 1889.",
+      "A Constituição de 1988 marca a redemocratização.",
+      "Brasília foi inaugurada em 1960."
+    ],
+    correctTexts: [
+      "A Proclamação da República ocorreu em 1889.",
+      "A Constituição de 1988 consolidou a redemocratização.",
+      "Brasília foi inaugurada em 1960.",
+      "A Era Vargas se estendeu de 1930 a 1945.",
+      "A Nova República iniciou-se em 1985."
+    ],
+    wrongTexts: [
+      "A República foi proclamada em 1822.",
+      "A Constituição de 1988 iniciou o Estado Novo.",
+      "Brasília foi inaugurada em 1970.",
+      "A Era Vargas ocorreu entre 1950 e 1964.",
+      "A Nova República começou em 1964."
+    ]
   })
 ];
 

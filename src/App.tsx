@@ -2,6 +2,7 @@
 import { NavLink, Route, Routes, Link } from "react-router-dom";
 import Arena from "./pages/Arena";
 import Duel from "./pages/Duel";
+import DuelMatch from "./pages/DuelMatch";
 import Campaign from "./pages/Campaign";
 import Library from "./pages/Library";
 import Review from "./pages/Review";
@@ -10,6 +11,8 @@ import QuestionRunner from "./pages/QuestionRunner";
 import Result from "./pages/Result";
 import Dashboard from "./pages/Dashboard";
 import ImportPage from "./pages/Import";
+import Login from "./pages/Login";
+import Ranking from "./pages/Ranking";
 import { useTheme } from "./services/theme";
 import UpdateToast from "./components/UpdateToast";
 import AppIcon from "./components/AppIcon";
@@ -28,6 +31,8 @@ export default function App(){
             <div className="sub">PWA offline-first. Duelo online opcional via Supabase.</div>
           </div>
           <div className="row" style={{ gap: 8, flexWrap:"wrap" }}>
+            <Link className="btn" to="/login">Login</Link>
+            <Link className="btn" to="/ranking">Ranking</Link>
             <Link className="btn" to="/perfil">Perfil</Link>
             <Link className="btn" to="/importar">Importar</Link>
             <button className="btn" onClick={toggle} aria-label="Alternar tema">
@@ -41,6 +46,7 @@ export default function App(){
             <Route path="/" element={<Arena />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/duelo" element={<Duel />} />
+            <Route path="/duelo/jogo" element={<DuelMatch />} />
             <Route path="/campanha" element={<Campaign />} />
             <Route path="/biblioteca" element={<Library />} />
             <Route path="/revisao" element={<Review />} />
@@ -48,6 +54,8 @@ export default function App(){
             <Route path="/importar" element={<ImportPage />} />
             <Route path="/questao" element={<QuestionRunner />} />
             <Route path="/resultado" element={<Result />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/ranking" element={<Ranking />} />
             <Route path="*" element={<div style={{ padding: 16 }}>Página não encontrada.</div>} />
           </Routes>
         </div>
@@ -79,5 +87,3 @@ function Tab({ to, label, end, icon }: { to: string; label: string; end?: boolea
     </NavLink>
   );
 }
-
-

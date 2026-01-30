@@ -6,7 +6,7 @@ export const DISCIPLINES: Discipline[] = [
   "Administrativo",
   "Penal/Proc Penal",
   "DH/Criminologia",
-  "Informática/RLM"
+  "Informática/RLM",
+  "Segurança Orgânica",
+  "História"
 ];
-
-
