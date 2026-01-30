@@ -1,10 +1,10 @@
-﻿import React, { useRef, useState } from "react";
+﻿import React, { useEffect, useRef, useState } from "react";
 import type { Question, RunMode } from "../types";
 import Mascot from "./Mascot";
 import { fmtMs } from "../lib/time";
 
 export default function QuestionView({
-  q, mode, onSubmit, onNext, onMark, note, onSaveNote
+  q, mode, onSubmit, onNext, onMark, note, onSaveNote, timeLimitMs
 }: {
   q: Question;
   mode: RunMode;
@@ -13,6 +13,7 @@ export default function QuestionView({
   onMark: (marked: boolean) => void;
   note: string;
   onSaveNote: (text: string) => Promise<void>;
+  timeLimitMs?: number;
 }){
   const startRef = useRef<number>(Date.now());
   const [selected, setSelected] = useState<"A"|"B"|"C"|"D"|"E"|null>(null);
@@ -22,6 +23,9 @@ export default function QuestionView({
   const [confidence, setConfidence] = useState<1|2|3|4|5|undefined>(undefined);
   const [savingNote, setSavingNote] = useState(false);
   const [noteText, setNoteText] = useState(note);
+  const [timeLeft, setTimeLeft] = useState<number | null>(timeLimitMs ?? null);
+  const [timedOut, setTimedOut] = useState(false);
+  const timeoutFiredRef = useRef(false);
 
   const showKeys = q.type === "TF" ? (["A","B"] as const) : (["A","B","C","D","E"] as const);
 
@@ -43,6 +47,32 @@ export default function QuestionView({
     setCorrect(res.isCorrect);
   };
 
+  const handleTimeout = async () => {
+    if (submitted || timeoutFiredRef.current) return;
+    timeoutFiredRef.current = true;
+    const timeSpentMs = timeLimitMs ?? (Date.now() - startRef.current);
+    const res = await onSubmit({ selectedKey: "", timeSpentMs, markedForReview: marked, confidence });
+    setSubmitted(true);
+    setCorrect(res.isCorrect);
+    setTimedOut(true);
+  };
+
+  useEffect(() => {
+    if (!timeLimitMs || submitted) return;
+    timeoutFiredRef.current = false;
+    const endAt = startRef.current + timeLimitMs;
+    const tick = () => {
+      const left = Math.max(0, endAt - Date.now());
+      setTimeLeft(left);
+      if (left <= 0){
+        handleTimeout();
+      }
+    };
+    tick();
+    const id = window.setInterval(tick, 250);
+    return () => window.clearInterval(id);
+  }, [timeLimitMs, submitted]);
+
   const mood = !submitted ? "neutral" : (correct ? "hype" : "think");
 
   return (
@@ -53,6 +83,11 @@ export default function QuestionView({
             <span style={{ fontWeight: 900 }}>{q.discipline}</span>
             <span style={{ color:"var(--ink-500)" }}>{q.subject} • {q.topic}</span>
             <span style={{ marginLeft:"auto", color:"var(--ink-500)" }}>D{q.difficulty}</span>
+            {timeLeft != null && (
+              <span style={{ color:"var(--warn-500)", fontWeight: 800 }}>
+                Tempo: {Math.ceil(timeLeft / 1000)}s
+              </span>
+            )}
           </div>
 
           <div className="card" style={{ padding: 14, borderRadius: 22 }}>
@@ -83,7 +118,7 @@ export default function QuestionView({
 
       <div className="row" style={{ marginTop: 12, flexWrap:"wrap" }}>
         <button className={"btn " + (!selected ? "" : "btnPrimary")} disabled={!selected || submitted} onClick={submit}>
-          {submitted ? (correct ? "Acertou ✓" : "Errou ✖") : "Confirmar"}
+          {submitted ? (timedOut ? "Tempo esgotado" : (correct ? "Acertou ✓" : "Errou ✖")) : "Confirmar"}
         </button>
 
         <button className="btn" onClick={() => { setMarked(m=>{ const nx = !m; onMark(nx); return nx; }); }} disabled={submitted}>
@@ -208,5 +243,3 @@ function Option({ label, text, state, onClick }: { label: string; text: string; 
     </button>
   );
 }
-
-

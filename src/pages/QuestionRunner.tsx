@@ -100,13 +100,14 @@ export default function QuestionRunner(){
   }
 
   const submit = async ({ selectedKey, timeSpentMs, markedForReview, confidence }: { selectedKey: string; timeSpentMs: number; markedForReview: boolean; confidence?: 1|2|3|4|5 }) => {
-    const isCorrect = selectedKey === q.correctKey;
+    const chosen = selectedKey || "TIMEOUT";
+    const isCorrect = chosen === q.correctKey;
     await putAttempt({
       id: uid("att"),
       questionId: q.id,
       createdAt: Date.now(),
       mode: session.mode,
-      selectedKey,
+      selectedKey: chosen,
       isCorrect,
       timeSpentMs,
       markedForReview,
@@ -196,6 +197,7 @@ export default function QuestionRunner(){
         onMark={()=>{}}
         note={note}
         onSaveNote={saveNote}
+        timeLimitMs={session.mode === "duel" ? 45000 : undefined}
       />
 
       {spinVisible && (
