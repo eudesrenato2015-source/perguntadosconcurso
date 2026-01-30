@@ -4,6 +4,13 @@ let client: SupabaseClient | null = null;
 let duelChannel: RealtimeChannel | null = null;
 let duelCode: string | null = null;
 let duelHandlers: Array<(payload: any)=>void> = [];
+let duelSubscribed = false;
+let pendingPayloads: any[] = [];
+const DEBUG = import.meta.env.VITE_DEBUG_DUEL === "1";
+
+function logDebug(...args: any[]){
+  if (DEBUG) console.log("[duel]", ...args);
+}
 
 export function onlineEnabled(){
   return Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
@@ -27,11 +34,24 @@ function ensureChannel(code: string){
   const supa = getSupabase();
   if (!supa) return null;
   duelCode = code;
+  duelSubscribed = false;
+  pendingPayloads = [];
   duelChannel = supa.channel(`duel:${code}`, { config: { broadcast: { ack: true } } });
   duelChannel.on("broadcast", { event: "duel" }, (payload) => {
     duelHandlers.forEach(fn => fn(payload.payload));
   });
-  duelChannel.subscribe();
+  duelChannel.subscribe((status) => {
+    logDebug("channel:status", code, status);
+    if (status === "SUBSCRIBED"){
+      duelSubscribed = true;
+      if (pendingPayloads.length){
+        pendingPayloads.forEach((payload) => {
+          duelChannel?.send({ type: "broadcast", event: "duel", payload });
+        });
+        pendingPayloads = [];
+      }
+    }
+  });
   return duelChannel;
 }
 
@@ -47,6 +67,10 @@ export function subscribeDuelEvents(code: string, handler: (payload: any)=>void)
 export function sendDuelEvent(code: string, payload: any){
   const channel = ensureChannel(code);
   if (!channel) return;
+  if (!duelSubscribed){
+    pendingPayloads.push(payload);
+    return;
+  }
   channel.send({ type: "broadcast", event: "duel", payload });
 }
 
@@ -56,5 +80,7 @@ export function closeDuelChannel(){
     duelChannel = null;
     duelCode = null;
     duelHandlers = [];
+    duelSubscribed = false;
+    pendingPayloads = [];
   }
 }

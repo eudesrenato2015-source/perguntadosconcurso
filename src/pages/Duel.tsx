@@ -1,19 +1,22 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useMemo, useRef, useState } from "react";
 import Wheel from "../components/Wheel";
 import { newSession } from "../services/session";
 import { useNavigate } from "react-router-dom";
 import { getActiveQuestions, getAllQuestions } from "../services/packs";
 import type { Discipline } from "../types";
-import { onlineEnabled, sendDuelEvent, subscribeDuelEvents } from "../services/online";
+import { onlineEnabled } from "../services/online";
+import {
+  connectRoomChannel,
+  createRoomRecord,
+  fetchRoomRecord,
+  getDuelClientId,
+  joinRoomRecord,
+  startRoomRecord,
+  type DuelRoom,
+  type DuelRoomConfig
+} from "../services/duelRoom";
 
 type GhostProfile = "Rápido"|"Preciso"|"Equilibrado";
-
-type OnlineConfig = {
-  discipline: Discipline;
-  seed: number;
-  length: number;
-  mix: boolean;
-};
 
 type OnlineStatus = "idle"|"hosting"|"joining"|"waiting"|"ready";
 
@@ -24,9 +27,15 @@ export default function Duel(){
   const [notice, setNotice] = useState<string | null>(null);
   const [roomCode, setRoomCode] = useState("");
   const [status, setStatus] = useState<OnlineStatus>("idle");
-  const [config, setConfig] = useState<OnlineConfig | null>(null);
+  const [config, setConfig] = useState<DuelRoomConfig | null>(null);
   const [mixMode, setMixMode] = useState(true);
+  const [room, setRoom] = useState<DuelRoom | null>(null);
   const online = onlineEnabled();
+  const clientId = useMemo(() => getDuelClientId(), []);
+  const channelCleanupRef = useRef<null | (()=>void)>(null);
+  const startedRef = useRef(false);
+  const startRequestedRef = useRef(false);
+  const timeoutRef = useRef<number | null>(null);
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const fullPool = useMemo(() => getAllQuestions(), []);
@@ -38,6 +47,30 @@ export default function Duel(){
   const spinPick = (d: Discipline) => {
     setPicked(d);
     setNotice(null);
+  };
+
+  const clearRoomTimeout = () => {
+    if (timeoutRef.current){
+      window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  const armResyncTimeout = (code: string) => {
+    clearRoomTimeout();
+    timeoutRef.current = window.setTimeout(async () => {
+      try {
+        const latest = await fetchRoomRecord(code);
+        if (latest){
+          setRoom(latest);
+          if (latest.status === "started" && latest.config){
+            startOnlineMatch(latest.config, code, fullPool, nav, startedRef);
+          }
+        }
+      } catch (err: any){
+        console.error("[duel] recheck failed", err?.message ?? err);
+      }
+    }, 12000);
   };
 
   const startGhost = () => {
@@ -56,48 +89,108 @@ export default function Duel(){
     nav("/questao");
   };
 
-  const createRoom = () => {
+  const createRoom = async () => {
     if (!picked){
       setNotice("Gire a roleta antes de criar a sala.");
       return;
     }
+    if (!online) return;
     const code = makeRoomCode();
     const seed = hashString(code + picked);
     const length = 12;
     setRoomCode(code);
-    const cfg: OnlineConfig = { discipline: picked, seed, length, mix: mixMode };
+    const cfg: DuelRoomConfig = { discipline: picked, seed, length, mix: mixMode };
     setConfig(cfg);
     setStatus("hosting");
-    sendDuelEvent(code, { type: "init", ...cfg });
+    setNotice(null);
+    setRoom(null);
+    startedRef.current = false;
+    startRequestedRef.current = false;
+    try {
+      channelCleanupRef.current?.();
+      const channel = await connectRoomChannel(code, (next) => setRoom(next));
+      await channel.waitForSubscribed();
+      channelCleanupRef.current = channel.unsubscribe;
+      await createRoomRecord(code, cfg, clientId);
+      armResyncTimeout(code);
+    } catch (err: any){
+      console.error("[duel] create room failed", err?.message ?? err);
+      setNotice("Falha ao criar sala online. Verifique as chaves do Supabase.");
+    }
   };
 
-  const joinRoom = () => {
-    if (!roomCode.trim()) return;
+  const joinRoom = async () => {
+    const code = roomCode.trim().toUpperCase();
+    if (!code) return;
+    if (!online) return;
+    setRoomCode(code);
     setStatus("joining");
-    sendDuelEvent(roomCode.trim().toUpperCase(), { type: "ready" });
+    setNotice(null);
+    setRoom(null);
+    startedRef.current = false;
+    startRequestedRef.current = false;
+    try {
+      channelCleanupRef.current?.();
+      const channel = await connectRoomChannel(code, (next) => setRoom(next));
+      await channel.waitForSubscribed();
+      channelCleanupRef.current = channel.unsubscribe;
+      const existing = await fetchRoomRecord(code);
+      if (!existing){
+        setNotice("Sala não encontrada. Verifique o código.");
+        setStatus("idle");
+        return;
+      }
+      setConfig(existing.config);
+      setPicked(existing.config?.discipline ?? null);
+      if (existing.status === "started"){
+        startOnlineMatch(existing.config, code, fullPool, nav, startedRef);
+        setStatus("ready");
+        return;
+      }
+      await joinRoomRecord(code, clientId);
+      armResyncTimeout(code);
+    } catch (err: any){
+      console.error("[duel] join room failed", err?.message ?? err);
+      setNotice("Falha ao entrar na sala. Verifique o código e a conexão.");
+      setStatus("idle");
+    }
   };
 
   useEffect(() => {
-    if (!roomCode) return;
-    return subscribeDuelEvents(roomCode, (payload) => {
-      if (payload.type === "init"){
-        setConfig({ discipline: payload.discipline, seed: payload.seed, length: payload.length, mix: Boolean(payload.mix) });
-        setPicked(payload.discipline);
-        setStatus("waiting");
+    if (!room) return;
+    if (room.config){
+      setConfig(room.config);
+      setPicked(room.config.discipline);
+    }
+    if (room.status === "waiting"){
+      setStatus("hosting");
+    } else if (room.status === "ready"){
+      setStatus("waiting");
+    } else if (room.status === "started"){
+      setStatus("ready");
+      if (room.config){
+        startOnlineMatch(room.config, room.code, fullPool, nav, startedRef);
       }
-      if (payload.type === "ready" && status === "hosting" && config){
-        const startAt = Date.now() + 1500;
-        sendDuelEvent(roomCode, { type: "start", startAt });
-        setStatus("ready");
-        window.setTimeout(() => startOnlineMatch(config, roomCode, fullPool, nav), 1500);
-      }
-      if (payload.type === "start" && config){
-        const delay = Math.max(0, payload.startAt - Date.now());
-        setStatus("ready");
-        window.setTimeout(() => startOnlineMatch(config, roomCode, fullPool, nav), delay);
-      }
-    });
-  }, [roomCode, status, config]);
+    }
+  }, [room, fullPool, nav]);
+
+  useEffect(() => {
+    if (!room || !config) return;
+    if (room.status === "ready" && status === "hosting" && !startRequestedRef.current){
+      startRequestedRef.current = true;
+      startRoomRecord(room.code).catch((err: any) => {
+        console.error("[duel] start room failed", err?.message ?? err);
+        startRequestedRef.current = false;
+      });
+    }
+  }, [room, config, status]);
+
+  useEffect(() => {
+    return () => {
+      channelCleanupRef.current?.();
+      clearRoomTimeout();
+    };
+  }, []);
 
   return (
     <div style={{ padding: 16 }}>
@@ -294,7 +387,15 @@ function buildQueue(
   return final.slice(0, length).map(q => q.id);
 }
 
-function startOnlineMatch(config: OnlineConfig, code: string, pool: { id: string; discipline: Discipline }[], nav: (path: string)=>void){
+function startOnlineMatch(
+  config: DuelRoomConfig,
+  code: string,
+  pool: { id: string; discipline: Discipline }[],
+  nav: (path: string)=>void,
+  startedRef: React.MutableRefObject<boolean>
+){
+  if (startedRef.current) return;
+  startedRef.current = true;
   const queue = buildQueue(pool, config.discipline, config.length, config.seed, config.mix);
   const modeLabel = config.mix ? "Misto" : "Foco";
   newSession(
@@ -305,4 +406,3 @@ function startOnlineMatch(config: OnlineConfig, code: string, pool: { id: string
   );
   nav("/questao");
 }
-
