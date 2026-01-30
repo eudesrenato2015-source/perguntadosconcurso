@@ -6,7 +6,7 @@ import { getNoteByQuestion, getSR, putAttempt, putNote, putSR } from "../service
 import type { Discipline, Question, SRItem } from "../types";
 import { uid } from "../lib/uid";
 import { updateSR } from "../services/sr";
-import { getActiveQuestions, getAllQuestions } from "../services/packs";
+import { getActiveQuestions, getAllQuestions, blockQuestion } from "../services/packs";
 import { awardAttemptXP } from "../services/progress";
 import { closeDuelChannel, sendDuelEvent, subscribeDuelEvents } from "../services/online";
 import Wheel from "../components/Wheel";
@@ -153,6 +153,12 @@ export default function QuestionRunner(){
     if (nx.index >= nx.queue.length){ nav("/resultado"); return; }
   };
 
+  const skipNullQuestion = () => {
+    if (!q) return;
+    blockQuestion(q.id);
+    advance();
+  };
+
   const handleSpinPick = () => {
     setSpinVisible(false);
     advance();
@@ -205,6 +211,7 @@ export default function QuestionRunner(){
         note={note}
         onSaveNote={saveNote}
         timeLimitMs={session.mode === "duel" ? 45000 : undefined}
+        onSkipNull={skipNullQuestion}
       />
 
       {spinVisible && (

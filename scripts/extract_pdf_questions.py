@@ -77,6 +77,36 @@ def extract_gabaritos(reader: PdfReader) -> Dict[str, Dict[int, str]]:
             gabaritos[label] = key
     return gabaritos
 
+def extract_gabarito_blocks(text: str) -> Dict[str, Dict[int, str]]:
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    blocks: Dict[str, Dict[int, str]] = {}
+    try:
+        start = next(i for i, l in enumerate(lines) if "GABARITOS" in l.upper())
+    except StopIteration:
+        return blocks
+    current_label: str | None = None
+    for line in lines[start+1:]:
+        if re.search(r"FGV/\d{4}", line) or re.search(r"/FGV/", line):
+            current_label = line
+            if current_label not in blocks:
+                blocks[current_label] = {}
+            continue
+        if not current_label:
+            continue
+        for num, ans in re.findall(r"(\d{1,3})\s*[-–]\s*(ANULADA|[A-E])", line, re.IGNORECASE):
+            if ans.upper().startswith("ANUL"):
+                continue
+            blocks[current_label][int(num)] = ans.upper()
+    return blocks
+
+def match_label(statement: str, labels: Dict[str, Dict[int, str]]) -> str | None:
+    stmt = strip_accents(statement.lower())
+    for label in labels.keys():
+        norm = strip_accents(label.lower())
+        if norm and norm in stmt:
+            return label
+    return None
+
 def extract_answer_key_from_text(text: str) -> Dict[int, str]:
     key: Dict[int, str] = {}
     m = re.search(r"(GABARITO|Gabarito)(.*)$", text, re.IGNORECASE | re.DOTALL)
@@ -167,7 +197,7 @@ def infer_discipline(text: str) -> str:
         return "DH/Criminologia"
     if any(k in t for k in ["informatica", "internet", "sistema", "rede", "seguranca da informacao", "logica"]):
         return "Inform\u00e1tica/RLM"
-    if any(k in t for k in ["seguranca organica", "vigilancia", "ronda", "perimetro", "controle de acesso"]):
+    if any(k in t for k in ["seguranca organica", "vigilancia", "ronda", "perimetro", "controle de acesso", "defesa pessoal", "gestao de riscos", "contingencia", "crise", "protecao", "seguranca patrimonial", "seguranca institucional", "policia legislativa", "policia institucional"]):
         return "Seguran\u00e7a Org\u00e2nica"
     if any(k in t for k in ["historia", "republica", "goias", "goiania", "era vargas"]):
         return "Hist\u00f3ria"
@@ -224,8 +254,14 @@ def build_questions():
             "aleto": "ALETO 2024 - Policial Legislativo II - Pol\u00edcia e Seguran\u00e7a II - Tipo 1",
             "transpetro": "Transpetro 2023.1 - N\u00edvel M\u00e9dio - Prova 13 (Seguran\u00e7a)",
         }
+        gabarito_by_label: Dict[str, Dict[int, str]] = {}
         normalized_gabaritos: Dict[str, Dict[int, str]] = {}
         for label, key in gabaritos.items():
+            gabarito_by_label[label] = key
+            normalized_gabaritos[strip_accents(label.lower())] = key
+        extra_gabaritos = extract_gabarito_blocks(read_pdf_text(path))
+        for label, key in extra_gabaritos.items():
+            gabarito_by_label[label] = key
             normalized_gabaritos[strip_accents(label.lower())] = key
 
         base = slugify(os.path.splitext(filename)[0])
@@ -239,10 +275,23 @@ def build_questions():
             detected = resolve_exam_label(text, label_map)
             if detected:
                 current_label = detected
+            else:
+                page_norm = strip_accents(text.lower())
+                for label in normalized_gabaritos.keys():
+                    if label and label in page_norm:
+                        current_label = label
+                        break
+            if not current_label and len(gabarito_by_label) == 1:
+                current_label = next(iter(gabarito_by_label.keys()))
             if not current_label:
                 continue
             key = normalized_gabaritos.get(strip_accents(current_label.lower()), {})
-            for num, body in split_questions(text):
+            page_blocks = split_questions(text) + split_questions_flexible(text)
+            merged_page: Dict[int, str] = {}
+            for num, body in page_blocks:
+                if num not in merged_page or len(body) > len(merged_page[num]):
+                    merged_page[num] = body
+            for num, body in merged_page.items():
                 statement, options = parse_options(body)
                 statement = fix_mojibake(statement)
                 options = [(k, fix_mojibake(v)) for k, v in options]
@@ -260,7 +309,9 @@ def build_questions():
                 opt_texts = [opt[1] for opt in options]
                 if len(set(opt_texts)) != len(opt_texts):
                     continue
-                correct = key.get(num)
+                label_hit = match_label(statement, gabarito_by_label) if not key else None
+                use_key = key if key else normalized_gabaritos.get(strip_accents(label_hit.lower())) if label_hit else {}
+                correct = use_key.get(num)
                 if correct is None:
                     continue
                 if correct not in dict(options):
@@ -278,8 +329,12 @@ def build_questions():
         if not normalized_gabaritos:
             fallback_key = extract_answer_key_from_text(text)
             if fallback_key:
-                blocks = split_questions_flexible(text)
-                for num, body in blocks:
+                blocks_raw = split_questions(text) + split_questions_flexible(text)
+                merged: Dict[int, str] = {}
+                for num, body in blocks_raw:
+                    if num not in merged or len(body) > len(merged[num]):
+                        merged[num] = body
+                for num, body in merged.items():
                     statement, options = parse_options(body)
                     statement = fix_mojibake(statement)
                     options = [(k, fix_mojibake(v)) for k, v in options]
@@ -310,7 +365,7 @@ def build_questions():
 
             # Inline gabarito por questão (ex.: "Gabarito: E")
             for num, body in split_questions_flexible(text):
-                core = re.split(r"(Coment\\w*|Gabarito)", body, flags=re.IGNORECASE)[0]
+                core = re.split(r"(Coment\w*|Gabarito|Resposta)", body, flags=re.IGNORECASE)[0]
                 statement, options = parse_options(core)
                 statement = fix_mojibake(statement)
                 options = [(k, fix_mojibake(v)) for k, v in options]
@@ -328,10 +383,10 @@ def build_questions():
                 opt_texts = [opt[1] for opt in options]
                 if len(set(opt_texts)) != len(opt_texts):
                     continue
-                m_ans = re.search(r"Gabarito\\s*:?\\s*([A-E])", body, re.IGNORECASE)
+                m_ans = re.search(r"(Gabarito|Resposta)\s*:?\s*([A-E])", body, re.IGNORECASE)
                 if not m_ans:
                     continue
-                correct = m_ans.group(1).upper()
+                correct = m_ans.group(2).upper()
                 if correct not in dict(options):
                     continue
                 seen_statements.add(statement)

@@ -52,363 +52,43 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (FGV / TJ AL Especialista Legislativo 2018) Duas palavras do texto que obedecem à mesma regra de acentuação gráfica são:",
-      "options": [
-        {
-          "key": "A",
-          "text": "indébita / também;"
-        },
-        {
-          "key": "B",
-          "text": "história / veículo;"
-        },
-        {
-          "key": "C",
-          "text": "crônicas / atribuídos;"
-        },
-        {
-          "key": "D",
-          "text": "coíba / já;"
-        },
-        {
-          "key": "E",
-          "text": "calúnia / plágio."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
       "id": "pdf-e_book_portugues_pc_rj_fgv-3",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (FGV / Prefeitura Salvador - BA Técnico 2017) As palavras do texto acentuadas pela mesma regra de ace ntuação gráfica são",
-      "options": [
-        {
-          "key": "A",
-          "text": "cóclea / células."
-        },
-        {
-          "key": "B",
-          "text": "frequências / destruídas."
-        },
-        {
-          "key": "C",
-          "text": "responsável / média."
-        },
-        {
-          "key": "D",
-          "text": "frágeis / música."
-        },
-        {
-          "key": "E",
-          "text": "ondulatório / daí. 4 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-4",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "4. (FGV / Prefeitura Salvador - BA Auxiliar 2017)",
-      "options": [
-        {
-          "key": "A",
-          "text": "palavra década tem acento gráfico pela mesma razão que o vocábulo"
-        },
-        {
-          "key": "A",
-          "text": "após."
-        },
-        {
-          "key": "B",
-          "text": "trágica."
-        },
-        {
-          "key": "C",
-          "text": "além."
-        },
-        {
-          "key": "D",
-          "text": "ninguém."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-5",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (FGV / TJ RS Oficial de Justiça 2020) Na redação de um texto, pode ocorrer uma série de dificuldades com os vocábulos da língua portuguesa; as palavr as abaixo que estão graficamente corretas são:",
-      "options": [
-        {
-          "key": "A",
-          "text": "advogado / metereologia;"
-        },
-        {
-          "key": "B",
-          "text": "bicabornato / astigmatismo;"
-        },
-        {
-          "key": "C",
-          "text": "babadouro / beneficência;"
-        },
-        {
-          "key": "D",
-          "text": "reinvindicação / bugigangas;"
-        },
-        {
-          "key": "E",
-          "text": "jaboticaba / cabelereiro."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-7",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (FGV / IBGE Recenseador 2017) No texto 2 há um erro de grafia ou acentuação, segundo as novas regras, que é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "microorganismos;"
-        },
-        {
-          "key": "B",
-          "text": "super -resiste ntes;"
-        },
-        {
-          "key": "C",
-          "text": "bactér ias;"
-        },
-        {
-          "key": "D",
-          "text": "antibióticos;"
-        },
-        {
-          "key": "E",
-          "text": "indústrias. 5 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-9",
-      "discipline": "DH/Criminologia",
-      "subject": "Direitos Humanos/Criminologia",
-      "topic": "Direitos e políticas públicas",
       "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "9. (FGV / Prefeitura de Salvador - BA Professor Português 2019) “O conceito de direitos humanos está sendo transformado num palavrão”. (Boris Casoy) Nessa frase, o vocábulo “palavrão”, formado com o sufix o -ão, perdeu o valor de aumentativo, passando a significar “palavra chula”.",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as PARTE 1 – QUESTÕES SEM COMENTÁRIO 1. ACENTUAÇÃO GRÁFICA 1. (FGV / AL RO Analista Legisla tivo 2018) Assinale a opção que apresenta a frase em que a forma verbal sublinhada está corretamente acentuada.",
       "options": [
         {
           "key": "A",
-          "text": "opção abaixo em que esse caso NÃO está representado por nenhum dos termos é:"
-        },
-        {
-          "key": "A",
-          "text": "cartão – homenzarrão – garrafão."
+          "text": "“Nas grandes coisas, os homens se mostram como lhes convém se mostrar; nas pequenas mostram -se como são”."
         },
         {
           "key": "B",
-          "text": "caixão – portão – colherão."
+          "text": "“Dêem -nos as coisas supérfluas da vida e dispensaremos o necessário”."
         },
         {
           "key": "C",
-          "text": "papelão – facão – jarrão."
+          "text": "“O envelhecimento ocorre apenas dos 25 aos 30 anos. O que se obtêm até e sse momento é o que se conservará para sempre”."
         },
         {
           "key": "D",
-          "text": "casarão – panelão – pratão."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-12",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "12. (FGV / ALE -RO 2018) Na palavra “falat ório”, o sufixo -ório tem o mesmo valor semântico no seguinte vocábulo:",
-      "options": [
-        {
-          "key": "A",
-          "text": "audit ório."
-        },
-        {
-          "key": "B",
-          "text": "promont ório."
-        },
-        {
-          "key": "C",
-          "text": "laborat ório."
-        },
-        {
-          "key": "D",
-          "text": "relat ório."
+          "text": "“Quase todos os jovens mantém a própria opinião em situações polêmicas”."
         },
         {
           "key": "E",
-          "text": "palavr ório. 7 www.professordecioterror.com.br Acesse questões gratuit as"
+          "text": "“O velho detêm a sabedoria de gerações”. 2. (FGV / TJ AL Especialista Legislativo 2018) Duas palavras do texto que obedecem à mesma regra de acentuação gráfica são:"
         }
       ],
-      "correctKey": "E",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-14",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "14. (FGV / ALERJ Registro de Debates 2017) Cidadãos e opiniões são substantivos formados com o sufixo -ão, que fazem seus plurais, exata e respectivamente, como:",
-      "options": [
-        {
-          "key": "A",
-          "text": "escrivão / vulcão;"
-        },
-        {
-          "key": "B",
-          "text": "cristão / ademão;"
-        },
-        {
-          "key": "C",
-          "text": "anão / corrimão;"
-        },
-        {
-          "key": "D",
-          "text": "chorão / ancião;"
-        },
-        {
-          "key": "E",
-          "text": "cartão / aldeão."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -418,14 +98,14 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-16",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-8",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "16. (FGV / BANESTES Analista Econômico -Financeiro Gestão Contábil 2018)",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as 16. (FGV / BANESTES Analista Econômico -Financeiro Gestão Contábil 2018)",
       "options": [
         {
           "key": "A",
@@ -448,14 +128,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "Em toda a separação existe uma ima gem da morte;"
         }
       ],
-      "correctKey": "D",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -463,44 +143,44 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-17",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
+      "id": "pdf-e_book_portugues_pc_rj_fgv-14",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "17. (FGV / IBGE Analista Censitário 2017) “É preciso levar em conta questões e conômicas e sociais”; se juntássemos os adjetivos sublinhados em forma de adjetivo composto, a forma correta, no contexto, seria:",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as As preposições, em língua portuguesa, ora são empregadas por uma exigência grama tical de um termo anterior, ora por necessidades semânticas, não sendo de emprego obrigatório. No texto, o único e xemplo de emprego obrigatório, exigido gramaticalmente, é:",
       "options": [
         {
           "key": "A",
-          "text": "econômicas -sociais;"
+          "text": "“boa tradição da arquitetura portuguesa”;"
         },
         {
           "key": "B",
-          "text": "econômico -social;"
+          "text": "“De Portugal, desde o descobrimento do Brasil”;"
         },
         {
           "key": "C",
-          "text": "econômica -social;"
+          "text": "“fundamentos típicos da arquitetura colonial”;"
         },
         {
           "key": "D",
-          "text": "econômico -sociais;"
+          "text": "“transplantação integral de gosto”;"
         },
         {
           "key": "E",
-          "text": "econômicas -social."
+          "text": "“uma feiç ão um tanto diferente da arquitetura genuinamente portuguesa”. 32. (FGV / AL -RO Consultor Legislativo Assessoramento em Orçamentos 2018) Fragmento de texto: “É natural no ser humano o desejo de conhecer.”"
         }
       ],
-      "correctKey": "D",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -510,33 +190,33 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-e_book_portugues_pc_rj_fgv-20",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
       "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "20. (FGV / SSP AM Assistente Operacional 2015) No segmento “parceria públ ico-privada” há uma correta informação sobre a concordância dos adjetivos compostos por dois adjetivos e, por isso mesmo, devemos considerar errada a seguinte construção:",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as 46. (FGV / IBGE Agente Censitário 2017) Entre as ocorrências da preposição “de” sublinh adas nas passagens do texto, aquela em que o emprego dessa preposição é uma exigência de um termo anterior é:",
       "options": [
         {
           "key": "A",
-          "text": "tratado luso -brasileiro;"
+          "text": "“história da América do Sul”;"
         },
         {
           "key": "B",
-          "text": "comunidades afro -asiáticas;"
+          "text": "“Guerra do Paraguai”;"
         },
         {
           "key": "C",
-          "text": "relações econômic o-sociais;"
+          "text": "“memória do povo b rasileiro”;"
         },
         {
           "key": "D",
-          "text": "injustiças arcaico -tradicionais;"
+          "text": "“fruto de pesquisas históricas rigorosas”;"
         },
         {
           "key": "E",
-          "text": "agentes públicos -financeiros. 10 www.professordecioterror.com.br Acesse questões gratuit as"
+          "text": "“ lembranças de momentos difíceis”. 47. (FGV / IBGE Analista Censitário 2017) No texto 1 há um conjunto de termos pr ecedidos da preposição DE; o termo abaixo em que essa preposição tem emprego não exigido por um termo anterior é:"
         }
       ],
       "correctKey": "E",
@@ -555,89 +235,45 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-22",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-24",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
-      "difficulty": 2,
+      "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "22. (FGV / COMPESA Assistente de Saneamento e Gestão 2018) “... que durante a noite brotara embrulhos e coisas”.",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as PARTE 2 – QUESTÕES COMENT ADAS 57. (FGV / AL RO Analista Legisla tivo 2018) Assinale a opção que apresenta a frase em que a forma verbal sublinhada está corretamente acentuada.",
       "options": [
         {
           "key": "A",
-          "text": "forma verbal “brotara” pode ser adequadamente substituída por"
-        },
-        {
-          "key": "A",
-          "text": "brotou."
+          "text": "“Nas grandes coisas, os homens se mostram como lhes convém se mostrar; nas pequenas mostram -se como são”."
         },
         {
           "key": "B",
-          "text": "brotava."
+          "text": "“Dêem -nos as coisas supérfluas da vida e dispensaremos o necessário”."
         },
         {
           "key": "C",
-          "text": "vinha brotando."
+          "text": "“O envelhecimento ocorre apenas dos 25 aos 30 anos. O que se obtêm até e sse momento é o que se conservará para sempre”."
         },
         {
           "key": "D",
-          "text": "havia brotado."
+          "text": "“Quase todos os jovens mantém a própria opinião em situações polêmicas”."
+        },
+        {
+          "key": "E",
+          "text": "“O velho detêm a sabedoria de gerações”. Comentário : A alternativa"
         }
       ],
-      "correctKey": "D",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-23",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "23. (FGV / MPE -AL Técnico do Ministério Público 2018) “A dona, diligente, havia conseguido algumas verduras.”",
-      "options": [
-        {
-          "key": "A",
-          "text": "forma verbal sublinhada poderia ser a dequadamente substituída por duas outras formas, que são"
-        },
-        {
-          "key": "A",
-          "text": "conseguira / tinha conseguido."
-        },
-        {
-          "key": "B",
-          "text": "conseguira / conseguiu."
-        },
-        {
-          "key": "C",
-          "text": "tinha conseguido / conseguiu."
-        },
-        {
-          "key": "D",
-          "text": "conseguia / conseguira."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -652,72 +288,27 @@ export const importedPdfPack: QuestionPack = {
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "27. (FGV / Banestes Técnico bancário 2018 )",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as",
       "options": [
         {
           "key": "A",
-          "text": "frase em que se deveria usar a forma EU em lugar de MIM é:"
+          "text": "palavra “inter -relacionamento” não é composta, mas apenas uma palavra com prefixo. Gabarito: E 63. (FGV / IBGE Recenseador 2017) No texto 2 há um erro de grafia ou acentuação, segundo as novas regras, que é:"
         },
         {
           "key": "A",
-          "text": "Um desejo de minha avó fez de mim um artista;"
+          "text": "microorganismos;"
         },
         {
           "key": "B",
-          "text": "Há muitas diferenças entre mim e a minha futura mulher;"
+          "text": "super -resiste ntes;"
         },
         {
           "key": "C",
-          "text": "Para mim, ver filmes antigos é a maior diversão;"
+          "text": "bactér ias;"
         },
         {
           "key": "D",
-          "text": "Entre mim viajar ou descansar, prefiro o descanso;"
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-28",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "28. (FGV / Banestes Técnico bancário 2018)",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase em que se deveria usar a forma EU em lugar de MIM é:"
-        },
-        {
-          "key": "A",
-          "text": "Um desejo de minha avó fez de mim um artista;"
-        },
-        {
-          "key": "B",
-          "text": "Há muitas diferenças entre mim e a minha futura mulher;"
-        },
-        {
-          "key": "C",
-          "text": "Para mim, ver filmes antigos é a maior diversão;"
-        },
-        {
-          "key": "D",
-          "text": "Entre mim viajar ou descansar, prefiro o descanso;"
+          "text": "antibióticos;"
         }
       ],
       "correctKey": "D",
@@ -742,27 +333,27 @@ export const importedPdfPack: QuestionPack = {
       "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "30. (FGV / Prefeitur a de Salvador - BA Guarda Civil Municipal 2019) “Muito se tem falado de conservação do meio ambiente, mas não se criou ainda a consciência de q ue o planeta precisa urgentemente de nossos cuidados.” (Brasil Escola) Assinale a opção que indica os termos que, nesse segmento do texto, desempenham a mesma função sintática.",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as “Um homem acorda gravemente ferido no meio de um lixão”; a palavra “lixão”, apesar do sufixo aumen tativo, não mostra esse valor, formando um vocábulo com novo sentido (texto). O mesmo ocor re em:",
       "options": [
         {
           "key": "A",
-          "text": "de conservação / do meio ambiente"
+          "text": "casa / casarão;"
         },
         {
           "key": "B",
-          "text": "de que o planeta precisa urgentemente / de nossos cuidados"
+          "text": "papel / papelão;"
         },
         {
           "key": "C",
-          "text": "de conservação / de nossos cuidados"
+          "text": "homem / homenzarrão;"
         },
         {
           "key": "D",
-          "text": "de que o planeta precisa urgentemente de nossos cui dados / do meio ambiente"
+          "text": "pacote / pacotão;"
         },
         {
           "key": "E",
-          "text": "de conservação / de que o planeta precisa"
+          "text": "cão / canzarrão. Comentário: A alternativa"
         }
       ],
       "correctKey": "D",
@@ -773,97 +364,6 @@ export const importedPdfPack: QuestionPack = {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-32",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "32. (FGV / AL -RO Consultor Legislativo Assessoramento em Orçamentos 2018) Fragmento de texto: “É natural no ser humano o desejo de conhecer.”",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase de Aristóteles está em ordem sintática inversa. Assinale a opção que apresenta essa mesma f rase na ordem direta."
-        },
-        {
-          "key": "A",
-          "text": "No ser humano, o desejo de conhecer é natural."
-        },
-        {
-          "key": "B",
-          "text": "O desejo de conhecer, no ser humano, é natural."
-        },
-        {
-          "key": "C",
-          "text": "É natural o desejo de conhecer no ser humano."
-        },
-        {
-          "key": "D",
-          "text": "O desejo de conhecer é natural no ser humano."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-33",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "33. (FGV / DPE -RJ Técnico Superior Especializado 2019) “Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular, obrigando os alunos a decorar fórmulas matemáticas...”; o gerúndio “obrigando” poderia ser adequadamente substituído pela seguinte forma desenvolvida:",
-      "options": [
-        {
-          "key": "A",
-          "text": "e obrigam;"
-        },
-        {
-          "key": "B",
-          "text": "e para obrigar;"
-        },
-        {
-          "key": "C",
-          "text": "mesmo que obriguem;"
-        },
-        {
-          "key": "D",
-          "text": "quando obrigam;"
-        },
-        {
-          "key": "E",
-          "text": "à medida que obrigam. 15 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -873,33 +373,33 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-e_book_portugues_pc_rj_fgv-36",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
+      "discipline": "Informática/RLM",
+      "subject": "Informática/RLM",
+      "topic": "Fundamentos",
       "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "36. (FGV / TJ -SC Analista Administrativo 2018) “Inteligência e sabedoria não são a mesma coisa. Entretanto, na linguagem cotidiana, usamos os dois ter mos indistintamente”. Nesse segmento do texto, o conector “entretanto” só NÃO pode ser substituído de forma semanticamente adequada por:",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as Fernando Sabino, A mulher do vizinho Considerando -se que um texto narrativo supõe a sequência cronológica de ações ou acontecimentos, as formas verbais que documentam uma sequência temporal são",
       "options": [
         {
           "key": "A",
-          "text": "contudo;"
+          "text": "tinha / resolveu levar."
         },
         {
           "key": "B",
-          "text": "todavia;"
+          "text": "era / foi interpelado."
         },
         {
           "key": "C",
-          "text": "conquanto;"
+          "text": "foi interpelado / está levando."
         },
         {
           "key": "D",
-          "text": "no entanto;"
+          "text": "está levando / farejando ."
         },
         {
           "key": "E",
-          "text": "porém."
+          "text": "farejando / sabia. Comentário : A sequência temporal deve ser marcada por uma relação direta entre uma ação anterior e outra posterior."
         }
       ],
       "correctKey": "C",
@@ -918,42 +418,41 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-37",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-40",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "37. (FGV / MP RJ Técnico do Ministério Público 2019) Sou contra essa visão utilitária, mas é assim que funciona. Essa frase pode ser reescrita de vários modos; a única forma que altera o seu sentido original é:",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as Gabarito: E 83. (FGV / Banestes Técnico bancário 2018 )",
       "options": [
         {
           "key": "A",
-          "text": "Mesmo sendo contra essa visão utilitária, é assim que fu nciona;"
+          "text": "frase em que se deveria usar a forma EU em lugar de MIM é:"
+        },
+        {
+          "key": "A",
+          "text": "Um desejo de minha avó fez de mim um artista;"
         },
         {
           "key": "B",
-          "text": "Apesar de ser contra essa visão utilitária, é assim que funciona;"
+          "text": "Há muitas diferenças entre mim e a minha futura mulher;"
         },
         {
           "key": "C",
-          "text": "É assim que funciona a despeito de eu ser contra essa visão utilitária;"
+          "text": "Para mim, ver filmes antigos é a maior diversão;"
         },
         {
           "key": "D",
-          "text": "Ainda que eu seja contra e ssa visão utilitária, é assim que funciona;"
-        },
-        {
-          "key": "E",
-          "text": "É assim que funciona a m enos que eu seja contra essa visão utilitária. 17 www.professordecioterror.com.br Acesse questões gratuit as"
+          "text": "Entre mim viajar ou descansar, prefiro o descanso;"
         }
       ],
-      "correctKey": "E",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca."
@@ -964,14 +463,14 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-39",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-50",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
-      "difficulty": 3,
+      "difficulty": 4,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "39. (FGV / Pref. Municipal de Salv ador - BA Analista Arquitetura 2019) Sobre uma nova espécie de droga, as smart d rugs , a chamada para um texto de jornal diz o seguinte: “Drogas apelidadas de smart drugs por supostamente aumentarem a inteligência ganham cada vez mais adeptos, apesar de pesq uisas desmentirem seus efeitos”.",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as 95. (FGV / Pref. Municipal de Salv ador - BA Analista Arquitetura 2019) Sobre uma nova espécie de droga, as smart d rugs , a chamada para um texto de jornal diz o seguinte: “Drogas apelidadas de smart drugs por supostamente aumentarem a inteligência ganham cada vez mais adeptos, apesar de pesq uisas desmentirem seus efeitos”.",
       "options": [
         {
           "key": "A",
@@ -994,51 +493,6 @@ export const importedPdfPack: QuestionPack = {
           "text": "“apesar de pesqui sas desmentirem” / ainda que pesquisas desmintam;"
         }
       ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-40",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "40. (FGV / Prefeitura de Niterói -RJ Auditor Municipal Controle Interno Controladoria 2018) “O inc auto, ao ler tal informação , poderia concluir que a área das matas brasile iras teria aumentado nas últimas décadas [...]”. A frase sublinhada poderia ser corretamente substituída por",
-      "options": [
-        {
-          "key": "A",
-          "text": "“quando lesse tal informação,”"
-        },
-        {
-          "key": "B",
-          "text": "“enquanto lesse tal informação,”"
-        },
-        {
-          "key": "C",
-          "text": "“apesar da leitura de tal informação,”"
-        },
-        {
-          "key": "D",
-          "text": "“no momento em que lia t al informação,”"
-        },
-        {
-          "key": "E",
-          "text": "“se leu tal informação,” 18 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
       "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
@@ -1046,8 +500,7 @@ export const importedPdfPack: QuestionPack = {
         "whyWrong": {
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -1055,60 +508,14 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-41",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "41. (FGV / Prefeitura de Salvador - BA Analista Engenharia Civil 2019) Assinale a opção em que a frase mostra erro de concordância nas expressões percentuais.",
-      "options": [
-        {
-          "key": "A",
-          "text": "No Brasil, apenas 1% têm tudo."
-        },
-        {
-          "key": "B",
-          "text": "Apenas 10% das prostitutas caem na vida."
-        },
-        {
-          "key": "C",
-          "text": "Mais valem 1 0% de mil do que 100% de dez."
-        },
-        {
-          "key": "D",
-          "text": "O Brasil é o único país do mundo com 110% de corrupção."
-        },
-        {
-          "key": "E",
-          "text": "Havia 50% de bons ladrões no tempo de Cristo."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-43",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-53",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 4,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "43. (FGV / DPE -RJ Técnico Super ior Especializado Administração de Empresas 2019) “Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular...”; esse segmento mostra uma forma de voz passiva - “são direcionados” - sem que haja menção do agente dessa ação. O pensamento abaixo em que há uma forma de voz passiva com a indicação do agente é:",
+      "statement": "www.professordecioterror.com.br Acesse questões gratuit as “Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular...”; esse segmento mostra uma forma de voz passiva - “são direcionados” - sem que haja menção do agente dessa ação. O pensamento abaixo em que há uma forma de voz passiva com a indicação do agente é:",
       "options": [
         {
           "key": "A",
@@ -1128,99 +535,7 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "“A sabedoria não pode ser transmitida. A sabedoria que um sábio tenta transmitir soa mais como loucura”. 19 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-4",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "4. Na frase “Feijoada, o prato que todos os brasileiros gostam”, o verbo “gostar” é transitivo direto e, por isso, não é precedido de preposição. Assinale a opção que indica as afirmativas corretas.",
-      "options": [
-        {
-          "key": "A",
-          "text": "1 – 3"
-        },
-        {
-          "key": "B",
-          "text": "1 – 2"
-        },
-        {
-          "key": "C",
-          "text": "2 – 3"
-        },
-        {
-          "key": "D",
-          "text": "3 – 4"
-        },
-        {
-          "key": "E",
-          "text": "2 – 4 20 www.professordecioterror.com.br Acesse questões gratuit as"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-46",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "46. (FGV / IBGE Agente Censitário 2017) Entre as ocorrências da preposição “de” sublinh adas nas passagens do texto, aquela em que o emprego dessa preposição é uma exigência de um termo anterior é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“história da América do Sul”;"
-        },
-        {
-          "key": "B",
-          "text": "“Guerra do Paraguai”;"
-        },
-        {
-          "key": "C",
-          "text": "“memória do povo b rasileiro”;"
-        },
-        {
-          "key": "D",
-          "text": "“fruto de pesquisas históricas rigorosas”;"
-        },
-        {
-          "key": "E",
-          "text": "“ lembranças de momentos difíceis”."
+          "text": "“A sabedoria não pode ser transmitida. A sabedoria que um sábio tenta transmitir soa mais como loucura”. Comentário : Na alternativa"
         }
       ],
       "correctKey": "E",
@@ -1232,236 +547,6 @@ export const importedPdfPack: QuestionPack = {
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-47",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "47. (FGV / IBGE Analista Censitário 2017) No texto 1 há um conjunto de termos pr ecedidos da preposição DE; o termo abaixo em que essa preposição tem emprego não exigido por um termo anterior é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“racionamento de energia”;"
-        },
-        {
-          "key": "B",
-          "text": "“construção de novas usinas”;"
-        },
-        {
-          "key": "C",
-          "text": "“capacidade de fornecê -la”;"
-        },
-        {
-          "key": "D",
-          "text": "“volume de chuvas”;"
-        },
-        {
-          "key": "E",
-          "text": "“fornecimento de energia”."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-48",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "48. (FGV / MPE RJ Analista 2016) “que vise à promoção de políticas de controle”; nesse seg mento de texto 1 emprega -se corretamente a regência do verbo visar, que muda de sentido conforme seja transitivo direto ou transitivo indireto. O verbo abaixo em que NÃO ocorre a mesma possibilidade de dupla regência e duplo sentido é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "aspirar;"
-        },
-        {
-          "key": "B",
-          "text": "assis tir;"
-        },
-        {
-          "key": "C",
-          "text": "carecer;"
-        },
-        {
-          "key": "D",
-          "text": "chamar;"
-        },
-        {
-          "key": "E",
-          "text": "precisar."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-49",
-      "discipline": "Informática/RLM",
-      "subject": "Informática/RLM",
-      "topic": "Fundamentos",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "49. (FGV / TJ AL Técnico Judiciário 2018) “No fundo, é um problema técnico que os avanços da informática mais cedo ou mais tarde colocarão à disposição dos usuários e das autoridades”. O acento grave indicativo da crase empregado nesse segmento é devido ao mesmo fator da seguinte frase:",
-      "options": [
-        {
-          "key": "A",
-          "text": "À noite, todos os gatos são pardos;"
-        },
-        {
-          "key": "B",
-          "text": "Pagar à vista é coisa rara hoje em dia; 21 www.professordecioterror.com.br Acesse questões gratuit as"
-        },
-        {
-          "key": "C",
-          "text": "Entregou o livro à aluna;"
-        },
-        {
-          "key": "D",
-          "text": "Saiu à procura da namorada;"
-        },
-        {
-          "key": "E",
-          "text": "Fica va contente à proporção que superava os obstáculos ."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-50",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "50. (FGV / MPE RJ Analista 2016) No texto 1, há qua tro ocorrências do acento grave indicativo da crase: “vise à promoção de políticas de controle”(1), “tornando -os inacessíveis à grande massa populacional”(2), “Além disso, à medida que as cidades crescem”(3) e “que às vezes não contam com saneamento básico ”(4). Os casos de crase que correspondem à união de preposição + artigo definido são:",
-      "options": [
-        {
-          "key": "A",
-          "text": "1 e 2;"
-        },
-        {
-          "key": "B",
-          "text": "1 e 4;"
-        },
-        {
-          "key": "C",
-          "text": "2 e 3;"
-        },
-        {
-          "key": "D",
-          "text": "3 e 4;"
-        },
-        {
-          "key": "E",
-          "text": "todos eles."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-e_book_portugues_pc_rj_fgv-56",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "56. (FGV / Prefeitura Municipal do Salvador - BA Engenharia Civil 2019) Uma editora paulista, sob o título “Da semente ao livro”, publicou o texto a seguir. “Plantar florestas. A madeira que serve de matéria -prima para nosso pa pel vem de plantio renovável, ou seja, não é fruto de desmatamento. Essa prática gera milhares de empregos para agricultores e ajuda a recuperar áreas ambientais degradadas.” Esse texto publicitário pretende",
-      "options": [
-        {
-          "key": "A",
-          "text": "mostrar a pe rfeita organização da empresa."
-        },
-        {
-          "key": "B",
-          "text": "criar uma imagem positiva da empresa na população."
-        },
-        {
-          "key": "C",
-          "text": "indicar a razão do sucesso profissional da empresa."
-        },
-        {
-          "key": "D",
-          "text": "demonstrar que a proteção ambiental é uma exigência legal."
-        },
-        {
-          "key": "E",
-          "text": "destacar os prejuízos do desmatamento. 24 www.professordecioterror.com.br Acesse questões gratuit as PARTE 2 – QUESTÕES COMENT ADAS"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -1514,45 +599,45 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-1",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-57",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
-      "difficulty": 3,
+      "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "1. (TJ - RS/FGV/2020 ) Considerando o pensamento do texto 1 e tendo conhecimento das atrib uições de um oficial de justiça, chegamos à conclusão de que, nessa ati vidade, a língua escrita, o nível, o uso ou o registro do idioma deve ser predominantemente:",
+      "statement": "57. (FGV / AL RO Analista Legisla tivo 2018) Assinale a opção que apresenta a frase em que a forma verbal sublinhada está corretamente acentuada.",
       "options": [
         {
           "key": "A",
-          "text": "formal, de acordo com os princípios da gramática normativa."
+          "text": "“Nas grandes coisas, os homens se mostram como lhes convém se mostrar; nas pequenas mostram -se como são”."
         },
         {
           "key": "B",
-          "text": "informal, em busca de mais ampla compreensão da mensagem."
+          "text": "“Dêem -nos as coisas supérfluas da vida e dispensaremos o necessário”."
         },
         {
           "key": "C",
-          "text": "regional, adequando-o ao local onde ocorre a comunicaç ão."
+          "text": "“O envelhecimento ocorre apenas dos 25 aos 30 anos. O que se obtêm até e sse momento é o que se conservará para sempre”."
         },
         {
           "key": "D",
-          "text": "popular, tendo em vista que as mensagens são lidas por todo s."
+          "text": "“Quase todos os jovens mantém a própria opinião em situações polêmicas”."
         },
         {
           "key": "E",
-          "text": "ultraformal, selecionando vocabulário erudito e construções e laboradas."
+          "text": "“O velho detêm a sabedoria de gerações”."
         }
       ],
-      "correctKey": "C",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -1560,34 +645,80 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-58",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "2. (TJ - RS/FGV/2020 ) O texto 1 é formado por dois períodos. O segundo período, em relaçã o ao primeiro, mostra uma:",
+      "statement": "58. (FGV / TJ AL Especialista Legislativo 2018) Duas palavras do texto que obedecem à mesma regra de acentuação gráfica são:",
       "options": [
         {
           "key": "A",
-          "text": "retificação do pensamento expresso no primeiro período."
+          "text": "indébita / também;"
         },
         {
           "key": "B",
-          "text": "explicação necessária de opiniões manifestadas."
+          "text": "história / veículo;"
         },
         {
           "key": "C",
-          "text": "limitação do alcance da afirmativa anterior."
+          "text": "crônicas / atribuídos;"
         },
         {
           "key": "D",
-          "text": "oposição a um pensamento já expresso."
+          "text": "coíba / já;"
         },
         {
           "key": "E",
-          "text": "informação comprovadora do que é escrito antes."
+          "text": "calúnia / plágio."
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-59",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "59. (FGV / Prefeitura Salvador - BA Técnico 2017) As palavras do texto acentuadas pela mesma regra de ace ntuação gráfica são",
+      "options": [
+        {
+          "key": "A",
+          "text": "cóclea / células."
+        },
+        {
+          "key": "B",
+          "text": "frequências / destruídas."
+        },
+        {
+          "key": "C",
+          "text": "responsável / média."
+        },
+        {
+          "key": "D",
+          "text": "frágeis / música."
+        },
+        {
+          "key": "E",
+          "text": "ondulatório / daí."
         }
       ],
       "correctKey": "A",
@@ -1606,34 +737,946 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-3",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-60",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "60. (FGV / Prefeitura Salvador - BA Auxiliar 2017)",
+      "options": [
+        {
+          "key": "A",
+          "text": "palavra década tem acento gráfico pela mesma razão que o vocábulo"
+        },
+        {
+          "key": "A",
+          "text": "após."
+        },
+        {
+          "key": "B",
+          "text": "trágica."
+        },
+        {
+          "key": "C",
+          "text": "além."
+        },
+        {
+          "key": "D",
+          "text": "ninguém."
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-61",
       "discipline": "Português",
       "subject": "Língua Portuguesa",
       "topic": "Interpretação/Gramática",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "3. (TJ - RS/FGV/2020 ) Na redação de um texto, pode ocorrer uma série de dificuldades co m vocábulos da língua portuguesa; as palavras abaixo que estão graficamente corret as são:",
+      "statement": "61. (FGV / TJ RS Oficial de Justiça 2020) Na redação de um texto, pode ocorrer uma série de dificuldades com os vocábulos da língua portuguesa; as palavr as abaixo que estão graficamente corretas são:",
       "options": [
         {
           "key": "A",
-          "text": "advogado / metereologia."
+          "text": "advogado / metereologia;"
         },
         {
           "key": "B",
-          "text": "bicabornato /astigmatismo."
+          "text": "bicabornato / astigmatismo;"
         },
         {
           "key": "C",
-          "text": "babadouro / beneficência."
+          "text": "babadouro / beneficência;"
         },
         {
           "key": "D",
-          "text": "reinvindicação / bugigangas."
+          "text": "reinvindicação / bugigangas;"
         },
         {
           "key": "E",
           "text": "jaboticaba / cabelereiro."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-63",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "63. (FGV / IBGE Recenseador 2017) No texto 2 há um erro de grafia ou acentuação, segundo as novas regras, que é:",
+      "options": [
+        {
+          "key": "A",
+          "text": "microorganismos;"
+        },
+        {
+          "key": "B",
+          "text": "super -resiste ntes;"
+        },
+        {
+          "key": "C",
+          "text": "bactér ias;"
+        },
+        {
+          "key": "D",
+          "text": "antibióticos;"
+        },
+        {
+          "key": "E",
+          "text": "indústrias."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-65",
+      "discipline": "DH/Criminologia",
+      "subject": "Direitos Humanos/Criminologia",
+      "topic": "Direitos e políticas públicas",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "65. (FGV / Prefeitura de Salvador - BA Professor Português 2019) “O conceito de direitos humanos está sendo transformado num palavrão”. (Boris Casoy) Nessa frase, o vocábulo “palavrão”, formado com o sufix o -ão, perdeu o valor de aumentativo, passando a significar “palavra chula”.",
+      "options": [
+        {
+          "key": "A",
+          "text": "opção abaixo em que esse caso NÃO está representado por nenhum dos termos é:"
+        },
+        {
+          "key": "A",
+          "text": "cartão – homenzarrão – garrafão."
+        },
+        {
+          "key": "B",
+          "text": "caixão – portão – colherão."
+        },
+        {
+          "key": "C",
+          "text": "papelão – facão – jarrão."
+        },
+        {
+          "key": "D",
+          "text": "casarão – panelão – pratão."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-68",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "68. (FGV / ALE -RO 2018) Na palavra “falat ório”, o sufixo -ório tem o mesmo valor semântico no seguinte vocábulo:",
+      "options": [
+        {
+          "key": "A",
+          "text": "audit ório."
+        },
+        {
+          "key": "B",
+          "text": "promont ório."
+        },
+        {
+          "key": "C",
+          "text": "laborat ório."
+        },
+        {
+          "key": "D",
+          "text": "relat ório."
+        },
+        {
+          "key": "E",
+          "text": "palavr ório."
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-70",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "70. (FGV / ALERJ Registro de Debates 2017) Cidadãos e opiniões são substantivos formados com o sufixo -ão, que fazem seus plurais, exata e respectivamente, como:",
+      "options": [
+        {
+          "key": "A",
+          "text": "escrivão / vulcão;"
+        },
+        {
+          "key": "B",
+          "text": "cristão / ademão;"
+        },
+        {
+          "key": "C",
+          "text": "anão / corrimão;"
+        },
+        {
+          "key": "D",
+          "text": "chorão / ancião;"
+        },
+        {
+          "key": "E",
+          "text": "cartão / aldeão."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-73",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "73. (FGV / IBGE Analista Censitário 2017) “É preciso levar em conta questões e conômicas e sociais”; se juntássemos os adjetivos sublinhados em forma de adjetivo composto, a forma correta, no contexto, seria:",
+      "options": [
+        {
+          "key": "A",
+          "text": "econômicas -sociais;"
+        },
+        {
+          "key": "B",
+          "text": "econômico -social;"
+        },
+        {
+          "key": "C",
+          "text": "econômica -social;"
+        },
+        {
+          "key": "D",
+          "text": "econômico -sociais;"
+        },
+        {
+          "key": "E",
+          "text": "econômicas -social."
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-76",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "76. (FGV / SSP AM Assistente Operacional 2015) No segmento “parceria públ ico-privada” há uma correta informação sobre a concordância dos adjetivos compostos por dois adjetivos e, por isso mesmo, devemos considerar errada a seguinte construção:",
+      "options": [
+        {
+          "key": "A",
+          "text": "tratado luso -brasileiro;"
+        },
+        {
+          "key": "B",
+          "text": "comunidades afro -asiáticas;"
+        },
+        {
+          "key": "C",
+          "text": "relações econômic o-sociais;"
+        },
+        {
+          "key": "D",
+          "text": "injustiças arcaico -tradicionais;"
+        },
+        {
+          "key": "E",
+          "text": "agentes públicos -financeiros."
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-78",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "78. (FGV / COMPESA Assistente de Saneamento e Gestão 2018) “... que durante a noite brotara embrulhos e coisas”.",
+      "options": [
+        {
+          "key": "A",
+          "text": "forma verbal “brotara” pode ser adequadamente substituída por"
+        },
+        {
+          "key": "A",
+          "text": "brotou."
+        },
+        {
+          "key": "B",
+          "text": "brotava."
+        },
+        {
+          "key": "C",
+          "text": "vinha brotando."
+        },
+        {
+          "key": "D",
+          "text": "havia brotado. 37 www.professordecioterror.com.br Acesse questões gratuit as"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-79",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "79. (FGV / MPE -AL Técnico do Ministério Público 2018) “A dona, diligente, havia conseguido algumas verduras.”",
+      "options": [
+        {
+          "key": "A",
+          "text": "forma verbal sublinhada poderia ser a dequadamente substituída por duas outras formas, que são"
+        },
+        {
+          "key": "A",
+          "text": "conseguira / tinha conseguido."
+        },
+        {
+          "key": "B",
+          "text": "conseguira / conseguiu."
+        },
+        {
+          "key": "C",
+          "text": "tinha conseguido / conseguiu."
+        },
+        {
+          "key": "D",
+          "text": "conseguia / conseguira."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-83",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "83. (FGV / Banestes Técnico bancário 2018 )",
+      "options": [
+        {
+          "key": "A",
+          "text": "frase em que se deveria usar a forma EU em lugar de MIM é:"
+        },
+        {
+          "key": "A",
+          "text": "Um desejo de minha avó fez de mim um artista;"
+        },
+        {
+          "key": "B",
+          "text": "Há muitas diferenças entre mim e a minha futura mulher;"
+        },
+        {
+          "key": "C",
+          "text": "Para mim, ver filmes antigos é a maior diversão;"
+        },
+        {
+          "key": "D",
+          "text": "Entre mim viajar ou descansar, prefiro o descanso;"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-84",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "84. (FGV / Banestes Técnico bancário 2018)",
+      "options": [
+        {
+          "key": "A",
+          "text": "frase em que se deveria usar a forma EU em lugar de MIM é:"
+        },
+        {
+          "key": "A",
+          "text": "Um desejo de minha avó fez de mim um artista;"
+        },
+        {
+          "key": "B",
+          "text": "Há muitas diferenças entre mim e a minha futura mulher;"
+        },
+        {
+          "key": "C",
+          "text": "Para mim, ver filmes antigos é a maior diversão;"
+        },
+        {
+          "key": "D",
+          "text": "Entre mim viajar ou descansar, prefiro o descanso;"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-86",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "86. (FGV / Prefeitur a de Salvador - BA Guarda Civil Municipal 2019) “Muito se tem falado de conservação do meio ambiente, mas não se criou ainda a consciência de q ue o planeta precisa urgentemente de nossos cuidados.” (Brasil Escola) Assinale a opção que indica os termos que, nesse segmento do texto, desempenham a mesma função sintática.",
+      "options": [
+        {
+          "key": "A",
+          "text": "de conservação / do meio ambiente"
+        },
+        {
+          "key": "B",
+          "text": "de que o planeta precisa urgentemente / de nossos cuidados"
+        },
+        {
+          "key": "C",
+          "text": "de conservação / de nossos cuidados"
+        },
+        {
+          "key": "D",
+          "text": "de que o planeta precisa urgentemente de nossos cui dados / do meio ambiente"
+        },
+        {
+          "key": "E",
+          "text": "de conservação / de que o planeta precisa"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-88",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "88. (FGV / AL -RO Consultor Legislativo Assessoramento em Orçamentos 2018) Fragmento de texto: “É natural no ser humano o desejo de conhecer.”",
+      "options": [
+        {
+          "key": "A",
+          "text": "frase de Aristóteles está em ordem sintática inversa. Assinale a opção que apresenta essa mesma f rase na ordem direta."
+        },
+        {
+          "key": "A",
+          "text": "No ser humano, o desejo de conhecer é natural."
+        },
+        {
+          "key": "B",
+          "text": "O desejo de conhecer, no ser humano, é natural."
+        },
+        {
+          "key": "C",
+          "text": "É natural o desejo de conhecer no ser humano."
+        },
+        {
+          "key": "D",
+          "text": "O desejo de conhecer é natural no ser humano."
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-89",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "89. (FGV / DPE -RJ Técnico Superior Especializado 2019) “Os modelos pedagógicos de nossas escolas ainda são muito mais direcionados ao ensino teórico para passar no funil do vestibular, obrigando os alunos a decorar fórmulas matemáticas...”; o gerúndio “obrigando” poderia ser adequadamente substituído pela seguinte forma desenvolvida:",
+      "options": [
+        {
+          "key": "A",
+          "text": "e obrigam;"
+        },
+        {
+          "key": "B",
+          "text": "e para obrigar;"
+        },
+        {
+          "key": "C",
+          "text": "mesmo que obriguem;"
+        },
+        {
+          "key": "D",
+          "text": "quando obrigam;"
+        },
+        {
+          "key": "E",
+          "text": "à medida que obrigam."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-92",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "92. (FGV / TJ -SC Analista Administrativo 2018) “Inteligência e sabedoria não são a mesma coisa. Entretanto, na linguagem cotidiana, usamos os dois ter mos indistintamente”. Nesse segmento do texto, o conector “entretanto” só NÃO pode ser substituído de forma semanticamente adequada por:",
+      "options": [
+        {
+          "key": "A",
+          "text": "contudo;"
+        },
+        {
+          "key": "B",
+          "text": "todavia;"
+        },
+        {
+          "key": "C",
+          "text": "conquanto;"
+        },
+        {
+          "key": "D",
+          "text": "no entanto;"
+        },
+        {
+          "key": "E",
+          "text": "porém."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-93",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "93. (FGV / MP RJ Técnico do Ministério Público 2019) Sou contra essa visão utilitária, mas é assim que funciona. Essa frase pode ser reescrita de vários modos; a única forma que altera o seu sentido original é:",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mesmo sendo contra essa visão utilitária, é assim que fu nciona;"
+        },
+        {
+          "key": "B",
+          "text": "Apesar de ser contra essa visão utilitária, é assim que funciona;"
+        },
+        {
+          "key": "C",
+          "text": "É assim que funciona a despeito de eu ser contra essa visão utilitária;"
+        },
+        {
+          "key": "D",
+          "text": "Ainda que eu seja contra e ssa visão utilitária, é assim que funciona;"
+        },
+        {
+          "key": "E",
+          "text": "É assim que funciona a m enos que eu seja contra essa visão utilitária."
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-95",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "95. (FGV / Pref. Municipal de Salv ador - BA Analista Arquitetura 2019) Sobre uma nova espécie de droga, as smart d rugs , a chamada para um texto de jornal diz o seguinte: “Drogas apelidadas de smart drugs por supostamente aumentarem a inteligência ganham cada vez mais adeptos, apesar de pesq uisas desmentirem seus efeitos”.",
+      "options": [
+        {
+          "key": "A",
+          "text": "substituição de um conectivo que está corre tamente realizada é:"
+        },
+        {
+          "key": "A",
+          "text": "“por supostamente aumentarem” / já que supostamente aumentassem;"
+        },
+        {
+          "key": "B",
+          "text": "“por supostamente aumentarem” / visto que supostamente aumentavam;"
+        },
+        {
+          "key": "C",
+          "text": "“apesar d e pesquisas desmentirem” / embora pesquisas desmentissem;"
+        },
+        {
+          "key": "D",
+          "text": "“apesar de pesqui sas desmentirem” / ainda que pesquisas desmintam;"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-96",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "96. (FGV / Prefeitura de Niterói -RJ Auditor Municipal Controle Interno Controladoria 2018) “O inc auto, ao ler tal informação , poderia concluir que a área das matas brasile iras teria aumentado nas últimas décadas [...]”. A frase sublinhada poderia ser corretamente substituída por 51 www.professordecioterror.com.br Acesse questões gratuit as",
+      "options": [
+        {
+          "key": "A",
+          "text": "“quando lesse tal informação,”"
+        },
+        {
+          "key": "B",
+          "text": "“enquanto lesse tal informação,”"
+        },
+        {
+          "key": "C",
+          "text": "“apesar da leitura de tal informação,”"
+        },
+        {
+          "key": "D",
+          "text": "“no momento em que lia t al informação,”"
+        },
+        {
+          "key": "E",
+          "text": "“se leu tal informação,”"
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-97",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "97. (FGV / Prefeitura de Salvador - BA Analista Engenharia Civil 2019) Assinale a opção em que a frase mostra erro de concordância nas expressões percentuais.",
+      "options": [
+        {
+          "key": "A",
+          "text": "No Brasil, apenas 1% têm tudo."
+        },
+        {
+          "key": "B",
+          "text": "Apenas 10% das prostitutas caem na vida."
+        },
+        {
+          "key": "C",
+          "text": "Mais valem 1 0% de mil do que 100% de dez."
+        },
+        {
+          "key": "D",
+          "text": "O Brasil é o único país do mundo com 110% de corrupção."
+        },
+        {
+          "key": "E",
+          "text": "Havia 50% de bons ladrões no tempo de Cristo."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-4",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "4. Na frase “Feijoada, o prato que todos os brasileiros gostam”, o verbo “gostar” é transitivo direto e, por isso, não é precedido de preposição. Assinale a opção que indica as afirmativas corretas.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 – 3"
+        },
+        {
+          "key": "B",
+          "text": "1 – 2"
+        },
+        {
+          "key": "C",
+          "text": "2 – 3"
+        },
+        {
+          "key": "D",
+          "text": "3 – 4"
+        },
+        {
+          "key": "E",
+          "text": "2 – 4 55 www.professordecioterror.com.br Acesse questões gratuit as"
         }
       ],
       "correctKey": "B",
@@ -1652,7 +1695,191 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-4",
+      "id": "pdf-e_book_portugues_pc_rj_fgv-103",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "103. (FGV / IBGE Analista Censitário 2017) No texto 1 há um conjunto de termos pr ecedidos da preposição DE; o termo abaixo em que essa preposição tem emprego não exigido por um termo anterior é:",
+      "options": [
+        {
+          "key": "A",
+          "text": "“racionamento de energia”;"
+        },
+        {
+          "key": "B",
+          "text": "“construção de novas usinas”;"
+        },
+        {
+          "key": "C",
+          "text": "“capacidade de fornecê -la”;"
+        },
+        {
+          "key": "D",
+          "text": "“volume de chuvas”;"
+        },
+        {
+          "key": "E",
+          "text": "“fornecimento de energia”."
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-104",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "104. (FGV / MPE RJ Analista 2016) “que vise à promoção de políticas de controle”; nesse seg mento de texto 1 emprega -se corretamente a regência do verbo visar, que muda de sentido conforme seja transitivo direto ou transitivo indireto. O verbo abaixo em que NÃO ocorre a mesma possibilidade de dupla regência e duplo sentido é:",
+      "options": [
+        {
+          "key": "A",
+          "text": "aspirar;"
+        },
+        {
+          "key": "B",
+          "text": "assis tir;"
+        },
+        {
+          "key": "C",
+          "text": "carecer;"
+        },
+        {
+          "key": "D",
+          "text": "chamar;"
+        },
+        {
+          "key": "E",
+          "text": "precisar."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-105",
+      "discipline": "Informática/RLM",
+      "subject": "Informática/RLM",
+      "topic": "Fundamentos",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "105. (FGV / TJ AL Técnico Judiciário 2018) “No fundo, é um problema técnico que os avanços da informática mais cedo ou mais tarde colocarão à disposição dos usuários e das autoridades”. O acento grave indicativo da crase empregado nesse segmento é devido ao mesmo fator da seguinte frase:",
+      "options": [
+        {
+          "key": "A",
+          "text": "À noite, todos os gatos são pardos;"
+        },
+        {
+          "key": "B",
+          "text": "Pagar à vista é coisa rara hoje em dia;"
+        },
+        {
+          "key": "C",
+          "text": "Entregou o livro à aluna;"
+        },
+        {
+          "key": "D",
+          "text": "Saiu à procura da namorada;"
+        },
+        {
+          "key": "E",
+          "text": "Fica va contente à proporção que superava os obstáculos ."
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-e_book_portugues_pc_rj_fgv-112",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 4,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "112. (FGV / Prefeitura Municipal do Salvador - BA Engenharia Civil 2019) Uma editora paulista, sob o título “Da semente ao livro”, publicou o texto a seguir. “Plantar florestas. A madeira que serve de matéria -prima para nosso pa pel vem de plantio renovável, ou seja, não é fruto de desmatamento. Essa prática gera milhares de empregos para agricultores e ajuda a recuperar áreas ambientais degradadas.” Esse texto publicitário pretende",
+      "options": [
+        {
+          "key": "A",
+          "text": "mostrar a pe rfeita organização da empresa."
+        },
+        {
+          "key": "B",
+          "text": "criar uma imagem positiva da empresa na população."
+        },
+        {
+          "key": "C",
+          "text": "indicar a razão do sucesso profissional da empresa."
+        },
+        {
+          "key": "D",
+          "text": "demonstrar que a proteção ambiental é uma exigência legal."
+        },
+        {
+          "key": "E",
+          "text": "destacar os prejuízos do desmatamento."
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova1-prova_tj-rs/fgv/2020-4",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -1682,107 +1909,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "Os cumprimentos devem ser dados na entrada da festa."
         }
       ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (TJ - RS/FGV/2020 ) Observe a frase abaixo: “Dada a causa, a natureza produz o efeito do modo mais breve em que pode ser produzido”. Segundo essa frase, a natureza:",
-      "options": [
-        {
-          "key": "A",
-          "text": "produz tudo aquilo de que o homem precisa."
-        },
-        {
-          "key": "B",
-          "text": "indica ao homem o caminho a seguir."
-        },
-        {
-          "key": "C",
-          "text": "segue, sem pressa, a ordem natural das coisas."
-        },
-        {
-          "key": "D",
-          "text": "cria leis, mas não as respeita."
-        },
-        {
-          "key": "E",
-          "text": "mostra espírito lógico e eficiência. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 3"
-        }
-      ],
-      "correctKey": "C",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-6",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "6. (TJ - RS/FGV/2020 ) Na frase “A natureza faz o homem feliz e bom, mas a soc iedade o corrompe e torna- o miserável”, a conjunção sublinhada pode ser adequada mente substituída por:",
-      "options": [
-        {
-          "key": "A",
-          "text": "no entretanto."
-        },
-        {
-          "key": "B",
-          "text": "embora."
-        },
-        {
-          "key": "C",
-          "text": "visto que."
-        },
-        {
-          "key": "D",
-          "text": "portanto."
-        },
-        {
-          "key": "E",
-          "text": "contudo."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -1790,53 +1925,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-8",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "8. (TJ - RS/FGV/2020 ) Frase inicial: “Hoje se dá grande atenção aos espaços verdes na construção de novos condomínios”. Acima está uma frase inicial, com uma ideia principal. A seguir col ocamos cinco opções de frases, que podem ou não estar relacionadas semanticamente com a ideia princi pal. A única frase que tem relação de sentido com a frase inicial é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Nas praças há muitos bancos para que os idosos possam d escansar."
-        },
-        {
-          "key": "B",
-          "text": "No Jardim Zoológico há preocupação com o bem-estar dos anima is selvagens."
-        },
-        {
-          "key": "C",
-          "text": "Graças às clareiras urbanas, as crianças podem respirar um ar pouco poluído."
-        },
-        {
-          "key": "D",
-          "text": "As árvores frutíferas apresentam a vantagem de produzir alimentos para a população mais pobre."
-        },
-        {
-          "key": "E",
-          "text": "A poluição do ar é combatida principalmente pelas águas oc eânicas."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-9",
+      "id": "pdf-nova1-6._(tj_-_rs/fgv/2020_)_na_frase_“a_natureza_faz_o_homem_feliz_e_bom,_mas_a_soc_iedade_o_corrompe_e_torna--9",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -1863,99 +1952,7 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "Fez um sinal para que o grupo o acompanhasse. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 4"
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-15",
-      "discipline": "Constitucional",
-      "subject": "Direito Constitucional",
-      "topic": "Princípios e direitos",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "15. (TJ - RS/FGV/2020 ) Um candidato a prefeito, questionado sobre a legalização do ab orto, explicou: “Sou contra a legalização do aborto. A Constituição já prevê os casos de aborto permitido. Como vou defender essa legalização numa cidade em que as pessoas morrem de meningite, morrem de tuberculose? A cidade tem de tratar da vida primeiro, para de pois tratar desse tipo de problema”. Nesse caso, o candidato adotou a seguinte estratégia:",
-      "options": [
-        {
-          "key": "A",
-          "text": "generalização excessiva."
-        },
-        {
-          "key": "B",
-          "text": "argumento autoritário."
-        },
-        {
-          "key": "C",
-          "text": "círculo vicioso."
-        },
-        {
-          "key": "D",
-          "text": "fuga do assunto."
-        },
-        {
-          "key": "E",
-          "text": "relação equivocada entre causa e efeito."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-16",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "16. (TJ - RS/FGV/2020 ) Ao escrever um texto, o autor enfrenta várias dificuldades. Uma delas é evitar a repetição de palavras e um dos meios para isso é substituir uma palavra de valor específico por outra de conteúdo geral, como no exemplo a seguir. O sargento foi atropelado; depois de alguns minutos, chegou uma ambulância que levou o militar para o hospital. Assinale os vocábulos abaixo que mostram, respectivamente, esse mesmo tipo de relação:",
-      "options": [
-        {
-          "key": "A",
-          "text": "selvagens / índios."
-        },
-        {
-          "key": "B",
-          "text": "músicos / sambistas."
-        },
-        {
-          "key": "C",
-          "text": "embalagens / caixas."
-        },
-        {
-          "key": "D",
-          "text": "bananeira / bananal."
-        },
-        {
-          "key": "E",
-          "text": "quarto / cômodo."
+          "text": "Fez um sinal para que o grupo o acompanhasse."
         }
       ],
       "correctKey": "C",
@@ -1974,693 +1971,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-17",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "17. (TJ - RS/FGV/2020 ) A frase a seguir em que os termos sublinhados podem ser considerad os sinônimos é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "A batata está custando caro, como, aliás, todo cereal."
-        },
-        {
-          "key": "B",
-          "text": "A educação é tarefa dos pais, e a cultura, do Estado."
-        },
-        {
-          "key": "C",
-          "text": "A maior greve ocorreu em 1950; a paralisação durou um mês."
-        },
-        {
-          "key": "D",
-          "text": "A operação e o tratamento foram demasiadamente caros."
-        },
-        {
-          "key": "E",
-          "text": "As crianças adoram doce, principalmente chocolate."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-18",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "18. (TJ - RS/FGV/2020 ) Uma outra estratégia para evitar-se a repetição de palavras consiste n a substituição da segunda ocorrência da palavra por um pronome pes soal.",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase em que isso foi feito de forma adequada é:"
-        },
-        {
-          "key": "A",
-          "text": "Os meninos procederam mal, por isso lhes condenaram."
-        },
-        {
-          "key": "B",
-          "text": "Comprei o livro ontem, mas vou revendê- lo."
-        },
-        {
-          "key": "C",
-          "text": "Os chefes deram as ordens, por isso os obedeci."
-        },
-        {
-          "key": "D",
-          "text": "João estava na festa, mas não no viram sair."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-19",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "19. (TJ - RS/FGV/2020 ) Também pode evitar-se a repetição de palavras idênticas, substituindo a segunda ocorrência do vocábulo por um pronome demonstrativo; a frase abai xo em que isso foi feito de forma adequada é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Amazonas e Sergipe são estados brasileiros; este tem enorme território e aquele, pequeno."
-        },
-        {
-          "key": "B",
-          "text": "Meu carro é mais elegante que esse que você está comprando."
-        },
-        {
-          "key": "C",
-          "text": "Teu jornal abordou o tema de forma interessante, mas aquele, em minh as mãos, é mais justo."
-        },
-        {
-          "key": "D",
-          "text": "Brasil e Rússia jogaram várias vezes, mas aqueles jogos nunc a foram violentos."
-        },
-        {
-          "key": "E",
-          "text": "O terremoto de Lisboa foi violentíssimo, mas aquele de agora ma tou mais gente. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 6"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-20",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "20. (TJ - RS/FGV/2020 ) Observe as frases a seguir. Comprei calças de lã na Europa. O preço das calças foi baixo.",
-      "options": [
-        {
-          "key": "A",
-          "text": "forma adequada de juntar essas duas frases numa só, de modo a evitar a repetição da palavra calças, é:"
-        },
-        {
-          "key": "A",
-          "text": "Comprei calças de lã na Europa, que o preço foi baixo."
-        },
-        {
-          "key": "B",
-          "text": "Comprei calças de lã na Europa, onde o preço foi baixo."
-        },
-        {
-          "key": "C",
-          "text": "Comprei calças de lã na Europa, cujo preço foi baixo."
-        },
-        {
-          "key": "D",
-          "text": "Comprei calças de lã na Europa em que o preço foi baixo."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-21",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "21. (TJ - RS/FGV/2020 ) Observe a frase a seguir. O Brasil está tentando superar dificuldades; torçamos para que o mai or país da América do Sul tenha sucesso. Nesse caso substituiu-se o primeiro termo, para evitar-se a repetição de palavras, por uma qualificação; ocorre o mesmo processo na seguinte frase:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Monet, criador do Impressionismo, vai ser o motivo de uma exposiç ão em Porto Alegre."
-        },
-        {
-          "key": "B",
-          "text": "O Museu de Arte Moderna, localizado no centro de São Paulo, é destacado centro cultural."
-        },
-        {
-          "key": "C",
-          "text": "Fernando Henrique Cardoso governou o país por dois mandatos e FHC acaba de escrever mais um livro."
-        },
-        {
-          "key": "D",
-          "text": "Flamengo e River Plate vão decidir este mês a Taça Libertadores da América."
-        },
-        {
-          "key": "E",
-          "text": "Pelé já está idoso, mas o mais famoso jogador de futebol de to dos os tempos continua sendo um papo interessante."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-22",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "22. (TJ - RS/FGV/2020 ) Observe a frase a seguir. É importante aprender muitas coisas / É importante o aprendizado d e muitas coisas. O mesmo processo de substituição de um verbo por um substantivo corres pondente foi feito de forma adequada em:",
-      "options": [
-        {
-          "key": "A",
-          "text": "É impossível ocultar a desonestidade / É impossível o oculti smo da desonestidade."
-        },
-        {
-          "key": "B",
-          "text": "Morrer é o ato final da existência humana / A mortandade é o ato final da existência humana."
-        },
-        {
-          "key": "C",
-          "text": "Enfrentar as dificuldades é o caminho da felicidade / O en frentamento das dificuldades é o caminho da felicidade."
-        },
-        {
-          "key": "D",
-          "text": "Oferecer amizade é atitude rara / O ofertório de amizade é atitud e rara."
-        },
-        {
-          "key": "E",
-          "text": "O mais difícil é viver / O mais difícil é a vivacidade."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-23",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "23. (TJ - RS/FGV/2020 ) Um problema da língua escrita é a polissemia das palavras, que p ode gerar mais de um entendimento da frase.",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase abaixo em que isso ocorre com o termo sublinhado é:"
-        },
-        {
-          "key": "A",
-          "text": "Comprou um romance de estilo moderno."
-        },
-        {
-          "key": "B",
-          "text": "Após dois anos, perdeu os óculos."
-        },
-        {
-          "key": "C",
-          "text": "Vi o automóvel importado por meu tio."
-        },
-        {
-          "key": "D",
-          "text": "Comprou uma caixa de ovos."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-25",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "25. (TJ - RS/FGV/2020 ) A frase em que a substituição do termo sublinhado foi feit a de forma adequada ao sentido original é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Remédio sem efeito / Remédio ineficiente."
-        },
-        {
-          "key": "B",
-          "text": "Poço sem água / Poço árido."
-        },
-        {
-          "key": "C",
-          "text": "Livro sem autor / Livro desautorizado."
-        },
-        {
-          "key": "D",
-          "text": "Carro sem direção / Carro indireto."
-        },
-        {
-          "key": "E",
-          "text": "Flor sem perfume / Flor fedorenta."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-26",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "26. (TJ - RS/FGV/2020 ) A frase abaixo em que a substituição do segmento sublinhado po r um advérbio foi feita de forma adequada é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Sem que se entendesse o motivo, o convidado aborreceu-se na festa / irresponsavelmente."
-        },
-        {
-          "key": "B",
-          "text": "Ia à academi a poucas vezes / habitualmente."
-        },
-        {
-          "key": "C",
-          "text": "Dirigia com toda a atenção / atenciosamente."
-        },
-        {
-          "key": "D",
-          "text": "Mesmo sem estudo realizou a tarefa a contento / Intuitivamente."
-        },
-        {
-          "key": "E",
-          "text": "Enfrentou as dificuldades com coragem / ferozmente."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-28",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "28. (TJ - RS/FGV/2020 ) O segmento composto pelo verbo ter + substantivo foi substituído de fo rma semanticamente adequada em:",
-      "options": [
-        {
-          "key": "A",
-          "text": "A velhinha tem disposição para o trabalho / se dedica ao."
-        },
-        {
-          "key": "B",
-          "text": "A jovem tinha vontade de sair / gostava."
-        },
-        {
-          "key": "C",
-          "text": "Os imigrantes tinham necessidade dos documentos / exigiam."
-        },
-        {
-          "key": "D",
-          "text": "As cortinas não tinham serventia / se deterioravam."
-        },
-        {
-          "key": "E",
-          "text": "O assaltante não teve intenção de fugir / pretendeu."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-29",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "29. (TJ - RS/FGV/2020 ) A frase em que a substituição do segmento sublinhado por um pa rticípio de valor equivalente foi feita de forma adequada é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "O terreno que está sob as águas do rio / submetido às."
-        },
-        {
-          "key": "B",
-          "text": "Um edifício que está sobre duas rochas / construído."
-        },
-        {
-          "key": "C",
-          "text": "Os restos que estão na lata do lixo / acolhidos."
-        },
-        {
-          "key": "D",
-          "text": "O estado que está entre Amazonas e Maranhão / posto."
-        },
-        {
-          "key": "E",
-          "text": "Um carro que está na garagem / paralisado."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-1",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "1. (TJ - SC/FGV/2018) O texto 1 é uma pequena notícia de primeira página de O Globo , cujo conteúdo é ampliado em reportagem no interior do jornal. A marca mais caracterí stica de ser este um texto resumido é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "a presença marcante de frases curtas."
-        },
-        {
-          "key": "B",
-          "text": "a preferência por sinais de pontuação em lugar de conectivo s."
-        },
-        {
-          "key": "C",
-          "text": "a ausência de adjetivos e advérbios."
-        },
-        {
-          "key": "D",
-          "text": "a seleção de temas de destaque."
-        },
-        {
-          "key": "E",
-          "text": "a utilização de verbos indicadores de ação rápida."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (TJ - SC/FGV/2018) Na estruturação da notícia do texto 1, o jornal deu principal des taque ao seguinte papel de Stephen Hawking:",
-      "options": [
-        {
-          "key": "A",
-          "text": "possuir uma mente privilegiada."
-        },
-        {
-          "key": "B",
-          "text": "ter revolucionado o estudo da cosmologia."
-        },
-        {
-          "key": "C",
-          "text": "ser um símbolo de superação."
-        },
-        {
-          "key": "D",
-          "text": "ter tido papel decisivo na divulgação científica."
-        },
-        {
-          "key": "E",
-          "text": "ter virado um ídolo pop."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-3",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (TJ - SC/FGV/2018) Ao dizer que o cientista inglês “virou um ícone pop”, o aut or do texto 1 quer dizer que ele:",
-      "options": [
-        {
-          "key": "A",
-          "text": "tornou-se temática de muitos filmes modernos."
-        },
-        {
-          "key": "B",
-          "text": "realizou tarefas ligadas à arte popular."
-        },
-        {
-          "key": "C",
-          "text": "alcançou popularidade acima das expectativas."
-        },
-        {
-          "key": "D",
-          "text": "obteve uma fama comparável à de artistas populares."
-        },
-        {
-          "key": "E",
-          "text": "conquistou um espaço nas artes plásticas."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-4",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "4. (TJ - SC/FGV/201 8) Observe a charge a seguir:",
-      "options": [
-        {
-          "key": "A",
-          "text": "charge acima é uma homenagem a Stephen Hawking, destacando o fato d e o cientista: BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 9"
-        },
-        {
-          "key": "A",
-          "text": "ter alcançado o céu após sua morte."
-        },
-        {
-          "key": "B",
-          "text": "mostrar determinação no combate à doença."
-        },
-        {
-          "key": "C",
-          "text": "ser comparado a cientistas famosos."
-        },
-        {
-          "key": "D",
-          "text": "ser reconhecido como uma mente brilhante."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
+      "id": "pdf-nova1-6._(tj_-_sc/fgv/2018)_sobre_a_frase_dita_por_einstein,_e_correto_afirmar_que:-5",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -2690,98 +2001,6 @@ export const importedPdfPack: QuestionPack = {
           "text": "as roupas dos cientistas estão adequadas à época em que viveram."
         }
       ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-7",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (TJ - SC/FGV/2018) “Inteligência e sabedoria não são a mesma coisa”. Essa frase tem a função textual de:",
-      "options": [
-        {
-          "key": "A",
-          "text": "introduzir tematicamente o assunto do texto 2, sem preocupações, no mo mento, de explicar a afirmativa."
-        },
-        {
-          "key": "B",
-          "text": "indicar uma questão que será resolvida no restante do texto 2."
-        },
-        {
-          "key": "C",
-          "text": "propor uma reflexão conjunta com o leitor."
-        },
-        {
-          "key": "D",
-          "text": "despertar o interesse do leitor pela leitura do texto 2."
-        },
-        {
-          "key": "E",
-          "text": "mostrar o posicionamento do autor diante de uma questão polêmica no terreno da psicologia. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 10"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-8",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "8. (TJ - SC/FGV/2018) “Inteligência e sabedoria não são a mesma coisa. Entretanto, na linguagem cotidiana, usamos os dois termos indistintamente”. Esse segmento do texto 2 mostra que nossa linguagem cotidiana:",
-      "options": [
-        {
-          "key": "A",
-          "text": "falha em determinar especificidades da realidade."
-        },
-        {
-          "key": "B",
-          "text": "é empregada de diferentes formas em função da situação comun icativa em que se insere."
-        },
-        {
-          "key": "C",
-          "text": "não possui todos os vocábulos necessários à perfeita comu nicação humana."
-        },
-        {
-          "key": "D",
-          "text": "engloba todo o conhecimento humano, mas não é usada de forma coerente por todos."
-        },
-        {
-          "key": "E",
-          "text": "não é capaz de mostrar a diferença entre realidades próximas."
-        }
-      ],
       "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
@@ -2798,329 +2017,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-9",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "9. (TJ - SC/FGV/2018) “Inteligência e sabedoria não são a mesma coisa. Entretanto, na linguagem cotidiana, usam os os dois termos indistintamente”. Nesse segmento do texto 2, o conector “entretanto” só NÃO pode ser substituído de forma semanticamente adequada por:",
-      "options": [
-        {
-          "key": "A",
-          "text": "contudo."
-        },
-        {
-          "key": "B",
-          "text": "todavia."
-        },
-        {
-          "key": "C",
-          "text": "conquanto."
-        },
-        {
-          "key": "D",
-          "text": "no entanto."
-        },
-        {
-          "key": "E",
-          "text": "porém."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-10",
-      "discipline": "Penal/Proc Penal",
-      "subject": "Direito Penal/Processual Penal",
-      "topic": "Teoria do crime",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "10. (TJ - SC/FGV/2 018) “Vivemos em uma sociedade onde a eficiência e os resultado s são valorizados. Aparentemente, apenas os mais inteligentes estão destinados a obter su cesso. No entanto, apenas os sábios conseguem uma felicidade autêntica”. Inferimos da leitura desse segmento do texto 2 que:",
-      "options": [
-        {
-          "key": "A",
-          "text": "a eficiência e os resultados estão mais ligados à sabedori a que à inteligência."
-        },
-        {
-          "key": "B",
-          "text": "a sociedade não valoriza a sabedoria, mas somente a inteligên cia."
-        },
-        {
-          "key": "C",
-          "text": "inteligentes e sábios podem atingir a plena felicidade."
-        },
-        {
-          "key": "D",
-          "text": "na vida humana, a inteligência é dom superior à sabedoria."
-        },
-        {
-          "key": "E",
-          "text": "os inteligentes não conseguem ser autenticamente felizes."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-11",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "11. (TJ - SC/FGV/2018) A frase do texto 2 em que os termos unidos pela conjunçã o “E” possuem valores sinônimos é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“Vivemos em uma sociedade onde a eficiência e os resul tados são valorizados”."
-        },
-        {
-          "key": "B",
-          "text": "“Inteligência e sabedoria não são a mesma coisa”."
-        },
-        {
-          "key": "C",
-          "text": "“Por isso, o tipo de personalidade e a maturidade emoci onal são fatores que influenciam...”."
-        },
-        {
-          "key": "D",
-          "text": "“...desenvolver uma sabedoria excepcional e moldar uma personalidade virtuosa”."
-        },
-        {
-          "key": "E",
-          "text": "“Isso vai um passo além do cognitivo e do emocional”. 12.(TJ - SC/FGV/2018) A frase do texto 2 que NÃO exemplifica a voz passiva é:"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-13",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "13. (TJ - SC/FGV/2018) Em todas as frases abaixo (texto 2) sublinhamos formas verbais de primeira pessoa do plural, em que o sujeito é quantitativamente impreciso. O caso em que o sujeito de uma dessas formas abrange o maior universo possível de pessoas é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“Inteligência e sabedoria não são a mesma coisa. Entre tanto, na linguagem cotidiana, usamos os dois termos indistintamente”."
-        },
-        {
-          "key": "B",
-          "text": "“Vivemos em uma sociedade onde a eficiência e os resultados são valorizados”."
-        },
-        {
-          "key": "C",
-          "text": "“T ambém é claro que quando falamos de inteligência surgem diferentes nuances”."
-        },
-        {
-          "key": "D",
-          "text": "“Assim, poderemos ter uma ideia mais precisa e útil do que realmente são”."
-        },
-        {
-          "key": "E",
-          "text": "“Afinal, se queremos algo, além de ter um alto QI, é desenvolver uma sabedoria excepcional e molda r uma personalidade virtuosa”."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-14",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "14. (TJ - SC/FGV/2018) “Afinal, se queremos algo, além de ter um alto QI, é necessá rio desenvolver uma sabedoria excepcional ”. A forma adequada de uma oração desenvolvida corresponde nte à oração reduzida sublinhada (texto 2) é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "o desenvolvimento de uma sabedoria excepcional;"
-        },
-        {
-          "key": "B",
-          "text": "que desenvolvemos uma sabedoria excepcional;"
-        },
-        {
-          "key": "C",
-          "text": "que desenvolvêssemos uma sabedoria excepcional;"
-        },
-        {
-          "key": "D",
-          "text": "desenvolvermos uma sabedoria excepcional;"
-        },
-        {
-          "key": "E",
-          "text": "que desenvolvamos uma sabedoria excepcional."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-15",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "15. (TJ - SC/FGV/2018) A frase do texto 2 em que o vocábulo sublinhado mostra uma funç ão sintática diferente das demais, por ser núcleo de função, é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“Aparentemente, apenas os mais inteligentes estão destinados a obter sucesso”."
-        },
-        {
-          "key": "B",
-          "text": "“Eles são guiados por valores e preocupados em fazer uso da bondade, aplicando uma visã o mais otimista à vida”."
-        },
-        {
-          "key": "C",
-          "text": "“...o tipo de personalidade e a maturidade emocional são fatores que influenciam mais concretamente as realizações das pessoas”."
-        },
-        {
-          "key": "D",
-          "text": "Isso também é verdadeiro em relação à capacidade de investir ma is ou menos em seu próprio bem- estar e no dos outros."
-        },
-        {
-          "key": "E",
-          "text": "Assim, poderemos ter uma ideia mais precisa e útil do que realmen te são."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-16",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "16. (TJ - SC/FGV/2018) A frase final do texto 2, atribuída a Sócrates, liga a sabedori a:",
-      "options": [
-        {
-          "key": "A",
-          "text": "ao orgulho."
-        },
-        {
-          "key": "B",
-          "text": "à bondade."
-        },
-        {
-          "key": "C",
-          "text": "à temperança."
-        },
-        {
-          "key": "D",
-          "text": "à humildade."
-        },
-        {
-          "key": "E",
-          "text": "à justiça."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-17",
+      "id": "pdf-nova1-13._(tj_-_sc/fgv/2018)_em_todas_as_frases_abaixo_(texto_2)_sublinhamos_formas_verbais_de_primeira_pessoa-17",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3147,7 +2044,7 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "Isso. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 12"
+          "text": "Isso."
         }
       ],
       "correctKey": "D",
@@ -3166,53 +2063,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-20",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "20. (TJ - SC/FGV/2018) Na comparação entre inteligência e sabedoria, realizada no text o 2, a afirmação adequada ao que é expresso no texto é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "inteligência e sabedoria são interdependentes."
-        },
-        {
-          "key": "B",
-          "text": "sabedoria mostra valores nas relações humanas."
-        },
-        {
-          "key": "C",
-          "text": "inteligência é a ferramenta da felicidade autêntica."
-        },
-        {
-          "key": "D",
-          "text": "inteligência e sabedoria aparecem sempre juntas."
-        },
-        {
-          "key": "E",
-          "text": "inteligência é superior à sabedoria. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 13 IMBEL/FGV/2021"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-1",
+      "id": "pdf-nova1-imbel/fgv/2021-1",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3242,15 +2093,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "Não sabem aposentar-se, à certa hora, não só estadistas, como também o s atores."
         }
       ],
-      "correctKey": "C",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3258,7 +2109,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
+      "id": "pdf-nova1-imbel/fgv/2021-2",
       "discipline": "Informática/RLM",
       "subject": "Informática/RLM",
       "topic": "Fundamentos",
@@ -3288,13 +2139,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "“A burrice está presente em todos os países do mundo. ”"
         }
       ],
-      "correctKey": "A",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -3304,7 +2155,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-3",
+      "id": "pdf-nova1-imbel/fgv/2021-3",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3334,12 +2185,12 @@ export const importedPdfPack: QuestionPack = {
           "text": "O preenchimento de cargos públicos é uma tarefa difícil, p ois todos os candidatos ficam descontentes."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
@@ -3350,7 +2201,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-4",
+      "id": "pdf-nova1-imbel/fgv/2021-4",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3380,15 +2231,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "“fundamentar -se” deve ser substituído por “se fundamentar”."
         }
       ],
-      "correctKey": "A",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3396,7 +2247,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-5",
+      "id": "pdf-nova1-imbel/fgv/2021-5",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3423,16 +2274,16 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "entretanto. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 14"
+          "text": "entretanto."
         }
       ],
-      "correctKey": "C",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -3442,7 +2293,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-6",
+      "id": "pdf-nova1-imbel/fgv/2021-6",
       "discipline": "História",
       "subject": "História",
       "topic": "História do Brasil/Goiás",
@@ -3472,13 +2323,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "dos tempos antigos / da verdade."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -3488,7 +2339,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-7",
+      "id": "pdf-nova1-imbel/fgv/2021-7",
       "discipline": "História",
       "subject": "História",
       "topic": "História do Brasil/Goiás",
@@ -3518,13 +2369,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "“E sses são os problemas de que devemos falar na reunião.”"
         }
       ],
-      "correctKey": "C",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -3534,7 +2385,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-8",
+      "id": "pdf-nova1-imbel/fgv/2021-8",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3564,15 +2415,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "“Não quero que as pessoas sejam muito gentis; isto me poupa do trabalho de gostar muito delas.”"
         }
       ],
-      "correctKey": "A",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3580,7 +2431,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-9",
+      "id": "pdf-nova1-imbel/fgv/2021-9",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3610,14 +2461,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "“As raízes da cultura são amargas, mas os frutos são do ces.”"
         }
       ],
-      "correctKey": "D",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -3626,7 +2477,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-10",
+      "id": "pdf-nova1-imbel/fgv/2021-10",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3653,18 +2504,18 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "Devemos nos preparar para sermos úteis. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 15"
+          "text": "Devemos nos preparar para sermos úteis."
         }
       ],
-      "correctKey": "E",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3672,7 +2523,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-11",
+      "id": "pdf-nova1-imbel/fgv/2021-11",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3702,14 +2553,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "somente está correta a primeira forma."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -3718,7 +2569,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-12",
+      "id": "pdf-nova1-imbel/fgv/2021-12",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -3748,14 +2599,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "trazer / trazia."
         }
       ],
-      "correctKey": "C",
+      "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "C": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3763,7 +2614,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-13",
+      "id": "pdf-nova1-imbel/fgv/2021-13",
       "discipline": "História",
       "subject": "História",
       "topic": "História do Brasil/Goiás",
@@ -3793,15 +2644,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "de / propriedade."
         }
       ],
-      "correctKey": "E",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3809,7 +2660,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-14",
+      "id": "pdf-nova1-imbel/fgv/2021-14",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3855,7 +2706,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-15",
+      "id": "pdf-nova1-imbel/fgv/2021-15",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3882,15 +2733,15 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "“Beber pouco é bom. Não beber, trágico.” BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 16"
+          "text": "“Beber pouco é bom. Não beber, trágico.”"
         }
       ],
-      "correctKey": "A",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
+          "A": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
@@ -3901,7 +2752,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-16",
+      "id": "pdf-nova1-imbel/fgv/2021-16",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -3947,7 +2798,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-17",
+      "id": "pdf-nova1-imbel/fgv/2021-17",
       "discipline": "Português",
       "subject": "Língua Portuguesa",
       "topic": "Interpretação/Gramática",
@@ -3977,7 +2828,7 @@ export const importedPdfPack: QuestionPack = {
           "text": "Conheço-me a mim mesmo."
         }
       ],
-      "correctKey": "D",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
@@ -3985,7 +2836,7 @@ export const importedPdfPack: QuestionPack = {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -3993,7 +2844,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-18",
+      "id": "pdf-nova1-imbel/fgv/2021-18",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4023,14 +2874,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "“É preciso observar simplesmente; o espírito do observador deve ser passivo, ou seja, deve calar -se; ele ouve a natureza e escreve o que ela dita.”"
         }
       ],
-      "correctKey": "C",
+      "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -4039,7 +2890,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-19",
+      "id": "pdf-nova1-imbel/fgv/2021-19",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4085,7 +2936,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-20",
+      "id": "pdf-nova1-imbel/fgv/2021-20",
       "discipline": "História",
       "subject": "História",
       "topic": "História do Brasil/Goiás",
@@ -4112,16 +2963,16 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "A escolha de um nome de homem não considerado honrado e patriota para a capital de Minas já tinha sido sugerida. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 17 IMBEL/FGV/2021"
+          "text": "A escolha de um nome de homem não considerado honrado e patriota para a capital de Minas já tinha sido sugerida."
         }
       ],
-      "correctKey": "A",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -4131,7 +2982,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
+      "id": "pdf-nova1-imbel/fgv/2021-2",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4161,13 +3012,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "Deve-se usar carne e peixe em nossa alimentação."
         }
       ],
-      "correctKey": "A",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -4177,7 +3028,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-3",
+      "id": "pdf-nova1-imbel/fgv/2021-3",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4207,12 +3058,12 @@ export const importedPdfPack: QuestionPack = {
           "text": "justifica- se o adjetivo “filantrópico” pelo fato de o boi ceder sua carne para a alimentação humana."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
@@ -4223,7 +3074,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-4",
+      "id": "pdf-nova1-imbel/fgv/2021-4",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4253,61 +3104,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "“O amor não nasce de uma circunstância fortuita, nem de uma longa intimidade, é uma harmonia entre duas naturezas, que se reconhecem e completam.”"
         }
       ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (IMBEL/FGV/2021) “Os deuses certamente não revelaram tudo aos mortais desde o princípio, mas , procurando os homens encontram pouco a pouco o melhor.” (Xenófanes, poeta e filósofo grego) As opções a seguir mostram mudanças vocabulares que mantém seu s entido original, à exceção de uma . Assinale- a.",
-      "options": [
-        {
-          "key": "A",
-          "text": "certamente / com certeza. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 18"
-        },
-        {
-          "key": "B",
-          "text": "desde o princípio / primitivamente."
-        },
-        {
-          "key": "C",
-          "text": "mas / todavia."
-        },
-        {
-          "key": "D",
-          "text": "procurando / com a procura."
-        },
-        {
-          "key": "E",
-          "text": "pouco a pouco / paulatinamente."
-        }
-      ],
-      "correctKey": "C",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -4315,7 +3120,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-6",
+      "id": "pdf-nova1-imbel/fgv/2021-6",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -4345,13 +3150,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "Desacreditar as opiniões de autoridades."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
@@ -4361,7 +3166,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-7",
+      "id": "pdf-nova1-imbel/fgv/2021-7",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4391,13 +3196,13 @@ export const importedPdfPack: QuestionPack = {
           "text": "fatos X hipóteses."
         }
       ],
-      "correctKey": "C",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -4406,7 +3211,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-8",
+      "id": "pdf-nova1-imbel/fgv/2021-8",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4436,15 +3241,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "a enorme quantidade de informações sobre cada tema."
         }
       ],
-      "correctKey": "A",
+      "correctKey": "E",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -4452,7 +3257,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-9",
+      "id": "pdf-nova1-imbel/fgv/2021-9",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4482,14 +3287,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "“O problema da vida é este: como romper a própria solidão, como comunicar- se com os outros.”"
         }
       ],
-      "correctKey": "D",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -4498,7 +3303,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-10",
+      "id": "pdf-nova1-imbel/fgv/2021-10",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4525,18 +3330,18 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "A falta de vírgula antes da oração “que se sustenta”. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 19"
+          "text": "A falta de vírgula antes da oração “que se sustenta”."
         }
       ],
-      "correctKey": "E",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -4544,7 +3349,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-11",
+      "id": "pdf-nova1-imbel/fgv/2021-11",
       "discipline": "História",
       "subject": "História",
       "topic": "História do Brasil/Goiás",
@@ -4574,14 +3379,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "da memória / do presente."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -4590,7 +3395,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-12",
+      "id": "pdf-nova1-imbel/fgv/2021-12",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4620,14 +3425,14 @@ export const importedPdfPack: QuestionPack = {
           "text": "“A consciência é um Deus para todos os mortais.”"
         }
       ],
-      "correctKey": "C",
+      "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
           "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
         },
         "tips": [
@@ -4636,7 +3441,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-13",
+      "id": "pdf-nova1-imbel/fgv/2021-13",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4666,15 +3471,15 @@ export const importedPdfPack: QuestionPack = {
           "text": "“Sem entusiasmo nunca se realizou nada de grandioso.”"
         }
       ],
-      "correctKey": "E",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -4682,7 +3487,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-14",
+      "id": "pdf-nova1-imbel/fgv/2021-14",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4728,7 +3533,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-15",
+      "id": "pdf-nova1-imbel/fgv/2021-15",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -4755,15 +3560,15 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "Artistas têm admiradores. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 20 PROVA IBGE/FGV/2020"
+          "text": "Artistas têm admiradores."
         }
       ],
-      "correctKey": "A",
+      "correctKey": "B",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
+          "A": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
@@ -4774,7 +3579,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-1",
+      "id": "pdf-nova1-prova_ibge/fgv/2020-1",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -4819,374 +3624,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (IBGE/FGV/2020) Um grande empresário moderno declarou: “O mundo está progre dindo e os recursos tornam-se mais abundantes. Prefiro entrar em uma mercearia hoje a ir ao banquete de um rei à cem anos”.",
-      "options": [
-        {
-          "key": "A",
-          "text": "modificação necessária para que esse texto fique correto é:"
-        },
-        {
-          "key": "A",
-          "text": "“está progredindo” deve ser substituído por “progrediu”;"
-        },
-        {
-          "key": "B",
-          "text": "“tornam -se” deve ser substituído por “ficaram”;"
-        },
-        {
-          "key": "C",
-          "text": "“a ir” deve ser substituído por “do que ir”;"
-        },
-        {
-          "key": "D",
-          "text": "“de um rei” deve ser substituído por “real”;"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-3",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (IBGE/FGV/2020) “O mundo está progredindo e os recursos tornam -se mais abundantes. Prefiro entrar em uma mercearia hoje a ir ao banquete de um rei à cem ano s”. Essa frase traz a seguinte mensagem:",
-      "options": [
-        {
-          "key": "A",
-          "text": "os tempos atuais são de crise econômica;"
-        },
-        {
-          "key": "B",
-          "text": "o mundo sofre contínuas mudanças;"
-        },
-        {
-          "key": "C",
-          "text": "o progresso nem sempre traz felicidade;"
-        },
-        {
-          "key": "D",
-          "text": "os tempos antigos são superiores aos modernos;"
-        },
-        {
-          "key": "E",
-          "text": "a produção agrícola atual é de grande abundância."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-4",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "4. (IBGE/FGV/2020) “Há pessoas que fazem as coisas acontecerem; há pessoas que observam as coisas acontecerem; há pessoas que comentam as coisas que acont ecem”. Esse pensamento é formulado com uma forma de oração chamada red uzida (sublinhada); se substituíssemos essa oração por uma forma desenvolvida, a opção correta seria:",
-      "options": [
-        {
-          "key": "A",
-          "text": "com que as coisas aconteçam;"
-        },
-        {
-          "key": "B",
-          "text": "que as coisas acontecem;"
-        },
-        {
-          "key": "C",
-          "text": "para que as coisas aconteçam;"
-        },
-        {
-          "key": "D",
-          "text": "o acontecimento das coisas;"
-        },
-        {
-          "key": "E",
-          "text": "que as coisas acontecessem."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (IBGE/FGV/2020) Em todas as frases abaixo há adjetivos destacados; o adjetivo q ue representa a opinião do autor da frase é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "O homem é o único animal que ri;"
-        },
-        {
-          "key": "B",
-          "text": "As grandes obras podem não ser obras grandes;"
-        },
-        {
-          "key": "C",
-          "text": "Os dias atuais passam mais rapidamente;"
-        },
-        {
-          "key": "D",
-          "text": "As provas extensas trazem muito cansaço;"
-        },
-        {
-          "key": "E",
-          "text": "Nuvens cinzentas anunciam chuva. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 21"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-6",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "6. (IBGE/FGV/2020) A frase “Foi observada a criação de uma nova empresa” está escrita na voz passiva com o verbo ser; se transformássemos essa frase para a voz ativa, a fo rma correta seria:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Observou-se a criação de uma nova empresa;"
-        },
-        {
-          "key": "B",
-          "text": "Observa-se a criação de uma nova empresa;"
-        },
-        {
-          "key": "C",
-          "text": "Criou-se uma nova empresa;"
-        },
-        {
-          "key": "D",
-          "text": "A criação de uma nova empresa foi observada;"
-        },
-        {
-          "key": "E",
-          "text": "Observaram a criação de uma nova empresa."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-7",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (IBGE/FGV/2020) Cada uma das frases abaixo foi reescrita de outro modo, conservand o-se o sentido original; a frase em que a modificação traz alteração de sentid o é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "O ministro foi chamado ao telefone / O ministro deu um telefonem a;"
-        },
-        {
-          "key": "B",
-          "text": "O cloro é utilizado para limpar a piscina / O cloro é util izado na limpeza da piscina;"
-        },
-        {
-          "key": "C",
-          "text": "O vinho foi bebido rapidamente / Bebeu-se o vinho com rapidez ;"
-        },
-        {
-          "key": "D",
-          "text": "Heitor é admirado por todos os colegas / Todos os colegas admiram Heitor;"
-        },
-        {
-          "key": "E",
-          "text": "Depois das chuvas surgem as inundações / As chuvas provocam i nundações ."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-8",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "8. (IBGE/FGV/2020) A frase em que o emprego do gerúndio mostra adequação é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Entrou na sala, sentando-se na primeira fila;"
-        },
-        {
-          "key": "B",
-          "text": "Nasceu em Curitiba, sendo filho de imigrantes;"
-        },
-        {
-          "key": "C",
-          "text": "Repreendeu a torcida, condenando as ofensas;"
-        },
-        {
-          "key": "D",
-          "text": "Desceu as escadas, chegando rapidamente ao térreo;"
-        },
-        {
-          "key": "E",
-          "text": "Saiu da festa, pegando um táxi na porta."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-9",
-      "discipline": "Português",
-      "subject": "Língua Portuguesa",
-      "topic": "Interpretação/Gramática",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "9. (IBGE/FGV/2020) A frase em que o emprego do acento grave (crase) é justificado por razão diferente dos demais é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Fui à casa dele na semana passada;"
-        },
-        {
-          "key": "B",
-          "text": "Nunca mais fui à França;"
-        },
-        {
-          "key": "C",
-          "text": "Entregue a encomenda à professora;"
-        },
-        {
-          "key": "D",
-          "text": "Não sei à qual te referes;"
-        },
-        {
-          "key": "E",
-          "text": "Dei esse livro à Rosângela."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-10",
+      "id": "pdf-nova1-6._(ibge/fgv/2020)_a_frase_“foi_observada_a_criacao_de_uma_nova_empresa”_esta_escrita_na_voz_passiva-10",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -5216,144 +3654,6 @@ export const importedPdfPack: QuestionPack = {
           "text": "Não sei onde ele mora / Se você não souber, eu também não saberei ."
         }
       ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-11",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "11. (IBGE/FGV/2020) A frase abaixo em que o conectivo como mostra valor de causa é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "A prova não saiu como ele desejava;"
-        },
-        {
-          "key": "B",
-          "text": "O autor passou a ser visto como um gênio;"
-        },
-        {
-          "key": "C",
-          "text": "Como se ferira no acidente, andava devagar;"
-        },
-        {
-          "key": "D",
-          "text": "Espero que tudo corra como planejado;"
-        },
-        {
-          "key": "E",
-          "text": "Agiu como bandido. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 22"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-12",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "12. (IBGE/FGV/2020) “Mesmo sendo ricos, não quiseram que seus filhos estudassem nos Estados Unidos”. Mantendo-se o sentido original, a frase sublinhada pode ser adequadamente substituída por:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Ainda que sejam ricos;"
-        },
-        {
-          "key": "B",
-          "text": "Porque são ricos;"
-        },
-        {
-          "key": "C",
-          "text": "Já que são ricos;"
-        },
-        {
-          "key": "D",
-          "text": "Embora fossem ricos;"
-        },
-        {
-          "key": "E",
-          "text": "Por serem ricos."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-14",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "14. (IBGE/FGV/2020) “Uma noite destas, vindo da cidade para o Engenho Novo, enc ontrei no trem da Central um rapaz aqui do bairro, que eu conheço de vista e de chapéu”. Um texto, em sua escritura, omite uma série de palavras; a opção em que o emprego de palavras ou informações omitidas (entre parênteses) estaria perfeitamente adequado ao text o é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Uma noite destas (noites);"
-        },
-        {
-          "key": "B",
-          "text": "vindo (do centro) da cidade;"
-        },
-        {
-          "key": "C",
-          "text": "eu) encontrei;"
-        },
-        {
-          "key": "D",
-          "text": "no trem da (Estrada de Ferro) Central (do Brasil);"
-        },
-        {
-          "key": "E",
-          "text": "aqui do bairro (do Engenho Novo)."
-        }
-      ],
       "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
@@ -5370,53 +3670,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-15",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "15. (IBGE/FGV/2020) Um pequeno adorno doméstico traz estas palavras: “Uma casa co m cachorro é um lar feliz”. Deduz-se dessa frase que:",
-      "options": [
-        {
-          "key": "A",
-          "text": "uma casa sem cachorro é um lar infeliz;"
-        },
-        {
-          "key": "B",
-          "text": "a causa da felicidade de um lar é a presença de um cão;"
-        },
-        {
-          "key": "C",
-          "text": "os cães são os melhores amigos do homem;"
-        },
-        {
-          "key": "D",
-          "text": "um cachorro traz felicidade aos casais sem filhos;"
-        },
-        {
-          "key": "E",
-          "text": "seria conveniente que todos tivéssemos cachorros. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 23 PROVA ANGRA DOS REIS-RJ/FGV/2019"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-1",
+      "id": "pdf-nova1-prova_angra_dos_reis-rj/fgv/2019-1",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -5461,98 +3715,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (Angra dos Reis - RJ/FGV/2019 ) “Nunca houve criança tão amável que a própria mãe não ficasse satisfeita ao conseguir adormecê- la”.",
-      "options": [
-        {
-          "key": "A",
-          "text": "oração sublinhada tem valor de"
-        },
-        {
-          "key": "A",
-          "text": "comparação."
-        },
-        {
-          "key": "B",
-          "text": "finalidade."
-        },
-        {
-          "key": "C",
-          "text": "consequência."
-        },
-        {
-          "key": "D",
-          "text": "conclusão."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-3",
-      "discipline": "Penal/Proc Penal",
-      "subject": "Direito Penal/Processual Penal",
-      "topic": "Teoria do crime",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (Angra dos Reis - RJ/FGV/2019 ) “A criança é um casulo, apenas. E não há entomologista que possa dizer, pelo aspecto exterior desse casulo, as cores do inseto que palpita l á dentro”. Presente em um dicionário de citações, essa frase, em linguagem figurada , significa que",
-      "options": [
-        {
-          "key": "A",
-          "text": "não se pode prever a raça de uma criança."
-        },
-        {
-          "key": "B",
-          "text": "é impossível adivinhar a cor da pele de uma criança."
-        },
-        {
-          "key": "C",
-          "text": "desconhece-se que tipo de pessoa futura será um bebê."
-        },
-        {
-          "key": "D",
-          "text": "ignora-se se um feto irá nascer saudável."
-        },
-        {
-          "key": "E",
-          "text": "não se pode saber a aparência de um futuro bebê."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-4",
+      "id": "pdf-nova1-prova_angra_dos_reis-rj/fgv/2019-4",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -5582,235 +3745,6 @@ export const importedPdfPack: QuestionPack = {
           "text": "conforme."
         }
       ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (Angra dos Reis - RJ/FGV/2019 ) “Criar filhos é como jogar videogame: a fase seguinte é a mais di fícil.” Entre as frases a seguir, assinale aquela em que a linguagem figu rada empregada é explicada.",
-      "options": [
-        {
-          "key": "A",
-          "text": "“Minha infância foi uma aposentadoria.”"
-        },
-        {
-          "key": "B",
-          "text": "“Um filho é uma pergunta que fazemos ao destino.”"
-        },
-        {
-          "key": "C",
-          "text": "“Ter crianças é como ter um jogo de boliche instalad o em seu cérebro.”"
-        },
-        {
-          "key": "D",
-          "text": "“É mais fácil um camelo entrar pelo buraco de uma ag ulha do que um rico entrar no Reino de Deus.”"
-        },
-        {
-          "key": "E",
-          "text": "“Adão era o mais feliz dos homens: não tinha sogra.” BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 24"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-6",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "6. (Angra dos Reis - RJ/FGV/2019 ) “Não pode a árvore boa dar maus frutos; nem pode a árvore ruim dar bons frutos.” Essa frase se apoia em antíteses (vocábulos de sentido oposto). A ssinale a opção em que ocorre o mesmo.",
-      "options": [
-        {
-          "key": "A",
-          "text": "“Pobre é o povo que não se abaixa para levantar uma moe da do chão”."
-        },
-        {
-          "key": "B",
-          "text": "“O ruim de ser rico é viver com pessoas ricas.”"
-        },
-        {
-          "key": "C",
-          "text": "“Um idiota pobre é um idiota. Um idiota rico é um rico.”"
-        },
-        {
-          "key": "D",
-          "text": "“Uma pessoa nunca será nem muito magra nem muito rica.”"
-        },
-        {
-          "key": "E",
-          "text": "“Não há nenhum grande homem para o seu criado de quarto.”"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-7",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (Angra dos Reis - RJ/FGV/2019 ) “Na África, todo ancião que morre é uma biblioteca que arde.” Sobre o sentido dessa frase, assinale a afirmativa correta.",
-      "options": [
-        {
-          "key": "A",
-          "text": "a cultura na África é predominantemente oral."
-        },
-        {
-          "key": "B",
-          "text": "os anciões africanos registram por escrito as tradições."
-        },
-        {
-          "key": "C",
-          "text": "todos os anciões africanos são sábios."
-        },
-        {
-          "key": "D",
-          "text": "os anciões são os protetores oficiais da cultura africana."
-        },
-        {
-          "key": "E",
-          "text": "na África, as bibliotecas são raras."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-8",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "8. (Angra dos Reis - RJ/FGV/2019 ) “Um homem, caminhando por seus domínios, vê no meio da multidão um homem muito parecido consigo.”",
-      "options": [
-        {
-          "key": "A",
-          "text": "oração sublinhada equivale à seguinte oração desenvolvida:"
-        },
-        {
-          "key": "A",
-          "text": "“após caminhar por seus domínios”."
-        },
-        {
-          "key": "B",
-          "text": "“enquanto caminhava por seus domínios”."
-        },
-        {
-          "key": "C",
-          "text": "“quando em caminho por seus domínios”."
-        },
-        {
-          "key": "D",
-          "text": "“ao caminhar por seus domínios”."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-9",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "9. (Angra dos Reis - RJ/FGV/2019 ) “Dada a causa, a natureza produz o efeito do modo mais breve em que pode ser produzido.” Segundo essa frase, a natureza",
-      "options": [
-        {
-          "key": "A",
-          "text": "produz tudo aquilo de que o homem precisa."
-        },
-        {
-          "key": "B",
-          "text": "indica ao homem o caminho a seguir."
-        },
-        {
-          "key": "C",
-          "text": "possui espírito lógico e eficiência."
-        },
-        {
-          "key": "D",
-          "text": "produz leis, mas não as respeita."
-        },
-        {
-          "key": "E",
-          "text": "segue, sem pressa, a ordem natural das coisas."
-        }
-      ],
       "correctKey": "D",
       "explanation": {
         "summary": "Gabarito identificado no material.",
@@ -5827,7 +3761,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-10",
+      "id": "pdf-nova1-6._(angra_dos_reis_-_rj/fgv/2019_)_“nao_pode_a_arvore_boa_dar_maus_frutos;_nem_pode_a_arvore_ruim_dar-10",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -5854,145 +3788,7 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "O termo “embora” equivale a “para suas casas”. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 25 PROVA MPE-RJ/FGV/2019"
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (MPE-RJ/FGV/2019) Sobre a estruturação e significação do texto 1, é correto afirmar q ue:",
-      "options": [
-        {
-          "key": "A",
-          "text": "são apresentadas três razões em função das quais os dicio nários apresentam deficiências;"
-        },
-        {
-          "key": "B",
-          "text": "a publicação do dicionário contraria a primeira afirmação do texto de que nenhum dicionário dá conta de todo um sistema de significação;"
-        },
-        {
-          "key": "C",
-          "text": "como os sistemas de significação não são estáticos, a publi cação de um dicionário leva à mudança de significados de algumas palavras;"
-        },
-        {
-          "key": "D",
-          "text": "alguns dicionários, como os dos sistemas religiosos, en frentam maiores problemas porque devem cobrir mais vocabulário que gramáticas;"
-        },
-        {
-          "key": "E",
-          "text": "um dicionário é, por definição, uma obra deficiente, pois retrata somente um estado momentâneo de algo em permanente mudança."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-3",
-      "discipline": "Penal/Proc Penal",
-      "subject": "Direito Penal/Processual Penal",
-      "topic": "Teoria do crime",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (MPE-RJ/FGV/2019) “...os significados apreendidos pelos dicionários são apenas pontos de referência para se atingir significados constantemente variáveis com os contextos em que os sistemas de significação encontram ex istência concreta” (texto 1). Deduz-se desse segmento do texto 1 que:",
-      "options": [
-        {
-          "key": "A",
-          "text": "os dicionários procuram indicar referências que podem au xiliar na apreensão dos diversos significados nos contextos;"
-        },
-        {
-          "key": "B",
-          "text": "os significados das palavras são abstrações, que nunca encontram existência concreta, em função da diversidade de contextos; BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 26"
-        },
-        {
-          "key": "C",
-          "text": "é a existência concreta dos sistemas de significação que se en contra presente nos melhores dicionários;"
-        },
-        {
-          "key": "D",
-          "text": "como os significados das palavras estão em permanente mudan ça, os dicionários só podem indicar previsões para os futuros significados;"
-        },
-        {
-          "key": "E",
-          "text": "todos os significados das palavras encontram-se presentes nos dicionários elaborados por equipes competentes de lexicógrafos."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (MPE-RJ/FGV/2019) “Pesquisas especulativas”(texto 2) são as que:",
-      "options": [
-        {
-          "key": "A",
-          "text": "se preocupam especialmente com a língua;"
-        },
-        {
-          "key": "B",
-          "text": "se referem a temas religiosos ou místicos;"
-        },
-        {
-          "key": "C",
-          "text": "tratam de problemas futuros;"
-        },
-        {
-          "key": "D",
-          "text": "se dedicam a investigações teóricas;"
-        },
-        {
-          "key": "E",
-          "text": "abordam situações da realidade concreta."
+          "text": "O termo “embora” equivale a “para suas casas”."
         }
       ],
       "correctKey": "C",
@@ -6011,53 +3807,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-7",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (MPE-RJ/FGV/2019) O termo “danação de Babel” (texto 3) se refere:",
-      "options": [
-        {
-          "key": "A",
-          "text": "à diversidade de línguas no mundo;"
-        },
-        {
-          "key": "B",
-          "text": "ao desconhecimento de outros idiomas;"
-        },
-        {
-          "key": "C",
-          "text": "ao fato de cada um só conhecer bem a própria língua;"
-        },
-        {
-          "key": "D",
-          "text": "à falta de uma língua universal, como o esperanto;"
-        },
-        {
-          "key": "E",
-          "text": "à ausência de sons comuns nos vários idiomas."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-10",
+      "id": "pdf-nova1-7._(mpe-rj/fgv/2019)_o_termo_“danacao_de_babel”_(texto_3)_se_refere:-10",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -6084,18 +3834,18 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "conhecimento / politização. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 28"
+          "text": "conhecimento / politização."
         }
       ],
-      "correctKey": "E",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -6103,7 +3853,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-11",
+      "id": "pdf-nova1-12._(mpe-rj/fgv/2019_)_uma_das_marcas_de_um_texto_e_a_sua_coerencia,_que_tanto_pode_ser_a_do_mundo-11",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -6133,12 +3883,12 @@ export const importedPdfPack: QuestionPack = {
           "text": "escrever de forma simples e clara."
         }
       ],
-      "correctKey": "B",
+      "correctKey": "A",
       "explanation": {
         "summary": "Gabarito identificado no material.",
         "whyCorrect": "Alternativa correta conforme gabarito.",
         "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "D": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
@@ -6149,99 +3899,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-12",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "12. (MPE-RJ/FGV/2019 ) Uma das marcas de um texto é a sua coerência, que tanto pode ser a do mundo lógico como a do mundo textual: a frase abaixo que é marcada pel a coerência é :",
-      "options": [
-        {
-          "key": "A",
-          "text": "O turista se afogou na praia de Copacabana e foi retirado da água desacordado;"
-        },
-        {
-          "key": "B",
-          "text": "O estudante estrangeiro fez o curso de Direito no Rio até se torna r conhecido na área;"
-        },
-        {
-          "key": "C",
-          "text": "O ministro explicou ontem, um mês após seu afastamento, as razões de sua demissão;"
-        },
-        {
-          "key": "D",
-          "text": "Nenhum morador morreu em função do desabamento, exceto o morador d o andar térreo;"
-        },
-        {
-          "key": "E",
-          "text": "Ao contrário do que disse a imprensa, o candidato não fo i reprovado, mas sim aprovado em lugar de destaque."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-13",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "13. (MPE-RJ/FGV/2019) Observe o seguinte diálogo em um texto de Millôr Fernandes. — Maria, ponha isso lá fora em qualquer parte. — Junto com as outras? — Não ponha junto com as outras, não. Senão pode vir alguém e fazer qualquer coisa com elas. Ponha no lugar do outro dia. — Sim, senhora. Esse texto é intencionalmente impreciso e pouco claro. A estratégia d e produção de imprecisão só NÃO está corretamente identificada em:",
-      "options": [
-        {
-          "key": "A",
-          "text": "emprego de pronomes sem indicação da situação: ponha isso lá fora em qualquer parte ;"
-        },
-        {
-          "key": "B",
-          "text": "emprego de termos sem identificação anterior: ponha isso lá fora em qualquer parte ;"
-        },
-        {
-          "key": "C",
-          "text": "ausência de coesão com termos já expressos: Junto com as outras? ;"
-        },
-        {
-          "key": "D",
-          "text": "emprego de pronomes indefinidos substantivos: Senão pode vir alguém ...;"
-        },
-        {
-          "key": "E",
-          "text": "emprego de palavras gerais, sem esclarecimentos: fazer qualquer coisa com elas ."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-14",
+      "id": "pdf-nova1-12._(mpe-rj/fgv/2019_)_uma_das_marcas_de_um_texto_e_a_sua_coerencia,_que_tanto_pode_ser_a_do_mundo-14",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -6287,191 +3945,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-15",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "15. (MPE-RJ/FGV/2019) O segmento textual abaixo que deve ser classificado predominantemente como dissertativo-argumentativo é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "“A cozinha feliz, que consiste no casamento de produtos naturais, um com o outro, é a antítese da cozinha feita para impressionar”;"
-        },
-        {
-          "key": "B",
-          "text": "“Restaurante sofisticado: aquele que serve comida fria d e propósito”; BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 29"
-        },
-        {
-          "key": "C",
-          "text": "“Aprendi que esparramar as ervilhas no prato dá a im pressão de que você comeu m ais e, por isso, eu as esparramei”;"
-        },
-        {
-          "key": "D",
-          "text": "“Eu cozinho com vinho, às vezes até mesmo acrescento comi da a ele”;"
-        },
-        {
-          "key": "E",
-          "text": "“A comida era belíssima: folhas verdes com cenouras ama relas, cercadas de carne vermelha e pimentão verde”. Texto 4 Observe o trecho retirado do livro A vida íntima das frases , de Deonísio da Silva."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-16",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "16. (MPE-RJ/FGV/2019) Sobre a estruturação do texto 4, a única afirmação inadequad a é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "A ocasião faz o ladrão – indicação da frase que gera os comentários realizados na co ntinuidade da frase;"
-        },
-        {
-          "key": "B",
-          "text": "Frase com certa sutileza malvada embutida – segmento opinativo, de responsabilidade do autor do livro;"
-        },
-        {
-          "key": "C",
-          "text": "Dá conta implicitamente de que, havendo ocasião, surge inevitavelmente o ladrão – inferência retirada dos segmentos anteriores;"
-        },
-        {
-          "key": "D",
-          "text": "Diversos códigos penais basearam-se em tão triste concepção do gên ero humano – ampliação da informação do texto por meio da análise da frase motivadora;"
-        },
-        {
-          "key": "E",
-          "text": "Segundo tal hipótese – a hipótese referida é a de haver diversos códigos apoiados na concepção aludida."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-17",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "17. (MPE-RJ/FGV/2019) “Frase com certa sutileza malvada embutida. Dá conta implicitam ente de que, havendo ocasião, surge inevitavelmente o ladrão”. Nesse segmento do texto 4, há uma forma reduzida de gerúndio, que eq uivale explicitamente a:",
-      "options": [
-        {
-          "key": "A",
-          "text": "já que há ocasião;"
-        },
-        {
-          "key": "B",
-          "text": "quando há ocasião;"
-        },
-        {
-          "key": "C",
-          "text": "se houver ocasião;"
-        },
-        {
-          "key": "D",
-          "text": "embora haja ocasião;"
-        },
-        {
-          "key": "E",
-          "text": "conforme haja ocasião."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-19",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "19. (MPE-RJ/FGV/2019) Uma das formas de indicar-se a coesão num texto é a utilização d e formas de paralelismo em sua construção; a frase abaixo que mostra paral elismo em sua estruturação é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Construir um prédio e alugá-lo não são exemplos de investimento social;"
-        },
-        {
-          "key": "B",
-          "text": "Pão na padaria, água no copo e leite na geladeira não al imentam;"
-        },
-        {
-          "key": "C",
-          "text": "Quanto mais difícil é ler um cardápio, mais altos são os preços;"
-        },
-        {
-          "key": "D",
-          "text": "A trufa dá uma espécie de auréola, que leva o gastrônomo ao êxta se... É o Mozart dos cogumelos;"
-        },
-        {
-          "key": "E",
-          "text": "Comida pesada é malfeita ou desconsidera os saberes e técnicas afro-indígenas no preparo."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-20",
+      "id": "pdf-nova1-19._(mpe-rj/fgv/2019)_uma_das_formas_de_indicar-se_a_coesao_num_texto_e_a_utilizacao_d_e_formas_de-20",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
@@ -6501,509 +3975,6 @@ export const importedPdfPack: QuestionPack = {
           "text": "um / que [os demais] / os demais / aquele / que [não é declarad o]."
         }
       ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-21",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "21. (MPE-RJ/FGV/2019) Na frase “Ele sempre preocupou -se em comprar o mais barato, mas seus irmãos nem sempre fizeram isso”, o verbo fazer substitui toda uma oração.",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase abaixo em que ocorre o mesmo é:"
-        },
-        {
-          "key": "A",
-          "text": "O árbitro marcou corretamente todas as faltas, mas o bandeirinha fez o contrário;"
-        },
-        {
-          "key": "B",
-          "text": "Enquanto o professor copiava o exercício no quadro, os alu nos faziam os exercícios no caderno;"
-        },
-        {
-          "key": "C",
-          "text": "Nem todos os policiais fazem as mesmas coisas todos os di as;"
-        },
-        {
-          "key": "D",
-          "text": "Quando os carros deram a partida, os mecânicos faziam outra s tarefas;"
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-22",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "22. (MPE-RJ/FGV/2019) A frase em que NÃO há nenhum termo elidido é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Ela trabalha muito, mas eu, não;"
-        },
-        {
-          "key": "B",
-          "text": "Nem todos sabem o valor que têm;"
-        },
-        {
-          "key": "C",
-          "text": "Um amigo é a pessoa que ama as mesmas coisas que você;"
-        },
-        {
-          "key": "D",
-          "text": "O importante não é o dinheiro, mas como gastá-lo;"
-        },
-        {
-          "key": "E",
-          "text": "Os impostos trazem despesas excessivas para o povo."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-23",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "23. (MPE-RJ/FGV/2019) Alguns termos de um texto são explicitados por termos posteriores (ca táforas) e não por termos anteriores, como nas anáforas.",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase abaixo que tem um exemplo de catáfora é:"
-        },
-        {
-          "key": "A",
-          "text": "Ele é um grande craque, esse tal de João;"
-        },
-        {
-          "key": "B",
-          "text": "Encontrei o deputado numa festa, mas nunca mais o vi;"
-        },
-        {
-          "key": "C",
-          "text": "Comprei o novo computador no Mercado Livre;"
-        },
-        {
-          "key": "D",
-          "text": "As frutas e os legumes eu trouxe, mas o restante, não;"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-24",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "24. (MPE-RJ/FGV/2019) “No programa ‘O Brasil visto do alto’ só se observam as bele zas do país”. Nesse pequeno texto há uma referência a uma marca dos textos descritivos que é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "a impossibilidade de descrever todos os dados do real;"
-        },
-        {
-          "key": "B",
-          "text": "a necessidade de só se descreverem alguns dos dados do que é observado; BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 31"
-        },
-        {
-          "key": "C",
-          "text": "o desejo de se descreverem somente os dados esteticamente positivos;"
-        },
-        {
-          "key": "D",
-          "text": "a limitação da posição do observador que o torna incapaz d e descrever todos os dados do que observa;"
-        },
-        {
-          "key": "E",
-          "text": "a dificuldade de o observador descrever dados que ele desco nhece."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-25",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "25. (MPE-RJ/FGV/2019) As fábulas são textos narrativos que, geralmente, mostram animais humanizados",
-      "options": [
-        {
-          "key": "E",
-          "text": "são acompanhados de uma moral, um ensinamento para os seres h umanos. Esses textos NÃO são situados cronologicamente porque:"
-        },
-        {
-          "key": "A",
-          "text": "não é conhecido o momento de sua ocorrência;"
-        },
-        {
-          "key": "B",
-          "text": "esse dado não é importante para o entendimento;"
-        },
-        {
-          "key": "C",
-          "text": "os fatos são totalmente inverossímeis;"
-        },
-        {
-          "key": "D",
-          "text": "são obras muito antigas cuja datação é difícil;"
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-26",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "26. (MPE-RJ/FGV/2019) Observe o seguinte texto descritivo a seguir. “A casa estava situada em centro de terreno; era bastante gran de, com duas salas, quatro quartos, dois banheiros e um pequeno quintal. O piso de todos os cômodos era de cerâmica cinzenta e cada um deles possuía uma iluminação diferente”. Nesse caso, a estratégia discursiva parte:",
-      "options": [
-        {
-          "key": "A",
-          "text": "de longe para perto;"
-        },
-        {
-          "key": "B",
-          "text": "de cima para baixo;"
-        },
-        {
-          "key": "C",
-          "text": "das partes para o todo;"
-        },
-        {
-          "key": "D",
-          "text": "de baixo para cima;"
-        },
-        {
-          "key": "E",
-          "text": "do todo para as partes."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-27",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "27. (MPE-RJ/FGV/2019) “No meio do terreno, as abelhas zumbiam debaixo de uma árvo re”. Nessa frase há uma relação direta entre o verbo zumbir e o som prod uzido pelas abelhas; o exemplo abaixo em que o som representado pelo verbo NÃO está adequado ao substantivo indicado é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "tilintar / moedas;"
-        },
-        {
-          "key": "B",
-          "text": "farfalhar / folhas pisadas;"
-        },
-        {
-          "key": "C",
-          "text": "estalar / as juntas do corpo;"
-        },
-        {
-          "key": "D",
-          "text": "zurrar / os burros;"
-        },
-        {
-          "key": "E",
-          "text": "crepitar / os galhos quebrados."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-28",
-      "discipline": "Informática/RLM",
-      "subject": "Informática/RLM",
-      "topic": "Fundamentos",
-      "difficulty": 4,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "28. (MPE-RJ/FGV/2019) “Observei a paisagem da janela, que se estendia por largo espaço e brilhava sob o sol. Verifiquei que a falta de chuvas havia feito estragos e que s eria necessário irrigação urgente, mas abandonei a reflexão quando me chamaram ao portão”. Como a narrativa é marcada por uma sucessão cronológica de fato s, uma sequência de tempos verbais que mostra essa sucessão é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "observei / estendia / brilhava;"
-        },
-        {
-          "key": "B",
-          "text": "estendia / brilhava / havia feito;"
-        },
-        {
-          "key": "C",
-          "text": "verifiquei / havia feito / abandonei;"
-        },
-        {
-          "key": "D",
-          "text": "verifiquei / havia feito / seria necessário;"
-        },
-        {
-          "key": "E",
-          "text": "observei / verifiquei / abandonei. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 32"
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-29",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "29. (MPE-RJ/FGV/2019) Todos os jogadores são elegantes Eduardinho é jogador Eduardinho é elegante O texto acima é um exemplo de silogismo que apresenta uma falha estrutural, que é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "ocorre uma relação de causa e efeito defeituosa;"
-        },
-        {
-          "key": "B",
-          "text": "é feita uma simplificação exagerada;"
-        },
-        {
-          "key": "C",
-          "text": "estabelece-se uma falsa analogia;"
-        },
-        {
-          "key": "D",
-          "text": "a premissa inicial não é verdadeira;"
-        },
-        {
-          "key": "E",
-          "text": "a conclusão não é fundamentada nas premissas."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-30",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "30. (MPE-RJ/FGV/2019) Observe o raciocínio a seguir. O médico recomendou-me este xarope. Vou ficar bom logo. Sempre que passamos de uma premissa diretamente a uma conclusão, as sumimos como verdadeira uma ideia intermediária.",
-      "options": [
-        {
-          "key": "A",
-          "text": "ideia intermediária desse raciocínio é:"
-        },
-        {
-          "key": "A",
-          "text": "o médico é bastante competente;"
-        },
-        {
-          "key": "B",
-          "text": "o xarope é um medicamento tradicional;"
-        },
-        {
-          "key": "C",
-          "text": "o xarope vai ser tomado na dosagem certa;"
-        },
-        {
-          "key": "D",
-          "text": "o exame foi demorado e meticuloso;"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-1",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "1. (TJ-CE/FGV/2019) O jurista romano Ulpiano formulou o seguinte pensamento: “Ta is são os preceitos do direito: viver honestamente, não ofender ninguém, dar a c ada um o que lhe pertence”. Abaixo aparecem cinco diferentes maneiras de reescrever essa mesma fra se; a reescritura que mostra uma forma inadequada é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Os preceitos do direito são tais: viver honestamente, não ofender ninguém, dar a cada um o que lhe pertence;"
-        },
-        {
-          "key": "B",
-          "text": "Tais são os preceitos do direito: viver honestamente, dar a cada um o que lhe pertence e não ofender ninguém;"
-        },
-        {
-          "key": "C",
-          "text": "Tais são os preceitos do direito: viver honestamente, não ofen der ninguém, dar o que lhe pertence a cada um;"
-        },
-        {
-          "key": "D",
-          "text": "São tais os preceitos do direito: viver honestamente, não ofender ninguém, dar a cada um o que lhe pertence;"
-        },
-        {
-          "key": "E",
-          "text": "Viver honestamente, não ofender ninguém, dar a cada um o que lhe pertence: tais são os preceitos do direito."
-        }
-      ],
       "correctKey": "C",
       "explanation": {
         "summary": "Gabarito identificado no material.",
@@ -7020,553 +3991,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-2",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "2. (TJ-CE/FGV/2019) “Amai a justiça, / vós que julgais a terra”. Considerando que esse pensamento é composto por dois segmentos (separad os por uma barra inclinada), sobre a sua estrutura, é correto afirmar que:",
-      "options": [
-        {
-          "key": "A",
-          "text": "o segundo segmento identifica a quem se refere o imperativo presente n o primeiro segmento;"
-        },
-        {
-          "key": "B",
-          "text": "o segundo segmento mostra a causa da afirmação contida no pri meiro segmento;"
-        },
-        {
-          "key": "C",
-          "text": "o segundo segmento explica o segmento anterior;"
-        },
-        {
-          "key": "D",
-          "text": "o primeiro segmento indica a condição de o segundo segmento ser rea lizado;"
-        },
-        {
-          "key": "E",
-          "text": "o primeiro segmento apresenta a consequência da ação presente no segundo."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-3",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "3. (TJ-CE/FGV/2019) Abaixo estão cinco frases com a negativa não; todas essas frases fora m reescritas, eliminando-se essa negativa, mas mantendo-se o sentido original.",
-      "options": [
-        {
-          "key": "A",
-          "text": "frase em que houve alteração do sentido original é:"
-        },
-        {
-          "key": "A",
-          "text": "A justiça não existe onde não há liberdade / A justiça só existe onde há liberdade;"
-        },
-        {
-          "key": "B",
-          "text": "Se temes a solidão, não tentes ser justo / Se temes a solidão, tenta ser injusto;"
-        },
-        {
-          "key": "C",
-          "text": "O raciocínio e a pressa não se dão bem / O raciocínio e a pressa mostram más relações;"
-        },
-        {
-          "key": "D",
-          "text": "Não existem amores feios / Só existem amores bonitos;"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-4",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "4. (TJ-CE/FGV/2019) “Excesso de direito, excesso de injustiça”.",
-      "options": [
-        {
-          "key": "A",
-          "text": "forma adequada de indicar-se de modo mais explícito a relaç ão lógica desse pensamento é:"
-        },
-        {
-          "key": "A",
-          "text": "Se houver excesso de direito, haverá excesso de injustiça;"
-        },
-        {
-          "key": "B",
-          "text": "O excesso de direito é sempre seguido do excesso de injustiça;"
-        },
-        {
-          "key": "C",
-          "text": "Em havendo excesso de direito, desaparecerá o excesso de injustiça;"
-        },
-        {
-          "key": "D",
-          "text": "O excesso de direito ocorre em função do excesso de injustiça;"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-5",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "5. (TJ-CE/FGV/2019) Observe o seguinte diálogo:",
-      "options": [
-        {
-          "key": "A",
-          "text": "– Não há justiça sobre a terra."
-        },
-        {
-          "key": "B",
-          "text": "– Por acaso, existe no céu? Sendo esse um texto argumentativo, o segundo argumentador apela para a seguinte estratégia:"
-        },
-        {
-          "key": "A",
-          "text": "emprega um argumento de autoridade religiosa;"
-        },
-        {
-          "key": "B",
-          "text": "utiliza-se de uma opinião pessoal como argumento;"
-        },
-        {
-          "key": "C",
-          "text": "foge do assunto, apresentando uma pergunta;"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-6",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "6. (TJ-CE/FGV/2019) “Se algum dia inclinares a balança da justiça, não o f aças com o peso das doações, mas com o da misericórdia”. Esse pensamento de Dom Quixote condena o seguinte traço da justiça :",
-      "options": [
-        {
-          "key": "A",
-          "text": "os privilégios do Judiciário;"
-        },
-        {
-          "key": "B",
-          "text": "a possibilidade de corrupção;"
-        },
-        {
-          "key": "C",
-          "text": "a indiferença pelos mais pobres;"
-        },
-        {
-          "key": "D",
-          "text": "o sentimentalismo exagerado;"
-        },
-        {
-          "key": "E",
-          "text": "o tecnicismo excessivo."
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-7",
-      "discipline": "Penal/Proc Penal",
-      "subject": "Direito Penal/Processual Penal",
-      "topic": "Teoria do crime",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "7. (TJ-CE/FGV/2019) “Quando um homem quer matar um tigre, chama isso de esporte; quando é o tigre que quer matá- lo, chama de ferocidade. A distinção entre crime e justiça não é muito maior”. Esse pensamento de Bernard Shaw se estrutura a partir de uma:",
-      "options": [
-        {
-          "key": "A",
-          "text": "igualdade;"
-        },
-        {
-          "key": "B",
-          "text": "oposição;"
-        },
-        {
-          "key": "C",
-          "text": "analogia;"
-        },
-        {
-          "key": "D",
-          "text": "diferença;"
-        },
-        {
-          "key": "E",
-          "text": "metaforização."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-8",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "8. (TJ-CE/FGV/2019) “É natural desejar que se faça justiça”. Se transformarmos a oração reduzida “desejar” em uma oraçã o desenvolvida, a forma ad equada será:",
-      "options": [
-        {
-          "key": "A",
-          "text": "que se deseje que se faça justiça;"
-        },
-        {
-          "key": "B",
-          "text": "o desejo de que se faça justiça;"
-        },
-        {
-          "key": "C",
-          "text": "que se desejasse que se faça justiça;"
-        },
-        {
-          "key": "D",
-          "text": "o desejo de que seja feita justiça;"
-        },
-        {
-          "key": "E",
-          "text": "desejarmos que se faça justiça."
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-9",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "9. (TJ-CE/FGV/2019) A frase abaixo em que o termo sublinhado repete ou se refere a um termo anterior é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "O justo é tranquilíssimo, o injusto é sempre muito solícito;"
-        },
-        {
-          "key": "B",
-          "text": "Raspai o juiz, encontrareis o carrasco ;"
-        },
-        {
-          "key": "C",
-          "text": "Não pretendas ser juiz se não tens força para desenraizar a s injustiças ;"
-        },
-        {
-          "key": "D",
-          "text": "É natural desejar que se faça justiça; a maior de todas as almas não ficaria insensível ao prazer de ser conhecida como tal ;"
-        },
-        {
-          "key": "E",
-          "text": "Causam menos dano cem delinquentes do que um mau juiz. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 35"
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-10",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "10. (TJ-CE/FGV/2019) Se reconheces que algo é injusto, tenta pôr fim à injustiça o mais rápido possível: para que esperar o próximo ano? Essa frase critica um aspecto da justiça que é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "a corrupção do Poder Judiciário;"
-        },
-        {
-          "key": "B",
-          "text": "a ausência de funcionários competentes;"
-        },
-        {
-          "key": "C",
-          "text": "o fato de os juízes desfrutarem de privilégios;"
-        },
-        {
-          "key": "D",
-          "text": "a falta de responsabilidade dos magistrados;"
-        },
-        {
-          "key": "E",
-          "text": "a demora no julgamento dos processos."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-11",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "11. (TJ-CE/FGV/2019) Se reconheces que algo é injusto, tenta pôr fim à injustiça o mais rápido possível: para que esperar o próximo ano?",
-      "options": [
-        {
-          "key": "A",
-          "text": "relação semântico-gramatical que existe entre injusto / injustiça se repete em:"
-        },
-        {
-          "key": "A",
-          "text": "julgar / julgamento;"
-        },
-        {
-          "key": "B",
-          "text": "dificultoso / dificuldade;"
-        },
-        {
-          "key": "C",
-          "text": "rápido / rapidamente;"
-        },
-        {
-          "key": "D",
-          "text": "roupagem / rouparia;"
-        }
-      ],
-      "correctKey": "B",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-12",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "12. (TJ-CE/FGV/2019) “Quem critica a injustiça o faz não porque teme cometer ações injustas, mas porque teme sofrê- las”. No caso desse pensamento de Platão, o verbo fazer substitui toda uma oração anterior (critica a injustiça);",
-      "options": [
-        {
-          "key": "A",
-          "text": "mesma situação ocorre na seguinte frase:"
-        },
-        {
-          "key": "A",
-          "text": "Arrepende-se quem faz o que não deve;"
-        },
-        {
-          "key": "B",
-          "text": "Zangou-se com os amigos e fez uma longa denúncia;"
-        },
-        {
-          "key": "C",
-          "text": "Decidiu viajar e fez isso rapidamente;"
-        },
-        {
-          "key": "D",
-          "text": "Comprou um novo computador e fez o trabalho;"
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-13",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "13. (TJ-CE/FGV/2019) “Onde, sob os olhos dos juízes, o direito é derrubado pela iniquidade e a verdade pela mentira, são derrubados os próprios juízes”. Sobre a estrutura dessa frase, a única afirmação inadequada é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "o termo inicial “onde” não se refere a nenhum lugar e specífico;"
-        },
-        {
-          "key": "B",
-          "text": "no segmento “e a verdade pela mentira” está omitida a forma verbal “é derrubada”;"
-        },
-        {
-          "key": "C",
-          "text": "no segmento “sob os olhos dos juízes” não se pode su bstituir a forma “sob” por “sobre”;"
-        },
-        {
-          "key": "D",
-          "text": "no segmento “o direito é derrubado pela iniquidade” há um exemplo de voz passiva em que o sujeito (o direito) sofre a ação;"
-        },
-        {
-          "key": "E",
-          "text": "no segmen to “são derrubados os próprios juízes” não se pode col ocar o sujeito (os próprios juízes) antes do verbo (são derrubados)."
-        }
-      ],
-      "correctKey": "E",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-14",
+      "id": "pdf-nova1-10._(tj-ce/fgv/2019)_se_reconheces_que_algo_e_injusto,_tenta_por_fim_a_injustica_o_mais_rapido_possivel:-14",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -7593,7 +4018,7 @@ export const importedPdfPack: QuestionPack = {
         },
         {
           "key": "E",
-          "text": "argumentar contra o primeiro período. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 36"
+          "text": "argumentar contra o primeiro período."
         }
       ],
       "correctKey": "D",
@@ -7612,7 +4037,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-15",
+      "id": "pdf-nova1-16._(tj-ce/fgv/2019)_“causam_menos_dano_cem_delinquentes_do_que_um_mau_juiz”;_no_caso_dessa_frase,-15",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -7658,191 +4083,7 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-16",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "16. (TJ-CE/FGV/2019) “Causam menos dano cem delinquentes do que um mau juiz”; no caso dessa frase, o vocábulo MAU está corretamente grafado; a frase abaixo em que esse mesmo vocábulo deveria ser grafado com a forma MAL é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Mau é o juiz, se má é a sentença;"
-        },
-        {
-          "key": "B",
-          "text": "O castigo é mau, se não é justo;"
-        },
-        {
-          "key": "C",
-          "text": "O crime é sempre mau feito;"
-        },
-        {
-          "key": "D",
-          "text": "Todos devem combater o mau juiz;"
-        },
-        {
-          "key": "E",
-          "text": "Nem sempre um mau homem é um mau jurado."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-17",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 3,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "17. (TJ-CE/FGV/2019) “Quando se julga por indução e sem o necessário conhec imento dos fatos, às vez es chega- se a ser injusto até mesmo com os malfeitores”. Indução é um processo lógico que parte do particular para o geral, como ocorre no seguinte raciocínio:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Todos os dias o metrô está cheio; hoje deve estar também;"
-        },
-        {
-          "key": "B",
-          "text": "Após as chuvas, as ruas ficam alagadas; hoje deve ter chovido durante toda a noite;"
-        },
-        {
-          "key": "C",
-          "text": "A torcida do Corinthians está presente em todos os jogos; doming o não deve ser diferente;"
-        },
-        {
-          "key": "D",
-          "text": "O estacionamento do restaurante está cheio de carros; o lucro desse restaurante deve ser alto;"
-        },
-        {
-          "key": "E",
-          "text": "Os carros brasileiros ainda mostram deficiências; o meu automó vel enguiçou ontem."
-        }
-      ],
-      "correctKey": "D",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-18",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "18. (TJ-CE/FGV/2019) A frase abaixo que mostra uma visão ironicamente negativa sobre a jus tiça é:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Em geral, a lei é a razão humana, na medida em que governa todos os povos da terra;"
-        },
-        {
-          "key": "B",
-          "text": "A lei é ordem; e uma boa lei é uma boa ordem;"
-        },
-        {
-          "key": "C",
-          "text": "A majestosa igualdade das leis, que proíbe tanto o rico co mo o pobre de dormir sob as pontes, de mendigar nas ruas e de roubar pão;"
-        },
-        {
-          "key": "D",
-          "text": "A lei deve ser breve para que os indoutos possam compreendê- la facilmente;"
-        },
-        {
-          "key": "E",
-          "text": "O mundo não pode se sustentar sem justiça."
-        }
-      ],
-      "correctKey": "C",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "A": "Distrator conforme padrão de banca.",
-          "B": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-19",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
-      "difficulty": 2,
-      "type": "MCQ",
-      "style": "FGV",
-      "statement": "19. (TJ-CE/FGV/2019) “Sem instrução, as melhores leis tornam -se inúteis”. Esse pensamento deve ser entendido do seguinte modo:",
-      "options": [
-        {
-          "key": "A",
-          "text": "Se não houver educação dos cidadãos, as leis tornam-se inúteis;"
-        },
-        {
-          "key": "B",
-          "text": "Se as leis não forem acompanhadas de instruções de fu ncionamento, tornam-se inúteis;"
-        },
-        {
-          "key": "C",
-          "text": "Caso as leis não possuam instruções claras, elas se tornam i núteis;"
-        },
-        {
-          "key": "D",
-          "text": "Só com a educação dos juízes, as leis podem tornar-se úteis ;"
-        },
-        {
-          "key": "E",
-          "text": "Se os juízes não forem pessoas cultas, as leis se tornam i núteis por não serem claras. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 37"
-        }
-      ],
-      "correctKey": "A",
-      "explanation": {
-        "summary": "Gabarito identificado no material.",
-        "whyCorrect": "Alternativa correta conforme gabarito.",
-        "whyWrong": {
-          "B": "Distrator conforme padrão de banca.",
-          "C": "Distrator conforme padrão de banca.",
-          "D": "Distrator conforme padrão de banca.",
-          "E": "Distrator conforme padrão de banca."
-        },
-        "tips": [
-          "Leia todas as alternativas antes de responder."
-        ]
-      }
-    },
-    {
-      "id": "pdf-nova1-20",
+      "id": "pdf-nova1-21._(tj-ce/fgv/2019)_“as_leis_existem,_mas_quem_as_aplica?”-20",
       "discipline": "Penal/Proc Penal",
       "subject": "Direito Penal/Processual Penal",
       "topic": "Teoria do crime",
@@ -7888,34 +4129,217 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-21",
+      "id": "pdf-nova2-6",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "21. (TJ-CE/FGV/2019) “As leis existem, mas quem as aplica?” Esse pensamento de Dante Alighieri critica:",
+      "statement": "Em “Muitos funcionários reclamaram do horário.”, a pa- lavra “Muitos” é classificada como:",
       "options": [
         {
           "key": "A",
-          "text": "a má elaboração das leis;"
+          "text": "advérbio."
         },
         {
           "key": "B",
-          "text": "o excesso de leis;"
+          "text": "pronome indefinido."
         },
         {
           "key": "C",
-          "text": "o rigor excessivo da polícia;"
+          "text": "numeral."
         },
         {
           "key": "D",
-          "text": "a fraqueza humana;"
+          "text": "artigo."
         },
         {
           "key": "E",
-          "text": "o controle demasiadamente rigoroso das leis."
+          "text": "conjunção. Letra b. Assunto abordado: Classes de palavras. Aspectos mor - fológicos, sintáticos, semânticos e textuais de substan- tivos, adjetivos, artigos, numerais, pronomes, verbos, advérbios, conjunções e interjeições. Modalizadores."
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-8",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Assinale a alternativa em que a regência do verbo está correta segundo a norma culta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aprovou ao projeto sem discussão."
+        },
+        {
+          "key": "B",
+          "text": "Assistimos ao espetáculo na noite passada."
+        },
+        {
+          "key": "C",
+          "text": "Preferi mais café do que chá."
+        },
+        {
+          "key": "D",
+          "text": "Ela simpatiza o movimento estudantil."
+        },
+        {
+          "key": "E",
+          "text": "Aspiramos uma solução imediata. Letra b. Assunto abordado: Organização sintática das frases – termos e orações."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-18",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Considere a seguinte frase: O pesquisador apresentaria os resultados hoje, se os da- dos já estivessem consolidados .",
+      "options": [
+        {
+          "key": "A",
+          "text": "forma verbal “apresentaria” indica uma ação:"
+        },
+        {
+          "key": "A",
+          "text": "obrigatória."
+        },
+        {
+          "key": "B",
+          "text": "inesperada."
+        },
+        {
+          "key": "C",
+          "text": "passada pontual."
+        },
+        {
+          "key": "D",
+          "text": "hipotética."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-20",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Assinale a alternativa que apresenta conector adequado para manter a progressão temática unindo as orações com o conector adequado: O IBGE publicou novos indicadores econômicos; ________, divulgou projeções para o próximo trimestre .",
+      "options": [
+        {
+          "key": "A",
+          "text": "contudo"
+        },
+        {
+          "key": "B",
+          "text": "ainda assim"
+        },
+        {
+          "key": "C",
+          "text": "no entanto"
+        },
+        {
+          "key": "D",
+          "text": "além disso"
+        },
+        {
+          "key": "E",
+          "text": "apesar disso Matemática e Raciocínio Lógico Diego Ribeiro"
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-24",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Um agente do IBGE registrou que a renda mensal média de um domicílio passou de R$ 1.500,00 para R$ 1.800,00. O aumento percentual foi de:",
+      "options": [
+        {
+          "key": "A",
+          "text": "15%."
+        },
+        {
+          "key": "B",
+          "text": "18%."
+        },
+        {
+          "key": "C",
+          "text": "20%."
+        },
+        {
+          "key": "D",
+          "text": "25%."
+        },
+        {
+          "key": "E",
+          "text": "30%."
         }
       ],
       "correctKey": "D",
@@ -7934,34 +4358,263 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
-      "id": "pdf-nova1-22",
+      "id": "pdf-nova2-30",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "22. (TJ-CE/FGV/2019) A frase abaixo que NÃO se estrutura com base numa oposição é:",
+      "statement": "Um triângulo tem lados proporcionais a 3, 4 e 5 e perí- metro igual a 24 m.",
       "options": [
         {
           "key": "A",
-          "text": "A tortura é um meio seguro de absolver os criminosos robustos e co ndenar os fracos inocentes;"
+          "text": "área desse triângulo é:"
+        },
+        {
+          "key": "A",
+          "text": "12."
         },
         {
           "key": "B",
-          "text": "Muitos primeiros virão a ser os últimos;"
+          "text": "18."
         },
         {
           "key": "C",
-          "text": "A glória deve ser conquistada; a honra, por sua vez, basta que não seja perdida;"
+          "text": "24."
         },
         {
           "key": "D",
-          "text": "Nenhuma lei se adapta igualmente bem a todos;"
+          "text": "30."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-49",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 4,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "O relevo brasileiro, marcado pela predominância de formas antigas e desgastadas, é classificado em três grandes uni - dades: planaltos, planícies e depressões. Essas formas definem o uso do solo, o potencial hídrico e a ocupação humana no território. Assinale a alternativa que descreve corretamente o planalto brasileiro, destacando uma de suas características geográ- ficas mais importantes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "É uma forma de relevo baixa e totalmente plana, que ocupa a menor parte do país, sendo ideal apenas para a nave- gação fluvial."
+        },
+        {
+          "key": "B",
+          "text": "É a estrutura geológica mais recente, formada por dobramentos modernos (grandes cadeias montanhosas) com as maiores altitudes do continente, como a Cordilheira dos Andes."
+        },
+        {
+          "key": "C",
+          "text": "O planalto é a forma de relevo predominante no Brasil, caracterizado por superfícies irregulares e com desníveis, o que o torna essencial para a produção de energia hidrelétrica."
+        },
+        {
+          "key": "D",
+          "text": "O planalto é a única unidade de relevo que não sofre desgaste (erosão), sendo por isso o principal local de acúmulo de petróleo e gás natural."
         },
         {
           "key": "E",
-          "text": "Infeliz é aquele discípulo que não supera seu mestre. BANCA FGV | CADERNO DE QUESTÕES DE LÍNGUA PORTUGUESA www.romulopassos.com.br 38 GABARITOS TJ - RS/FGV/2020"
+          "text": "O planalto se limita à faixa litorânea do Nordeste, sendo um relevo de formação sedimentar recente, sem nenhuma ocorrência de rochas cristalinas. 2° Simulado – IBGE – Agente de Pesquisas e Mapeamento (Pós-Edital"
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-5",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Leia a frase a seguir: O relatório do gerente foi encaminhado . Identifique a função sintática da expressão em destaque.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adjunto adnominal."
+        },
+        {
+          "key": "B",
+          "text": "Complemento nominal."
+        },
+        {
+          "key": "C",
+          "text": "Aposto."
+        },
+        {
+          "key": "D",
+          "text": "Predicativo."
+        },
+        {
+          "key": "E",
+          "text": "Objeto indireto. Letra a. Assunto abordado: Organização sintática das frases – termos e orações."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova2-15",
+      "discipline": "Português",
+      "subject": "Língua Portuguesa",
+      "topic": "Interpretação/Gramática",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Sobre o uso correto do sinal indicativo de crase, analise as frases a seguir e assinale a alternativa correta.",
+      "options": [
+        {
+          "key": "A",
+          "text": "O gestor retornou à empresa após a reunião."
+        },
+        {
+          "key": "B",
+          "text": "Eles aspiram à uma oportunidade melhor."
+        },
+        {
+          "key": "C",
+          "text": "A diretora explicou o projeto à qualquer interessado."
+        },
+        {
+          "key": "D",
+          "text": "O relatório foi entregue à ele pessoalmente."
+        },
+        {
+          "key": "E",
+          "text": "Os técnicos viajaram à Brasília para o evento. Letra a. Assunto aborda do: Crase."
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova3-1",
+      "discipline": "Constitucional",
+      "subject": "Direito Constitucional",
+      "topic": "Princípios e direitos",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Leia o trecho a seguir: “A Constituição Federal de 1988 estabelece, em seu ar - tigo 225, que todos têm direito ao meio ambiente eco- logicamente equilibrado, bem de uso comum do povo",
+      "options": [
+        {
+          "key": "E",
+          "text": "essencial à sadia qualidade de vida, impondo-se ao poder público e à coletividade o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.” Quanto à sua tipologia textual, o segmento é do tipo:"
+        },
+        {
+          "key": "A",
+          "text": "narrativo."
+        },
+        {
+          "key": "B",
+          "text": "descritivo."
+        },
+        {
+          "key": "C",
+          "text": "injuntivo."
+        },
+        {
+          "key": "D",
+          "text": "instrucional."
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "E": "Distrator conforme padrão de banca.",
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova3-2",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Leia o período a seguir: O livro, esquecido sobre a mesa, foi encontrado pelo professor. Assinale a alternativa que indica a função sintática da ex - pressão destacada.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Adjunto adnominal."
+        },
+        {
+          "key": "B",
+          "text": "Sujeito composto."
+        },
+        {
+          "key": "C",
+          "text": "Complemento nominal."
+        },
+        {
+          "key": "D",
+          "text": "Aposto explicativo."
+        },
+        {
+          "key": "E",
+          "text": "Objeto direto."
         }
       ],
       "correctKey": "D",
@@ -7973,6 +4626,142 @@ export const importedPdfPack: QuestionPack = {
           "B": "Distrator conforme padrão de banca.",
           "C": "Distrator conforme padrão de banca.",
           "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova3-30",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "According to the text, what is the role of digital transformation in the context of AI implementation in government?",
+      "options": [
+        {
+          "key": "A",
+          "text": "To replace all existing government systems with AI- driven solutions."
+        },
+        {
+          "key": "B",
+          "text": "To provide a framework for evaluating AI implementation and usage responsibly."
+        },
+        {
+          "key": "C",
+          "text": "To limit the use of AI to only cybersecurity applications."
+        },
+        {
+          "key": "D",
+          "text": "To solely focus on automating public services."
+        },
+        {
+          "key": "E",
+          "text": "To prevent any form of AI implementation. Raciocínio Lógico Diego Ribeiro"
+        }
+      ],
+      "correctKey": "D",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova3-40",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "Na análise de projetos: • O relatório foi lido antes do pedido de vistas. • A votação ocorreu depois do pedido de vistas. • O destaque ocorreu depois da votação. • A leitura do relatório não foi a última etapa.",
+      "options": [
+        {
+          "key": "A",
+          "text": "última etapa é:"
+        },
+        {
+          "key": "A",
+          "text": "relatório."
+        },
+        {
+          "key": "B",
+          "text": "vistas."
+        },
+        {
+          "key": "C",
+          "text": "votação."
+        },
+        {
+          "key": "D",
+          "text": "destaque."
+        }
+      ],
+      "correctKey": "A",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-nova3-60",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 3,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "O Hospital X contrata a empresa de tecnologia Nuvem Segura Ltda. para armazenar os prontuários eletrôni - cos de seus pacientes. O hospital é quem define quais dados dos pacientes serão coletados e a finalidade do tratamento (prestação de serviço de saúde), enquanto",
+      "options": [
+        {
+          "key": "A",
+          "text": "empresa Nuvem Segura Ltda. apenas fornece a infra- estrutura de servidores e realiza o processamento dos dados conforme as ordens do hospital. De acordo com as definições da Lei Geral de Proteção de Dados Pessoais (LGP"
+        },
+        {
+          "key": "D",
+          "text": ", nesse cenário,"
+        },
+        {
+          "key": "A",
+          "text": "a empresa Nuvem Segura Ltda. atua como controla - dora, e os pacientes são os operadores dos dados."
+        },
+        {
+          "key": "B",
+          "text": "o Hospital X é o controlador, e a empresa Nuvem Se- gura Ltda. é a operadora."
+        },
+        {
+          "key": "C",
+          "text": "ambos, Hospital X e Nuvem Segura Ltda., são con - siderados controladores, pois ambos têm acesso aos dados."
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca."
         },
         "tips": [
           "Leia todas as alternativas antes de responder."
@@ -8940,9 +5729,9 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-questoes_e_gabaritos_unico_corrigido-mpu_2025_-_tecnico_do_mpu_-_policia_institucional_-_tipo_1-54",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
+      "discipline": "Segurança Orgânica",
+      "subject": "Segurança Orgânica",
+      "topic": "Procedimentos e controle",
       "difficulty": 4,
       "type": "MCQ",
       "style": "FGV",
@@ -11368,6 +8157,97 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
+      "id": "pdf-questoes_e_gabaritos_unico_corrigido-trf1_2024_-_tecnico_judiciario_(agente_da_policia_judicial)_-_tipo_3_(amarela)-5",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "5 . Essa moeda é lançada 3 vezes.",
+      "options": [
+        {
+          "key": "A",
+          "text": "probabilidade de que saia “cara” pelo menos uma vez é:"
+        },
+        {
+          "key": "A",
+          "text": "98 125;"
+        },
+        {
+          "key": "B",
+          "text": "54 125;"
+        },
+        {
+          "key": "C",
+          "text": "50 125;"
+        },
+        {
+          "key": "D",
+          "text": "27 125;"
+        }
+      ],
+      "correctKey": "B",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
+      "id": "pdf-questoes_e_gabaritos_unico_corrigido-trf1_2024_-_tecnico_judiciario_(agente_da_policia_judicial)_-_tipo_3_(amarela)-6",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "6 kg e as maiores pesam 11 kg. Em um transporte, o peso total de várias embalagens cheias foi de 190 kg. O menor número possível de embalagens transportadas foi:",
+      "options": [
+        {
+          "key": "A",
+          "text": "19;"
+        },
+        {
+          "key": "B",
+          "text": "20;"
+        },
+        {
+          "key": "C",
+          "text": "21;"
+        },
+        {
+          "key": "D",
+          "text": "22;"
+        },
+        {
+          "key": "E",
+          "text": "23. 20 Sabe -se que o número 𝑁=3𝑥−18"
+        }
+      ],
+      "correctKey": "C",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca.",
+          "E": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
       "id": "pdf-questoes_e_gabaritos_unico_corrigido-trf1_2024_-_tecnico_judiciario_(agente_da_policia_judicial)_-_tipo_3_(amarela)-24",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
@@ -13023,30 +9903,30 @@ export const importedPdfPack: QuestionPack = {
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
       "topic": "Atos e Administração",
-      "difficulty": 2,
+      "difficulty": 3,
       "type": "MCQ",
       "style": "FGV",
-      "statement": "Sabe -se que 20% de N é igual a 13,4. Logo, 90% de N é igual a",
+      "statement": "13 , 12 , 14 , 11 , 15 , 10 , 16 , 9 , 17 , ... Os termos são, alternadamente, maiores e menores que seus antecessores imediatos, seguindo um padrão de construção. Sabendo -se que esse padrão é mantido ao longo de toda a sequência, conclui -se que um termo negativo aparecerá pela primeira vez na",
       "options": [
         {
           "key": "A",
-          "text": "59,6."
+          "text": "28ª posição."
         },
         {
           "key": "B",
-          "text": "60,3."
+          "text": "27ª posição."
         },
         {
           "key": "C",
-          "text": "61,2."
+          "text": "26ª posição."
         },
         {
           "key": "D",
-          "text": "62,5."
+          "text": "15ª posição."
         },
         {
           "key": "E",
-          "text": "63,2. 14 Marcelo é filho de Alberto. Pedro é filho de Luiz. Se Marcelo e Luiz são irmãos por parte de pai, então"
+          "text": "14ª posição. 16 Para pagar um lanche, Temístocles usou uma nota de R$20,00 e recebeu, de troco, uma nota de R$5,00, duas notas de R$2,00, nove moedas de R$0,50 e 3 moedas de R$0,25. O lanche custou a Temístocles"
         }
       ],
       "correctKey": "B",
@@ -14027,6 +10907,52 @@ export const importedPdfPack: QuestionPack = {
       }
     },
     {
+      "id": "pdf-questoes_e_gabaritos_unico_corrigido-transpetro_2023.1_-_nivel_medio_-_prova_13_(seguranca)-2",
+      "discipline": "Administrativo",
+      "subject": "Direito Administrativo",
+      "topic": "Atos e Administração",
+      "difficulty": 2,
+      "type": "MCQ",
+      "style": "FGV",
+      "statement": "2 4000 Nessas condições, o desvio padrão dos bônus pagos é dado por",
+      "options": [
+        {
+          "key": "A",
+          "text": "22236 2000 4 2500 4 4000 10⋅ +⋅ +⋅"
+        },
+        {
+          "key": "B",
+          "text": "22236 500 4 2500 4 1500 10⋅ +⋅ +⋅"
+        },
+        {
+          "key": "C",
+          "text": "2226 2000 2 2500 2 4000 10⋅ +⋅ +⋅"
+        },
+        {
+          "key": "D",
+          "text": "22500 1500 10+"
+        },
+        {
+          "key": "E",
+          "text": "226 500 2 1500 10⋅ +⋅ RASCUNHO"
+        }
+      ],
+      "correctKey": "E",
+      "explanation": {
+        "summary": "Gabarito identificado no material.",
+        "whyCorrect": "Alternativa correta conforme gabarito.",
+        "whyWrong": {
+          "A": "Distrator conforme padrão de banca.",
+          "B": "Distrator conforme padrão de banca.",
+          "C": "Distrator conforme padrão de banca.",
+          "D": "Distrator conforme padrão de banca."
+        },
+        "tips": [
+          "Leia todas as alternativas antes de responder."
+        ]
+      }
+    },
+    {
       "id": "pdf-questoes_e_gabaritos_unico_corrigido-transpetro_2023.1_-_nivel_medio_-_prova_13_(seguranca)-16",
       "discipline": "Administrativo",
       "subject": "Direito Administrativo",
@@ -14348,9 +11274,9 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-questoes_e_gabaritos_unico_corrigido-transpetro_2023.1_-_nivel_medio_-_prova_13_(seguranca)-29",
-      "discipline": "Administrativo",
-      "subject": "Direito Administrativo",
-      "topic": "Atos e Administração",
+      "discipline": "Segurança Orgânica",
+      "subject": "Segurança Orgânica",
+      "topic": "Procedimentos e controle",
       "difficulty": 2,
       "type": "MCQ",
       "style": "FGV",

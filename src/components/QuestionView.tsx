@@ -4,7 +4,7 @@ import Mascot from "./Mascot";
 import { fmtMs } from "../lib/time";
 
 export default function QuestionView({
-  q, mode, onSubmit, onNext, onMark, note, onSaveNote, timeLimitMs, hiddenKeys, disabledKeys, headerSlot, showNext
+  q, mode, onSubmit, onNext, onMark, note, onSaveNote, timeLimitMs, hiddenKeys, disabledKeys, headerSlot, showNext, onSkipNull
 }: {
   q: Question;
   mode: RunMode;
@@ -18,6 +18,7 @@ export default function QuestionView({
   disabledKeys?: Array<"A"|"B"|"C"|"D"|"E">;
   headerSlot?: React.ReactNode;
   showNext?: boolean;
+  onSkipNull?: () => void;
 }){
   const showNextSection = showNext !== false;
   const startRef = useRef<number>(Date.now());
@@ -159,6 +160,12 @@ export default function QuestionView({
         <button className="btn" onClick={() => { setMarked(m=>{ const nx = !m; onMark(nx); return nx; }); }} disabled={submitted}>
           {marked ? "Marcada p/ revisão" : "Marcar revisão"}
         </button>
+
+        {onSkipNull && (
+          <button className="btn" onClick={onSkipNull} disabled={false}>
+            Pular questão nula
+          </button>
+        )}
 
         <div className="pill" style={{ marginLeft:"auto" }}>
           <span style={{ color:"var(--ink-500)" }}>Confiança:</span>

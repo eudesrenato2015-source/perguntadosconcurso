@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import QuestionView from "../components/QuestionView";
 import Wheel from "../components/Wheel";
-import { getActiveQuestions } from "../services/packs";
+import { getActiveQuestions, blockQuestion } from "../services/packs";
 import { getDuelClientId, updateRoomState, fetchRoomRecord, connectRoomChannel, startRoomRecord, type DuelRoom, type DuelState } from "../services/duelRoom";
 import type { Discipline, Question } from "../types";
 import { awardAttemptXP } from "../services/progress";
@@ -40,10 +40,8 @@ export default function DuelMatch(){
   const [localWinner, setLocalWinner] = useState<Role | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [spinOpen, setSpinOpen] = useState(false);
-  const [spinTarget, setSpinTarget] = useState<Discipline | null>(null);
   const [crownNotice, setCrownNotice] = useState<string | null>(null);
-  const [spinCrown, setSpinCrown] = useState(false);
-  const pendingSpinRef = useRef<{ category: Discipline; base: DuelState; willCrown: boolean } | null>(null);
+  const pendingSpinRef = useRef<{ base: DuelState } | null>(null);
   const [attemptToken, setAttemptToken] = useState(0);
   const [hiddenKeys, setHiddenKeys] = useState<Array<"A"|"B"|"C"|"D"|"E">>([]);
   const [extraTime, setExtraTime] = useState(0);
@@ -62,6 +60,8 @@ export default function DuelMatch(){
   const [loadError, setLoadError] = useState<string | null>(null);
   const [chatText, setChatText] = useState("");
   const [crownAnim, setCrownAnim] = useState(false);
+  const [reveal, setReveal] = useState<{ q: Question; correct: boolean; selectedKey: string } | null>(null);
+  const revealTimerRef = useRef<number | null>(null);
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
@@ -82,6 +82,12 @@ export default function DuelMatch(){
   const winnerId = isOnline ? room?.winner_id ?? null : null;
   const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
   const chat = state?.chat ?? [];
+  const availableDisciplines = useMemo(() => {
+    const used = new Set(state?.used ?? []);
+    const set = new Set<Discipline>();
+    activePool.forEach(q => { if (!used.has(q.id)) set.add(q.discipline); });
+    return set.size ? Array.from(set.values()) : disciplines;
+  }, [activePool, disciplines, state?.used]);
 
   const addRoomToList = (roomCode: string) => {
     const raw = safeGet(roomsKey);
@@ -291,10 +297,7 @@ export default function DuelMatch(){
     if (state.pendingCrown?.player === me){
       return;
     }
-    const prepared = prepareSpin(state, me, activePool, disciplines);
-    pendingSpinRef.current = prepared;
-    setSpinTarget(prepared.willCrown ? null : prepared.category);
-    setSpinCrown(prepared.willCrown);
+    pendingSpinRef.current = { base: state };
     setSpinOpen(true);
     if (sfxEnabled) sfx.spin();
   };
@@ -308,11 +311,14 @@ export default function DuelMatch(){
       return;
     }
     used.add(id);
+    const recentBase = s.recent ?? { host: [], guest: [] };
+    const nextRecent = [...(recentBase[s.turn] ?? []), category].slice(-3);
     const next: DuelState = {
       ...s,
       current: { questionId: id, category, crown, player: s.turn },
       used: Array.from(used),
-      pendingCrown: undefined
+      pendingCrown: undefined,
+      recent: { ...recentBase, [s.turn]: nextRecent }
     };
     const winnerRole = !isOnline ? localWinnerFromState(next) : null;
     if (winnerRole) setLocalWinner(winnerRole);
@@ -321,35 +327,18 @@ export default function DuelMatch(){
 
   const onWheelPick = async (category: Discipline) => {
     setSpinOpen(false);
-    setSpinCrown(false);
     if (!state) return;
     const base = pendingSpinRef.current?.base ?? state;
-    const willCrown = pendingSpinRef.current?.willCrown ?? false;
-    if (willCrown){
-    const unowned = unownedCategories(base, base.turn);
-    if (!unowned.length){
-      await startQuestion(category, false, base);
-      return;
-    }
-    const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
-    await updateState(next);
-    setCrownNotice("Coroa direta! Escolha a categoria.");
-    if (sfxEnabled) sfx.crown();
-    window.setTimeout(() => setCrownNotice(null), 2200);
-    return;
-    }
     await startQuestion(category, false, base);
   };
 
   const onWheelCrown = async () => {
     setSpinOpen(false);
-    setSpinCrown(false);
     if (!state) return;
     const base = pendingSpinRef.current?.base ?? state;
     const unowned = unownedCategories(base, base.turn);
     if (!unowned.length){
-      const prepared = prepareSpin(base, base.turn, activePool, disciplines);
-      await startQuestion(prepared.category, false, prepared.base);
+      await startQuestion(base.recent?.[base.turn]?.slice(-1)[0] ?? disciplines[0] ?? "Português", false, base);
       return;
     }
     const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
@@ -477,6 +466,9 @@ export default function DuelMatch(){
     }
 
     await resolveAnswer(isCorrect, chosen, timeSpentMs);
+    setReveal({ q: currentQ, correct: isCorrect, selectedKey: chosen });
+    if (revealTimerRef.current) window.clearTimeout(revealTimerRef.current);
+    revealTimerRef.current = window.setTimeout(() => setReveal(null), 1800);
     return { isCorrect };
   };
 
@@ -497,7 +489,7 @@ export default function DuelMatch(){
         return;
       }
       const prepared = prepareSpin(state, "guest", activePool, disciplines);
-      pendingSpinRef.current = prepared;
+      pendingSpinRef.current = { base: prepared.base };
       await startQuestion(prepared.category, false, prepared.base);
     }, delay);
   }, [mode, state?.turn, state?.current, disciplines, activePool]);
@@ -515,6 +507,20 @@ export default function DuelMatch(){
     }, delay);
     return () => window.clearTimeout(id);
   }, [mode, current?.questionId, current?.player]);
+
+  const skipNullQuestion = async () => {
+    if (!state || !current) return;
+    const blockId = currentQ?.id ?? current.questionId;
+    if (blockId){
+      blockQuestion(blockId);
+    }
+    const next: DuelState = {
+      ...state,
+      current: undefined,
+      pendingCrown: state.pendingCrown?.player === state.turn ? undefined : state.pendingCrown
+    };
+    await updateState(next);
+  };
 
   if (!state){
     if (loadError){
@@ -542,6 +548,19 @@ export default function DuelMatch(){
         <div className="h2">Sem questões ativas</div>
         <div className="sub">Ative packs no Perfil para iniciar o duelo.</div>
         <button className="btn btnPrimary" onClick={() => nav("/perfil")}>Ir para Perfil</button>
+      </div>
+    );
+  }
+
+  if (current && !currentQ){
+    return (
+      <div style={{ padding: 16 }}>
+        <div className="h2">QuestÃ£o invÃ¡lida</div>
+        <div className="sub">Essa questÃ£o veio sem texto ou com erro. VocÃª pode pular e ela serÃ¡ removida do banco local.</div>
+        <div className="row" style={{ marginTop: 12 }}>
+          <button className="btn btnPrimary" onClick={skipNullQuestion}>Pular questÃ£o nula</button>
+          <button className="btn" onClick={() => nav("/duelo")}>Voltar</button>
+        </div>
       </div>
     );
   }
@@ -738,12 +757,26 @@ export default function DuelMatch(){
           timeLimitMs={BASE_TIME_MS + extraTime}
           hiddenKeys={hiddenKeys}
           showNext={false}
+          onSkipNull={skipNullQuestion}
           headerSlot={current.crown ? (
             <div className="pill" style={{ marginBottom: 10, color:"var(--warn-500)" }}>
               Questão de coroa • {current.category}
             </div>
           ) : undefined}
         />
+      )}
+
+      {reveal && (
+        <div className="card" style={{ marginTop: 10, padding: 12 }}>
+          <div style={{ fontWeight: 900, color: reveal.correct ? "var(--ok-500)" : "var(--warn-500)" }}>
+            {reveal.correct ? "VocÃª acertou!" : "VocÃª errou!"}
+          </div>
+          {!reveal.correct && (
+            <div style={{ marginTop: 6 }}>
+              Correta: <b>{reveal.q.correctKey}</b> â€” {reveal.q.options.find(o => o.key === reveal.q.correctKey)?.text ?? ""}
+            </div>
+          )}
+        </div>
       )}
 
       {isOnline && (
@@ -799,17 +832,15 @@ export default function DuelMatch(){
             <div className="h3">Roleta do Duelo</div>
             <div className="sub">Gire para sortear a próxima disciplina.</div>
             <div className="pill" style={{ marginTop: 8, color:"var(--accent-500)" }}>
-              {spinCrown ? "Coroa direta ativada!" : "Chance de coroa direta: 12%"}
+              HÃ¡ uma fatia de coroa direta na roleta.
             </div>
             <div style={{ marginTop: 12 }}>
               <Wheel
                 onPick={onWheelPick}
                 onCrown={onWheelCrown}
                 includeCrown
-                forcePick={spinTarget ?? undefined}
-                forceCrown={spinCrown}
                 showHint={false}
-                disciplines={disciplines}
+                disciplines={availableDisciplines}
               />
             </div>
           </div>
@@ -869,31 +900,21 @@ function pickQuestionId(pool: Question[], used: Set<string>, category: Disciplin
 }
 
 function prepareSpin(state: DuelState, player: Role, pool: Question[], disciplines: Discipline[]){
-  const bags = state.bags ?? { host: [], guest: [] };
+  const used = new Set(state.used ?? []);
+  const available = disciplines.filter(d => pool.some(q => q.discipline === d && !used.has(q.id)));
+  const options = available.length ? available : disciplines;
+  let pick = options[Math.floor(Math.random() * options.length)] ?? disciplines[0] ?? "Portugu??s";
   const recentBase = state.recent ?? { host: [], guest: [] };
-  const bag = bags[player]?.length ? [...bags[player]] : buildBag(disciplines);
   const recent = recentBase[player] ?? [];
-  let pick = bag.find(d => !recent.includes(d)) ?? bag[0];
-  if (!pick) pick = disciplines[0] ?? "Português";
-  const nextBag = bag.filter((_, i) => i !== bag.indexOf(pick));
-  const nextRecent = [...recent, pick].slice(-2);
+  if (options.length > 1 && recent.slice(-1)[0] === pick){
+    pick = options[(options.indexOf(pick) + 1) % options.length];
+  }
+  const nextRecent = [...recent, pick].slice(-3);
   const base: DuelState = {
     ...state,
-    bags: { ...bags, [player]: nextBag },
     recent: { ...recentBase, [player]: nextRecent }
   };
-  const unowned = unownedCategories(base, player);
-  const willCrown = unowned.length > 0 && Math.random() < 0.12;
-  return { category: pick, base, willCrown };
-}
-
-function buildBag(disciplines: Discipline[]){
-  const out = [...disciplines];
-  for (let i = out.length - 1; i > 0; i--){
-    const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
-  }
-  return out;
+  return { category: pick, base };
 }
 
 function pickWrongKey(q?: Question | null){

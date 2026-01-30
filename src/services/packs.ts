@@ -16,11 +16,36 @@ function questionKey(q: Question){
   return `${statement}::${options}`;
 }
 
+const BLOCK_KEY = "rota190:blockedQuestions";
+
 function isValidQuestion(q: Question){
   if (!q.statement || !q.options || q.options.length < 4) return false;
+  if (q.statement.includes("???")) return false;
+  if (q.options.some(o => !o.text || o.text.includes("???"))) return false;
   const opts = q.options.map(o => normalizeText(o.text));
   if (opts.length !== new Set(opts).size) return false;
   return true;
+}
+
+function getBlockedSet(){
+  const raw = safeGet(BLOCK_KEY);
+  if (!raw) return new Set<string>();
+  try {
+    const parsed = JSON.parse(raw) as string[];
+    return new Set(Array.isArray(parsed) ? parsed : []);
+  } catch {
+    return new Set<string>();
+  }
+}
+
+export function blockQuestion(id: string){
+  const blocked = getBlockedSet();
+  blocked.add(id);
+  safeSet(BLOCK_KEY, JSON.stringify(Array.from(blocked)));
+}
+
+export function getBlockedQuestionIds(){
+  return Array.from(getBlockedSet());
 }
 import { questionPacks } from "../data/packs";
 
@@ -85,9 +110,11 @@ export function getActivePacks(){
 
 export function getActiveQuestions(): Question[]{
   const map = new Map<string, Question>();
+  const blocked = getBlockedSet();
   getActivePacks().forEach(pack => {
     pack.questions.forEach(q => {
       if (!isValidQuestion(q)) return;
+      if (blocked.has(q.id)) return;
       const key = questionKey(q);
       if (!map.has(key)) map.set(key, q);
     });
@@ -97,9 +124,11 @@ export function getActiveQuestions(): Question[]{
 
 export function getAllQuestions(): Question[]{
   const map = new Map<string, Question>();
+  const blocked = getBlockedSet();
   getAllPacks().forEach(pack => {
     pack.questions.forEach(q => {
       if (!isValidQuestion(q)) return;
+      if (blocked.has(q.id)) return;
       const key = questionKey(q);
       if (!map.has(key)) map.set(key, q);
     });
