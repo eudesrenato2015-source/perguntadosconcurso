@@ -36,6 +36,7 @@ export default function Duel(){
   const startedRef = useRef(false);
   const startRequestedRef = useRef(false);
   const timeoutRef = useRef<number | null>(null);
+  const isHost = room?.host_id === clientId;
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const fullPool = useMemo(() => getAllQuestions(), []);
@@ -163,27 +164,39 @@ export default function Duel(){
       setPicked(room.config.discipline);
     }
     if (room.status === "waiting"){
-      setStatus("hosting");
+      setStatus(isHost ? "hosting" : "waiting");
     } else if (room.status === "ready"){
-      setStatus("waiting");
+      setStatus(isHost ? "hosting" : "waiting");
     } else if (room.status === "started"){
       setStatus("ready");
       if (room.config){
         startOnlineMatch(room.config, room.code, fullPool, nav, startedRef);
       }
     }
-  }, [room, fullPool, nav]);
+  }, [room, fullPool, nav, isHost]);
 
   useEffect(() => {
     if (!room || !config) return;
-    if (room.status === "ready" && status === "hosting" && !startRequestedRef.current){
+    if (room.status === "ready" && isHost && !startRequestedRef.current){
       startRequestedRef.current = true;
       startRoomRecord(room.code).catch((err: any) => {
         console.error("[duel] start room failed", err?.message ?? err);
         startRequestedRef.current = false;
       });
     }
-  }, [room, config, status]);
+  }, [room, config, isHost]);
+
+  const startNow = async () => {
+    if (!room || !isHost) return;
+    try {
+      startRequestedRef.current = true;
+      await startRoomRecord(room.code);
+    } catch (err: any){
+      console.error("[duel] start room failed", err?.message ?? err);
+      startRequestedRef.current = false;
+      setNotice("Falha ao iniciar. Tente novamente.");
+    }
+  };
 
   useEffect(() => {
     return () => {
@@ -277,6 +290,13 @@ export default function Duel(){
               </div>
               {roomCode && (
                 <div className="pill">Sala: <b>{roomCode}</b> • Status: {status}</div>
+              )}
+              {room && isHost && room.status !== "started" && (
+                <div className="row" style={{ justifyContent:"flex-end" }}>
+                  <button className="btn btnPrimary" onClick={startNow} disabled={startRequestedRef.current}>
+                    {startRequestedRef.current ? "Iniciando..." : "Iniciar duelo"}
+                  </button>
+                </div>
               )}
             </div>
           )}
