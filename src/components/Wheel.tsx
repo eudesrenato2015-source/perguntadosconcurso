@@ -2,7 +2,7 @@
 import type { Discipline } from "../types";
 import { DISCIPLINES } from "../data/disciplines";
 
-type Slice = { key: Discipline; label: string; colorVar: string };
+type Slice = { key: string; label: string; colorVar: string };
 
 const sliceMap: Record<Discipline, Slice> = {
   "Português": { key: "Português", label: "Port.", colorVar: "var(--cat-port)" },
@@ -14,6 +14,8 @@ const sliceMap: Record<Discipline, Slice> = {
   "Segurança Orgânica": { key: "Segurança Orgânica", label: "Seg.", colorVar: "var(--cat-seg)" },
   "História": { key: "História", label: "Hist.", colorVar: "var(--cat-hist)" }
 };
+
+const crownSlice: Slice = { key: "__CROWN__", label: "Coroa", colorVar: "var(--accent-500)" };
 
 function polarToCartesian(cx:number, cy:number, r:number, angleDeg:number){
   const a = (angleDeg - 90) * Math.PI / 180.0;
@@ -30,12 +32,18 @@ export default function Wheel({
   onPick,
   disabled,
   forcePick,
+  forceCrown,
+  includeCrown,
+  onCrown,
   showHint = true,
   disciplines
 }: {
   onPick: (d: Discipline)=>void;
   disabled?: boolean;
   forcePick?: Discipline;
+  forceCrown?: boolean;
+  includeCrown?: boolean;
+  onCrown?: ()=>void;
   showHint?: boolean;
   disciplines?: Discipline[];
 }){
@@ -45,8 +53,10 @@ export default function Wheel({
   const slices = useMemo(() => {
     const base = (disciplines && disciplines.length ? disciplines : DISCIPLINES)
       .filter((d, i, arr) => arr.indexOf(d) === i);
-    return base.map(d => sliceMap[d]);
-  }, [disciplines]);
+    const mapped = base.map(d => sliceMap[d]);
+    if (includeCrown) mapped.push(crownSlice);
+    return mapped;
+  }, [disciplines, includeCrown]);
   const labelSize = slices.length >= 8 ? 10 : slices.length >= 7 ? 11 : 12;
 
   const paths = useMemo(() => {
@@ -65,14 +75,19 @@ export default function Wheel({
     setSpinning(true);
     const extra = 360 * (3 + Math.floor(Math.random()*3));
     const forcedIndex = forcePick ? slices.findIndex(s => s.key === forcePick) : -1;
-    const target = forcedIndex >= 0 ? forcedIndex : Math.floor(Math.random() * slices.length);
+    const crownIndex = forceCrown ? slices.findIndex(s => s.key === "__CROWN__") : -1;
+    const target = crownIndex >= 0 ? crownIndex : forcedIndex >= 0 ? forcedIndex : Math.floor(Math.random() * slices.length);
     const step = 360 / slices.length;
     const desired = 360 - (target*step + step/2);
     const final = rot + extra + desired;
     setRot(final);
     window.setTimeout(() => {
       setSpinning(false);
-      onPick(slices[target].key);
+      if (slices[target].key === "__CROWN__"){
+        onCrown?.();
+      } else {
+        onPick(slices[target].key as Discipline);
+      }
     }, 1000);
   };
 
@@ -117,7 +132,7 @@ export default function Wheel({
                 transform={`rotate(${p.mid} 160 160) translate(0 -108) rotate(${-p.mid} 160 160)`}
                 style={{ fontWeight: 900 }}
               >
-                {p.label}
+                {p.key === "__CROWN__" ? "👑" : p.label}
               </text>
             </g>
           ))}

@@ -30,6 +30,7 @@ export default function Duel(){
   const [config, setConfig] = useState<DuelRoomConfig | null>(null);
   const [mixMode, setMixMode] = useState(true);
   const [room, setRoom] = useState<DuelRoom | null>(null);
+  const [lastRoomCode, setLastRoomCode] = useState<string | null>(null);
   const online = onlineEnabled();
   const [authReady, setAuthReady] = useState(false);
   const [authOk, setAuthOk] = useState(false);
@@ -59,6 +60,11 @@ export default function Duel(){
       setAuthOk(Boolean(u?.emailConfirmed));
       setAuthReady(true);
     });
+  }, []);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("rota190:lastRoomCode");
+    if (saved) setLastRoomCode(saved);
   }, []);
 
   const clearRoomTimeout = () => {
@@ -116,6 +122,8 @@ export default function Duel(){
       await channel.waitForSubscribed();
       channelCleanupRef.current = channel.unsubscribe;
       await createRoomRecord(code, cfg, clientId);
+      localStorage.setItem("rota190:lastRoomCode", code);
+      setLastRoomCode(code);
       armResyncTimeout(code);
     } catch (err: any){
       console.error("[duel] create room failed", err?.message ?? err);
@@ -155,6 +163,8 @@ export default function Duel(){
         return;
       }
       await joinRoomRecord(code, clientId);
+      localStorage.setItem("rota190:lastRoomCode", code);
+      setLastRoomCode(code);
       armResyncTimeout(code);
     } catch (err: any){
       console.error("[duel] join room failed", err?.message ?? err);
@@ -294,6 +304,11 @@ export default function Duel(){
                   onChange={(e)=>setRoomCode(e.target.value.toUpperCase())}
                 />
                 <button className="btn btnPrimary" onClick={joinRoom} disabled={!authOk}>Entrar</button>
+                {lastRoomCode && (
+                  <button className="btn" onClick={() => nav(`/duelo/jogo?code=${lastRoomCode}`)}>
+                    Continuar sala
+                  </button>
+                )}
               </div>
               {roomCode && (
                 <div className="pill">Sala: <b>{roomCode}</b> • Status: {status}</div>

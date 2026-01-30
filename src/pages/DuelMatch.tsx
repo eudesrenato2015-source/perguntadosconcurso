@@ -22,6 +22,7 @@ export default function DuelMatch(){
   const code = params.get("code")?.toUpperCase() ?? "";
   const mode = params.get("mode") ?? (code ? "online" : "ghost");
   const ghostProfile = params.get("ghost") ?? "Equilibrado";
+  const resumeKey = "rota190:lastRoomCode";
 
   const clientId = useMemo(() => getDuelClientId(), []);
   const [room, setRoom] = useState<DuelRoom | null>(null);
@@ -40,6 +41,7 @@ export default function DuelMatch(){
   const [retryUsed, setRetryUsed] = useState(false);
   const awaitingGhostRef = useRef(false);
   const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
+  const winSfxRef = useRef(false);
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
@@ -61,6 +63,15 @@ export default function DuelMatch(){
   const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
 
   useEffect(() => {
+    if (!code && params.get("mode") == null){
+      const saved = localStorage.getItem(resumeKey);
+      if (saved){
+        nav(`/duelo/jogo?code=${saved}`);
+      }
+    }
+  }, [code]);
+
+  useEffect(() => {
     if (!isOnline){
       if (!localState){
         setLocalState(initialLocalState());
@@ -76,6 +87,7 @@ export default function DuelMatch(){
         cleanup = channel.unsubscribe;
         const latest = await fetchRoomRecord(code);
         if (latest) setRoom(latest);
+        if (latest?.code) localStorage.setItem(resumeKey, latest.code);
       } catch (err: any){
         console.error("[duel] connect failed", err?.message ?? err);
         setNotice("Falha ao conectar na sala.");
@@ -144,7 +156,7 @@ export default function DuelMatch(){
     }
     const prepared = prepareSpin(state, me, activePool, disciplines);
     pendingSpinRef.current = prepared;
-    setSpinTarget(prepared.category);
+    setSpinTarget(prepared.willCrown ? null : prepared.category);
     setSpinCrown(prepared.willCrown);
     setSpinOpen(true);
     if (sfxEnabled) sfx.spin();
@@ -177,19 +189,37 @@ export default function DuelMatch(){
     const base = pendingSpinRef.current?.base ?? state;
     const willCrown = pendingSpinRef.current?.willCrown ?? false;
     if (willCrown){
-      const unowned = unownedCategories(base, base.turn);
-      if (!unowned.length){
-        await startQuestion(category, false, base);
-        return;
-      }
-      const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
-      await updateState(next);
-      setCrownNotice("Coroa direta! Escolha a categoria.");
-      if (sfxEnabled) sfx.crown();
-      window.setTimeout(() => setCrownNotice(null), 2200);
+    const unowned = unownedCategories(base, base.turn);
+    if (!unowned.length){
+      await startQuestion(category, false, base);
       return;
     }
+    const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
+    await updateState(next);
+    setCrownNotice("Coroa direta! Escolha a categoria.");
+    if (sfxEnabled) sfx.crown();
+    window.setTimeout(() => setCrownNotice(null), 2200);
+    return;
+    }
     await startQuestion(category, false, base);
+  };
+
+  const onWheelCrown = async () => {
+    setSpinOpen(false);
+    setSpinCrown(false);
+    if (!state) return;
+    const base = pendingSpinRef.current?.base ?? state;
+    const unowned = unownedCategories(base, base.turn);
+    if (!unowned.length){
+      const prepared = prepareSpin(base, base.turn, activePool, disciplines);
+      await startQuestion(prepared.category, false, prepared.base);
+      return;
+    }
+    const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
+    await updateState(next);
+    setCrownNotice("Coroa direta! Escolha a categoria.");
+    if (sfxEnabled) sfx.crown();
+    window.setTimeout(() => setCrownNotice(null), 2200);
   };
 
   const selectCrownCategory = async (category: Discipline) => {
@@ -378,6 +408,10 @@ export default function DuelMatch(){
   }
 
   if (winnerId){
+    if (sfxEnabled && !winSfxRef.current){
+      winSfxRef.current = true;
+      sfx.win();
+    }
     return (
       <div style={{ padding: 16 }}>
         <div className="h2">Duelo encerrado</div>
@@ -387,6 +421,10 @@ export default function DuelMatch(){
     );
   }
   if (!isOnline && localWinner){
+    if (sfxEnabled && !winSfxRef.current){
+      winSfxRef.current = true;
+      sfx.win();
+    }
     return (
       <div style={{ padding: 16 }}>
         <div className="h2">Duelo encerrado</div>
@@ -533,7 +571,15 @@ export default function DuelMatch(){
               {spinCrown ? "Coroa direta ativada!" : "Chance de coroa direta: 12%"}
             </div>
             <div style={{ marginTop: 12 }}>
-              <Wheel onPick={onWheelPick} forcePick={spinTarget ?? undefined} showHint={false} disciplines={disciplines} />
+              <Wheel
+                onPick={onWheelPick}
+                onCrown={onWheelCrown}
+                includeCrown
+                forcePick={spinTarget ?? undefined}
+                forceCrown={spinCrown}
+                showHint={false}
+                disciplines={disciplines}
+              />
             </div>
           </div>
         </div>
