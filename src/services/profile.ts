@@ -94,3 +94,24 @@ export async function fetchDailyRanking(limit = 50){
   if (error) throw error;
   return (data ?? []).map((row: any) => ({ display_name: row.profiles?.display_name ?? "Jogador", xp: row.xp }));
 }
+
+export async function fetchPeriodRanking(days: number, limit = 50){
+  const supa = getSupabase();
+  if (!supa) return [] as Array<{ display_name: string; xp: number }>;
+  const end = new Date();
+  const start = new Date();
+  start.setDate(end.getDate() - (days - 1));
+  const startKey = start.toISOString().slice(0, 10);
+  const { data, error } = await supa
+    .from("daily_xp")
+    .select("user_id, xp, day, profiles(display_name)")
+    .gte("day", startKey);
+  if (error) throw error;
+  const map = new Map<string, { display_name: string; xp: number }>();
+  (data ?? []).forEach((row: any) => {
+    const id = row.user_id;
+    const prev = map.get(id) ?? { display_name: row.profiles?.display_name ?? "Jogador", xp: 0 };
+    map.set(id, { display_name: prev.display_name, xp: prev.xp + Number(row.xp ?? 0) });
+  });
+  return Array.from(map.values()).sort((a, b) => b.xp - a.xp).slice(0, limit);
+}

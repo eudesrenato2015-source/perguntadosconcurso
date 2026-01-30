@@ -71,12 +71,16 @@ export const sfx = {
 
 export function useSfxEnabled(){
   const [enabled, setEnabled] = useState(() => {
-    const raw = localStorage.getItem(KEY);
-    return raw ? raw === "1" : true;
+    try {
+      const raw = localStorage.getItem(KEY);
+      return raw ? raw === "1" : true;
+    } catch {
+      return true;
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem(KEY, enabled ? "1" : "0");
+    try { localStorage.setItem(KEY, enabled ? "1" : "0"); } catch {}
   }, [enabled]);
 
   const toggle = () => {

@@ -24,6 +24,15 @@ export default function DuelMatch(){
   const ghostProfile = params.get("ghost") ?? "Equilibrado";
   const resumeKey = "rota190:lastRoomCode";
   const roomsKey = "rota190:rooms";
+  const safeGet = (key: string) => {
+    try { return localStorage.getItem(key); } catch { return null; }
+  };
+  const safeSet = (key: string, value: string) => {
+    try { localStorage.setItem(key, value); } catch {}
+  };
+  const safeRemove = (key: string) => {
+    try { localStorage.removeItem(key); } catch {}
+  };
 
   const clientId = useMemo(() => getDuelClientId(), []);
   const [room, setRoom] = useState<DuelRoom | null>(null);
@@ -75,17 +84,17 @@ export default function DuelMatch(){
   const chat = state?.chat ?? [];
 
   const addRoomToList = (roomCode: string) => {
-    const raw = localStorage.getItem(roomsKey);
+    const raw = safeGet(roomsKey);
     const list = raw ? (JSON.parse(raw) as string[]) : [];
     const next = [roomCode, ...list.filter((c) => c !== roomCode)].slice(0, 8);
-    localStorage.setItem(roomsKey, JSON.stringify(next));
+    safeSet(roomsKey, JSON.stringify(next));
   };
 
   const removeRoomFromList = (roomCode: string) => {
-    const raw = localStorage.getItem(roomsKey);
+    const raw = safeGet(roomsKey);
     const list = raw ? (JSON.parse(raw) as string[]) : [];
     const next = list.filter((c) => c !== roomCode);
-    localStorage.setItem(roomsKey, JSON.stringify(next));
+    safeSet(roomsKey, JSON.stringify(next));
   };
 
   const requestNotification = async () => {
@@ -96,7 +105,7 @@ export default function DuelMatch(){
 
   useEffect(() => {
     if (!code && params.get("mode") == null){
-      const saved = localStorage.getItem(resumeKey);
+      const saved = safeGet(resumeKey);
       if (saved){
         nav(`/duelo/jogo?code=${saved}`);
       }
@@ -123,7 +132,7 @@ export default function DuelMatch(){
         if (!latest){
           setLoadError("Sala não encontrada ou expirada.");
         }
-        if (latest?.code) localStorage.setItem(resumeKey, latest.code);
+        if (latest?.code) safeSet(resumeKey, latest.code);
         if (latest?.code) addRoomToList(latest.code);
       } catch (err: any){
         console.error("[duel] connect failed", err?.message ?? err);
@@ -151,11 +160,11 @@ export default function DuelMatch(){
   useEffect(() => {
     if (!isOnline || !room) return;
     if (room.status === "ended"){
-      localStorage.removeItem(resumeKey);
+      safeRemove(resumeKey);
       removeRoomFromList(room.code);
       return;
     }
-    localStorage.setItem(resumeKey, room.code);
+    safeSet(resumeKey, room.code);
     addRoomToList(room.code);
   }, [isOnline, room?.code, room?.status]);
 

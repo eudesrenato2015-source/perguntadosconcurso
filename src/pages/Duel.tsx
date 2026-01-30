@@ -41,6 +41,15 @@ export default function Duel(){
   const timeoutRef = useRef<number | null>(null);
   const autoJoinRef = useRef(false);
   const isHost = room?.host_id === clientId;
+  const safeGet = (key: string) => {
+    try { return localStorage.getItem(key); } catch { return null; }
+  };
+  const safeSet = (key: string, value: string) => {
+    try { localStorage.setItem(key, value); } catch {}
+  };
+  const safeRemove = (key: string) => {
+    try { localStorage.removeItem(key); } catch {}
+  };
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const availableDisciplines = useMemo(() => {
@@ -65,15 +74,15 @@ export default function Duel(){
   }, []);
 
   useEffect(() => {
-    const saved = localStorage.getItem("rota190:lastRoomCode");
-    const listRaw = localStorage.getItem("rota190:rooms");
+    const saved = safeGet("rota190:lastRoomCode");
+    const listRaw = safeGet("rota190:rooms");
     const list = listRaw ? (JSON.parse(listRaw) as string[]) : [];
     if (saved) setLastRoomCode(saved);
     setRecentRooms(list);
     if (!online || !saved) return;
     fetchRoomRecord(saved).then((existing) => {
       if (!existing || existing.status === "ended"){
-        localStorage.removeItem("rota190:lastRoomCode");
+        safeRemove("rota190:lastRoomCode");
         setLastRoomCode(null);
         return;
       }
@@ -85,7 +94,7 @@ export default function Duel(){
     const listRaw = localStorage.getItem("rota190:rooms");
     const list = listRaw ? (JSON.parse(listRaw) as string[]) : [];
     const next = [code, ...list.filter(c => c !== code)].slice(0, 8);
-    localStorage.setItem("rota190:rooms", JSON.stringify(next));
+    safeSet("rota190:rooms", JSON.stringify(next));
     setRecentRooms(next);
   };
 
@@ -145,7 +154,7 @@ export default function Duel(){
       await channel.waitForSubscribed();
       channelCleanupRef.current = channel.unsubscribe;
       await createRoomRecord(code, cfg, clientId);
-      localStorage.setItem("rota190:lastRoomCode", code);
+      safeSet("rota190:lastRoomCode", code);
       setLastRoomCode(code);
       addRoomToList(code);
       armResyncTimeout(code);
@@ -188,7 +197,7 @@ export default function Duel(){
         return;
       }
       await joinRoomRecord(code, clientId);
-      localStorage.setItem("rota190:lastRoomCode", code);
+      safeSet("rota190:lastRoomCode", code);
       setLastRoomCode(code);
       addRoomToList(code);
       armResyncTimeout(code);

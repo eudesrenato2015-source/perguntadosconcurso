@@ -10,6 +10,7 @@ import { getActiveQuestions, getAllQuestions } from "../services/packs";
 import { awardAttemptXP } from "../services/progress";
 import { closeDuelChannel, sendDuelEvent, subscribeDuelEvents } from "../services/online";
 import Wheel from "../components/Wheel";
+import { sfx, useSfxEnabled } from "../services/sfx";
 
 export default function QuestionRunner(){
   const nav = useNavigate();
@@ -20,6 +21,7 @@ export default function QuestionRunner(){
   const timeEndRef = useRef(false);
   const [spinVisible, setSpinVisible] = useState(false);
   const [spinTarget, setSpinTarget] = useState<Discipline | null>(null);
+  const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
   const activePool = useMemo(() => getActiveQuestions(), []);
   const activeDisciplines = useMemo(() => {
     const set = new Set(activePool.map(item => item.discipline));
@@ -137,6 +139,9 @@ export default function QuestionRunner(){
     }
 
     awardAttemptXP({ isCorrect, timeSpentMs });
+    if (sfxEnabled){
+      isCorrect ? sfx.correct() : sfx.wrong();
+    }
 
     return { isCorrect };
   };
@@ -163,6 +168,7 @@ export default function QuestionRunner(){
       const nextQ = nextId ? questionMap.get(nextId) : undefined;
       setSpinTarget(nextQ?.discipline ?? null);
       setSpinVisible(true);
+      if (sfxEnabled) sfx.spin();
       return;
     }
     advance();
@@ -185,6 +191,7 @@ export default function QuestionRunner(){
             )}
           </div>
           <button className="btn" onClick={done}>Encerrar</button>
+          <button className="btn" onClick={toggleSfx}>{sfxEnabled ? "Som: ligado" : "Som: desligado"}</button>
         </div>
       </div>
 

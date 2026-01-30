@@ -45,16 +45,24 @@ export type DuelRoom = {
 
 const DEBUG = import.meta.env.VITE_DEBUG_DUEL === "1";
 const CLIENT_KEY = "rota190:duelClientId";
+const memoryStore = new Map<string, string>();
+
+function safeGet(key: string){
+  try { return localStorage.getItem(key); } catch { return memoryStore.get(key) ?? null; }
+}
+function safeSet(key: string, value: string){
+  try { localStorage.setItem(key, value); } catch { memoryStore.set(key, value); }
+}
 
 function logDebug(...args: any[]){
   if (DEBUG) console.log("[duel]", ...args);
 }
 
 export function getDuelClientId(){
-  const existing = localStorage.getItem(CLIENT_KEY);
+  const existing = safeGet(CLIENT_KEY);
   if (existing) return existing;
   const next = uid("duel");
-  localStorage.setItem(CLIENT_KEY, next);
+  safeSet(CLIENT_KEY, next);
   return next;
 }
 
