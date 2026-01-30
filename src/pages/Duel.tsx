@@ -31,6 +31,7 @@ export default function Duel(){
   const [mixMode, setMixMode] = useState(true);
   const [room, setRoom] = useState<DuelRoom | null>(null);
   const [lastRoomCode, setLastRoomCode] = useState<string | null>(null);
+  const [recentRooms, setRecentRooms] = useState<string[]>([]);
   const online = onlineEnabled();
   const [authReady, setAuthReady] = useState(false);
   const [authOk, setAuthOk] = useState(false);
@@ -38,6 +39,7 @@ export default function Duel(){
   const channelCleanupRef = useRef<null | (()=>void)>(null);
   const startRequestedRef = useRef(false);
   const timeoutRef = useRef<number | null>(null);
+  const autoJoinRef = useRef(false);
   const isHost = room?.host_id === clientId;
 
   const activePool = useMemo(() => getActiveQuestions(), []);
@@ -64,9 +66,11 @@ export default function Duel(){
 
   useEffect(() => {
     const saved = localStorage.getItem("rota190:lastRoomCode");
-    if (!saved) return;
-    setLastRoomCode(saved);
-    if (!online) return;
+    const listRaw = localStorage.getItem("rota190:rooms");
+    const list = listRaw ? (JSON.parse(listRaw) as string[]) : [];
+    if (saved) setLastRoomCode(saved);
+    setRecentRooms(list);
+    if (!online || !saved) return;
     fetchRoomRecord(saved).then((existing) => {
       if (!existing || existing.status === "ended"){
         localStorage.removeItem("rota190:lastRoomCode");
@@ -76,6 +80,14 @@ export default function Duel(){
       setRoom(existing);
     }).catch(() => {});
   }, [online]);
+
+  const addRoomToList = (code: string) => {
+    const listRaw = localStorage.getItem("rota190:rooms");
+    const list = listRaw ? (JSON.parse(listRaw) as string[]) : [];
+    const next = [code, ...list.filter(c => c !== code)].slice(0, 8);
+    localStorage.setItem("rota190:rooms", JSON.stringify(next));
+    setRecentRooms(next);
+  };
 
   const clearRoomTimeout = () => {
     if (timeoutRef.current){
@@ -126,6 +138,7 @@ export default function Duel(){
     setNotice(null);
     setRoom(null);
     startRequestedRef.current = false;
+    autoJoinRef.current = true;
     try {
       channelCleanupRef.current?.();
       const channel = await connectRoomChannel(code, (next) => setRoom(next));
@@ -134,6 +147,7 @@ export default function Duel(){
       await createRoomRecord(code, cfg, clientId);
       localStorage.setItem("rota190:lastRoomCode", code);
       setLastRoomCode(code);
+      addRoomToList(code);
       armResyncTimeout(code);
     } catch (err: any){
       console.error("[duel] create room failed", err?.message ?? err);
@@ -154,6 +168,7 @@ export default function Duel(){
     setNotice(null);
     setRoom(null);
     startRequestedRef.current = false;
+    autoJoinRef.current = true;
     try {
       channelCleanupRef.current?.();
       const channel = await connectRoomChannel(code, (next) => setRoom(next));
@@ -175,6 +190,7 @@ export default function Duel(){
       await joinRoomRecord(code, clientId);
       localStorage.setItem("rota190:lastRoomCode", code);
       setLastRoomCode(code);
+      addRoomToList(code);
       armResyncTimeout(code);
     } catch (err: any){
       console.error("[duel] join room failed", err?.message ?? err);
@@ -195,9 +211,12 @@ export default function Duel(){
       setStatus(isHost ? "hosting" : "waiting");
     } else if (room.status === "started"){
       setStatus("ready");
-      nav(`/duelo/jogo?code=${room.code}`);
+      if (autoJoinRef.current){
+        autoJoinRef.current = false;
+        nav(`/duelo/jogo?code=${room.code}`);
+      }
     }
-  }, [room, nav, isHost]);
+  }, [room, nav, isHost, status]);
 
   useEffect(() => {
     if (!room || !config) return;
@@ -215,6 +234,7 @@ export default function Duel(){
     try {
       startRequestedRef.current = true;
       await startRoomRecord(room.code);
+      nav(`/duelo/jogo?code=${room.code}`);
     } catch (err: any){
       console.error("[duel] start room failed", err?.message ?? err);
       startRequestedRef.current = false;
@@ -325,6 +345,19 @@ export default function Duel(){
               )}
               {lastRoomCode && !roomCode && (
                 <div className="pill">Sala salva: <b>{lastRoomCode}</b></div>
+              )}
+              {recentRooms.length > 1 && (
+                <div className="card" style={{ padding: 10 }}>
+                  <div style={{ fontWeight: 900 }}>Salas recentes</div>
+                  <div style={{ marginTop: 8, display:"grid", gap: 6 }}>
+                    {recentRooms.map(code => (
+                      <div key={code} className="row" style={{ justifyContent:"space-between" }}>
+                        <span className="pill">{code}</span>
+                        <button className="btn" onClick={() => nav(`/duelo/jogo?code=${code}`)}>Abrir</button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               )}
               {room && isHost && room.status !== "started" && (
                 <div className="row" style={{ justifyContent:"flex-end" }}>

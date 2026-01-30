@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import QuestionView from "../components/QuestionView";
 import Wheel from "../components/Wheel";
 import { getActiveQuestions } from "../services/packs";
-import { getDuelClientId, updateRoomState, fetchRoomRecord, connectRoomChannel, type DuelRoom, type DuelState } from "../services/duelRoom";
+import { getDuelClientId, updateRoomState, fetchRoomRecord, connectRoomChannel, startRoomRecord, type DuelRoom, type DuelState } from "../services/duelRoom";
 import type { Discipline, Question } from "../types";
 import { awardAttemptXP } from "../services/progress";
 import { uid } from "../lib/uid";
@@ -23,6 +23,7 @@ export default function DuelMatch(){
   const mode = params.get("mode") ?? (code ? "online" : "ghost");
   const ghostProfile = params.get("ghost") ?? "Equilibrado";
   const resumeKey = "rota190:lastRoomCode";
+  const roomsKey = "rota190:rooms";
 
   const clientId = useMemo(() => getDuelClientId(), []);
   const [room, setRoom] = useState<DuelRoom | null>(null);
@@ -40,8 +41,14 @@ export default function DuelMatch(){
   const [doubleChance, setDoubleChance] = useState(false);
   const [retryUsed, setRetryUsed] = useState(false);
   const awaitingGhostRef = useRef(false);
+  const lastTurnRef = useRef<"none"|"turn"|"crown">("none");
   const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
   const winSfxRef = useRef(false);
+  const [notifyEnabled, setNotifyEnabled] = useState(() => {
+    if (typeof window === "undefined") return false;
+    if (!("Notification" in window)) return false;
+    return Notification.permission === "granted";
+  });
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
@@ -61,6 +68,26 @@ export default function DuelMatch(){
   const myQuestion = current?.player === me;
   const winnerId = isOnline ? room?.winner_id ?? null : null;
   const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
+
+  const addRoomToList = (roomCode: string) => {
+    const raw = localStorage.getItem(roomsKey);
+    const list = raw ? (JSON.parse(raw) as string[]) : [];
+    const next = [roomCode, ...list.filter((c) => c !== roomCode)].slice(0, 8);
+    localStorage.setItem(roomsKey, JSON.stringify(next));
+  };
+
+  const removeRoomFromList = (roomCode: string) => {
+    const raw = localStorage.getItem(roomsKey);
+    const list = raw ? (JSON.parse(raw) as string[]) : [];
+    const next = list.filter((c) => c !== roomCode);
+    localStorage.setItem(roomsKey, JSON.stringify(next));
+  };
+
+  const requestNotification = async () => {
+    if (typeof window === "undefined" || !("Notification" in window)) return;
+    const permission = await Notification.requestPermission();
+    setNotifyEnabled(permission === "granted");
+  };
 
   useEffect(() => {
     if (!code && params.get("mode") == null){
@@ -88,6 +115,7 @@ export default function DuelMatch(){
         const latest = await fetchRoomRecord(code);
         if (latest) setRoom(latest);
         if (latest?.code) localStorage.setItem(resumeKey, latest.code);
+        if (latest?.code) addRoomToList(latest.code);
       } catch (err: any){
         console.error("[duel] connect failed", err?.message ?? err);
         setNotice("Falha ao conectar na sala.");
@@ -100,10 +128,31 @@ export default function DuelMatch(){
     if (!isOnline || !room) return;
     if (room.status === "ended"){
       localStorage.removeItem(resumeKey);
+      removeRoomFromList(room.code);
       return;
     }
     localStorage.setItem(resumeKey, room.code);
+    addRoomToList(room.code);
   }, [isOnline, room?.code, room?.status]);
+
+  useEffect(() => {
+    if (!isOnline || !state) return;
+    const isMyTurn = state.turn === me && !state.current && !state.pendingCrown;
+    const isMyCrown = state.pendingCrown?.player === me;
+    if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "granted"){
+      if (isMyTurn && lastTurnRef.current !== "turn"){
+        new Notification("Sua vez no duelo", { body: "Gire a roleta para continuar." });
+        lastTurnRef.current = "turn";
+      } else if (isMyCrown && lastTurnRef.current !== "crown"){
+        new Notification("Coroa disponível!", { body: "Escolha a categoria para disputar a coroa." });
+        lastTurnRef.current = "crown";
+      } else if (!isMyTurn && !isMyCrown) {
+        lastTurnRef.current = "none";
+      }
+    } else if (!isMyTurn && !isMyCrown) {
+      lastTurnRef.current = "none";
+    }
+  }, [isOnline, state?.turn, state?.current, state?.pendingCrown?.player, me]);
 
   useEffect(() => {
     if (!isOnline || !room) return;
@@ -410,8 +459,20 @@ export default function DuelMatch(){
     return (
       <div style={{ padding: 16 }}>
         <div className="h2">Aguardando início</div>
-        <div className="sub">A sala ainda não iniciou a partida. Volte para o lobby e inicie.</div>
-        <button className="btn btnPrimary" onClick={() => nav("/duelo")}>Voltar</button>
+        <div className="sub">A sala ainda não iniciou a partida. Aguarde o host iniciar.</div>
+        <div className="row" style={{ marginTop: 10, flexWrap:"wrap" }}>
+          {room.host_id === clientId && (
+            <button className="btn btnPrimary" onClick={async () => {
+              try {
+                await startRoomRecord(room.code);
+              } catch (err: any){
+                console.error("[duel] start room failed", err?.message ?? err);
+                setNotice("Falha ao iniciar a sala.");
+              }
+            }}>Iniciar agora</button>
+          )}
+          <button className="btn" onClick={() => nav("/duelo")}>Voltar</button>
+        </div>
       </div>
     );
   }
@@ -451,6 +512,11 @@ export default function DuelMatch(){
           <div className="sub">Quem errar passa a vez. 3 acertos = coroa. Coroa só se ganha acertando.</div>
         </div>
         <div className="row">
+          {"Notification" in window && (
+            <button className="btn" onClick={requestNotification} disabled={notifyEnabled}>
+              {notifyEnabled ? "Notificações: ligadas" : "Ativar notificações"}
+            </button>
+          )}
           <button className="btn" onClick={toggleSfx}>{sfxEnabled ? "Som: ligado" : "Som: desligado"}</button>
           <button className="btn" onClick={() => nav("/duelo")}>Sair</button>
         </div>
@@ -465,18 +531,37 @@ export default function DuelMatch(){
             <Pill label="Turno" value={state.turn === me ? "Sua vez" : "Oponente"} />
             <Pill label="Streak" value={state.streak[me]} />
             <Pill label="Coroas" value={countCrowns(state, me) + "/" + disciplines.length} />
+            <Pill label="Coroas oponente" value={countCrowns(state, opponent) + "/" + disciplines.length} />
             <Pill label="Seus acertos" value={`${stats[me].correct}/${stats[me].total}`} />
             <Pill label="Oponente" value={`${stats[opponent].correct}/${stats[opponent].total}`} />
           </div>
-          <div style={{ marginTop: 8, display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(120px,1fr))", gap: 6 }}>
-            {disciplines.map(d => (
-              <div key={d} className="pill" style={{ display:"flex", justifyContent:"space-between" }}>
-                <span>{d}</span>
-                <span style={{ color: state.crowns[d]?.[me] ? "var(--ok-500)" : "var(--ink-500)" }}>
-                  {state.crowns[d]?.[me] ? "✓" : "—"}
-                </span>
+          <div style={{ marginTop: 8, display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(160px,1fr))", gap: 8 }}>
+            <div>
+              <div className="sub" style={{ marginBottom: 6 }}>Suas coroas</div>
+              <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(120px,1fr))", gap: 6 }}>
+                {disciplines.map(d => (
+                  <div key={d} className="pill" style={{ display:"flex", justifyContent:"space-between" }}>
+                    <span>{d}</span>
+                    <span style={{ color: state.crowns[d]?.[me] ? "var(--ok-500)" : "var(--ink-500)" }}>
+                      {state.crowns[d]?.[me] ? "✓" : "—"}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div>
+              <div className="sub" style={{ marginBottom: 6 }}>Coroas do oponente</div>
+              <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(120px,1fr))", gap: 6 }}>
+                {disciplines.map(d => (
+                  <div key={d} className="pill" style={{ display:"flex", justifyContent:"space-between" }}>
+                    <span>{d}</span>
+                    <span style={{ color: state.crowns[d]?.[opponent] ? "var(--warn-500)" : "var(--ink-500)" }}>
+                      {state.crowns[d]?.[opponent] ? "✓" : "—"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

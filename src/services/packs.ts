@@ -1,4 +1,26 @@
 import type { Question, QuestionPack } from "../types";
+
+function normalizeText(text: string){
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function questionKey(q: Question){
+  const statement = normalizeText(q.statement ?? "");
+  const options = (q.options ?? []).map(o => normalizeText(o.text)).join("|");
+  return `${statement}::${options}`;
+}
+
+function isValidQuestion(q: Question){
+  if (!q.statement || !q.options || q.options.length < 4) return false;
+  const opts = q.options.map(o => normalizeText(o.text));
+  if (opts.length !== new Set(opts).size) return false;
+  return true;
+}
 import { questionPacks } from "../data/packs";
 
 const KEY = "rota190:activePacks";
@@ -64,7 +86,9 @@ export function getActiveQuestions(): Question[]{
   const map = new Map<string, Question>();
   getActivePacks().forEach(pack => {
     pack.questions.forEach(q => {
-      if (!map.has(q.id)) map.set(q.id, q);
+      if (!isValidQuestion(q)) return;
+      const key = questionKey(q);
+      if (!map.has(key)) map.set(key, q);
     });
   });
   return Array.from(map.values());
@@ -74,7 +98,9 @@ export function getAllQuestions(): Question[]{
   const map = new Map<string, Question>();
   getAllPacks().forEach(pack => {
     pack.questions.forEach(q => {
-      if (!map.has(q.id)) map.set(q.id, q);
+      if (!isValidQuestion(q)) return;
+      const key = questionKey(q);
+      if (!map.has(key)) map.set(key, q);
     });
   });
   return Array.from(map.values());

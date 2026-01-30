@@ -33,7 +33,10 @@ export default function QuestionView({
   const [retryNotice, setRetryNotice] = useState<string | null>(null);
   const timeoutFiredRef = useRef(false);
 
-  const showKeys = q.type === "TF" ? (["A","B"] as const) : (["A","B","C","D","E"] as const);
+  const defaultKeys: Array<"A"|"B"|"C"|"D"|"E"> = ["A","B","C","D","E"];
+  const showKeys: Array<"A"|"B"|"C"|"D"|"E"> = q.type === "TF"
+    ? ["A","B"]
+    : defaultKeys.filter(k => q.options.some(o => o.key === k));
   const hidden = new Set(hiddenKeys ?? []);
   const disabled = new Set(disabledKeys ?? []);
 
