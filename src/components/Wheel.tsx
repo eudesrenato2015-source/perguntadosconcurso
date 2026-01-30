@@ -53,7 +53,11 @@ export default function Wheel({
   const slices = useMemo(() => {
     const base = (disciplines && disciplines.length ? disciplines : DISCIPLINES)
       .filter((d, i, arr) => arr.indexOf(d) === i);
-    const mapped = base.map(d => sliceMap[d]);
+    const mapped = base.map(d => sliceMap[d] ?? {
+      key: d,
+      label: d.slice(0, 6),
+      colorVar: "var(--accent-500)"
+    });
     if (includeCrown) mapped.push(crownSlice);
     return mapped;
   }, [disciplines, includeCrown]);
