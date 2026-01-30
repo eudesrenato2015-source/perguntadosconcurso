@@ -127,7 +127,7 @@ export default function Wheel({
 
         <div style={{ position:"absolute", inset:0 }}>
           <button
-            className="btn btnPrimary"
+            className="btn btnPrimary wheelBtn"
             onClick={spin}
             disabled={disabled || spinning || !slices.length}
             aria-label="Girar roleta"

@@ -9,6 +9,7 @@ import { awardAttemptXP } from "../services/progress";
 import { uid } from "../lib/uid";
 import { putAttempt } from "../services/db";
 import { DISCIPLINES } from "../data/disciplines";
+import { sfx, useSfxEnabled } from "../services/sfx";
 
 type Role = "host" | "guest";
 type PowerType = "bomb" | "extraTime" | "skip" | "double";
@@ -29,12 +30,16 @@ export default function DuelMatch(){
   const [notice, setNotice] = useState<string | null>(null);
   const [spinOpen, setSpinOpen] = useState(false);
   const [spinTarget, setSpinTarget] = useState<Discipline | null>(null);
+  const [crownNotice, setCrownNotice] = useState<string | null>(null);
+  const [spinCrown, setSpinCrown] = useState(false);
+  const pendingSpinRef = useRef<{ category: Discipline; base: DuelState; willCrown: boolean } | null>(null);
   const [attemptToken, setAttemptToken] = useState(0);
   const [hiddenKeys, setHiddenKeys] = useState<Array<"A"|"B"|"C"|"D"|"E">>([]);
   const [extraTime, setExtraTime] = useState(0);
   const [doubleChance, setDoubleChance] = useState(false);
   const [retryUsed, setRetryUsed] = useState(false);
   const awaitingGhostRef = useRef(false);
+  const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
 
   const activePool = useMemo(() => getActiveQuestions(), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
@@ -45,6 +50,7 @@ export default function DuelMatch(){
 
   const isOnline = mode === "online";
   const me: Role = isOnline ? (room?.host_id === clientId ? "host" : "guest") : "host";
+  const opponent: Role = me === "host" ? "guest" : "host";
 
   const state = isOnline ? room?.state ?? null : localState;
   const current = state?.current;
@@ -52,6 +58,7 @@ export default function DuelMatch(){
   const myTurn = state?.turn === me;
   const myQuestion = current?.player === me;
   const winnerId = isOnline ? room?.winner_id ?? null : null;
+  const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
 
   useEffect(() => {
     if (!isOnline){
@@ -85,6 +92,19 @@ export default function DuelMatch(){
       console.error("[duel] init state failed", err?.message ?? err);
     });
   }, [isOnline, room?.code, room?.version, room?.state]);
+
+  useEffect(() => {
+    if (!isOnline || !room?.state) return;
+    const st = room.state;
+    if (st.stats && st.bags && st.recent) return;
+    const patched: DuelState = {
+      ...st,
+      stats: st.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
+      bags: st.bags ?? { host: [], guest: [] },
+      recent: st.recent ?? { host: [], guest: [] }
+    };
+    updateRoomState(room.code, patched, room.version).then((next) => setRoom(next)).catch(() => {});
+  }, [isOnline, room?.state]);
 
   useEffect(() => {
     if (!currentQ) return;
@@ -122,13 +142,16 @@ export default function DuelMatch(){
     if (state.pendingCrown?.player === me){
       return;
     }
-    const pick = monteCarloPick(disciplines, activePool);
-    setSpinTarget(pick);
+    const prepared = prepareSpin(state, me, activePool, disciplines);
+    pendingSpinRef.current = prepared;
+    setSpinTarget(prepared.category);
+    setSpinCrown(prepared.willCrown);
     setSpinOpen(true);
+    if (sfxEnabled) sfx.spin();
   };
 
-  const startQuestion = async (category: Discipline, crown: boolean) => {
-    const s = ensureState();
+  const startQuestion = async (category: Discipline, crown: boolean, base?: DuelState) => {
+    const s = base ?? ensureState();
     const used = new Set(s.used);
     const id = pickQuestionId(activePool, used, category);
     if (!id){
@@ -149,20 +172,31 @@ export default function DuelMatch(){
 
   const onWheelPick = async (category: Discipline) => {
     setSpinOpen(false);
+    setSpinCrown(false);
     if (!state) return;
-    const crownChance = Math.random() < 0.12;
-    if (crownChance){
-      const next: DuelState = { ...state, pendingCrown: { player: state.turn, reason: "wheel" } };
+    const base = pendingSpinRef.current?.base ?? state;
+    const willCrown = pendingSpinRef.current?.willCrown ?? false;
+    if (willCrown){
+      const unowned = unownedCategories(base, base.turn);
+      if (!unowned.length){
+        await startQuestion(category, false, base);
+        return;
+      }
+      const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
       await updateState(next);
+      setCrownNotice("Coroa direta! Escolha a categoria.");
+      if (sfxEnabled) sfx.crown();
+      window.setTimeout(() => setCrownNotice(null), 2200);
       return;
     }
-    await startQuestion(category, false);
+    await startQuestion(category, false, base);
   };
 
   const selectCrownCategory = async (category: Discipline) => {
     if (!state) return;
     if (state.pendingCrown?.player !== me) return;
-    await startQuestion(category, true);
+    if (state.crowns[category]?.[me]) return;
+    await startQuestion(category, true, state);
   };
 
   const applyPower = async (type: PowerType) => {
@@ -176,18 +210,32 @@ export default function DuelMatch(){
       const wrongKeys = currentQ.options.map(o => o.key).filter(k => k !== currentQ.correctKey);
       const bombed = shuffle(wrongKeys).slice(0, 2);
       setHiddenKeys(bombed);
+      if (sfxEnabled) sfx.power();
     }
     if (type === "extraTime"){
       await updateState(nextState);
       setExtraTime(15000);
+      if (sfxEnabled) sfx.power();
     }
     if (type === "double"){
       await updateState(nextState);
       setDoubleChance(true);
+      if (sfxEnabled) sfx.power();
     }
     if (type === "skip"){
-      await resolveAnswer(false, "SKIP", 0, true, nextState);
+      await skipCurrentQuestion(nextState);
     }
+  };
+
+  const skipCurrentQuestion = async (base?: DuelState) => {
+    const source = base ?? state;
+    if (!source || !current) return;
+    const next: DuelState = {
+      ...source,
+      current: undefined,
+      pendingCrown: source.pendingCrown?.player === source.turn ? undefined : source.pendingCrown
+    };
+    await updateState(next);
   };
 
   const resolveAnswer = async (isCorrect: boolean, selectedKey: string, timeSpentMs: number, skipped = false, baseState?: DuelState) => {
@@ -221,17 +269,33 @@ export default function DuelMatch(){
         next.streak = { ...next.streak, [player]: 0 };
       }
       if (next.streak[player] >= 3){
-        next.pendingCrown = { player, reason: "streak" };
-        next.streak = { ...next.streak, [player]: 0 };
+        const unowned = unownedCategories(next, player);
+        if (unowned.length){
+          next.pendingCrown = { player, reason: "streak" };
+          next.streak = { ...next.streak, [player]: 0 };
+          if (sfxEnabled) sfx.crown();
+        }
       }
     } else {
       next.streak = { ...next.streak, [player]: 0 };
       next.turn = opponent;
     }
 
+    const baseStats = next.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
+    next.stats = {
+      ...baseStats,
+      [player]: {
+        correct: baseStats[player].correct + (isCorrect ? 1 : 0),
+        total: baseStats[player].total + 1
+      }
+    };
+
     next.current = undefined;
 
     if (!skipped) awardAttemptXP({ isCorrect, timeSpentMs });
+    if (!skipped && sfxEnabled){
+      isCorrect ? sfx.correct() : sfx.wrong();
+    }
     await updateState(next);
   };
 
@@ -257,8 +321,17 @@ export default function DuelMatch(){
     const delay = 900 + Math.random() * 800;
     window.setTimeout(async () => {
       awaitingGhostRef.current = false;
-      const pick = monteCarloPick(disciplines, activePool);
-      await startQuestion(pick, false);
+      if (state.pendingCrown?.player === "guest"){
+        const unowned = unownedCategories(state, "guest");
+        const pick = unowned[Math.floor(Math.random() * unowned.length)];
+        if (pick){
+          await startQuestion(pick, true, state);
+        }
+        return;
+      }
+      const prepared = prepareSpin(state, "guest", activePool, disciplines);
+      pendingSpinRef.current = prepared;
+      await startQuestion(prepared.category, false, prepared.base);
     }, delay);
   }, [mode, state?.turn, state?.current, disciplines, activePool]);
 
@@ -330,7 +403,10 @@ export default function DuelMatch(){
           <div className="h2">Duelo</div>
           <div className="sub">Quem errar passa a vez. 3 acertos = coroa. Coroa só se ganha acertando.</div>
         </div>
-        <button className="btn" onClick={() => nav("/duelo")}>Sair</button>
+        <div className="row">
+          <button className="btn" onClick={toggleSfx}>{sfxEnabled ? "Som: ligado" : "Som: desligado"}</button>
+          <button className="btn" onClick={() => nav("/duelo")}>Sair</button>
+        </div>
       </div>
 
       <div className="sep" />
@@ -342,6 +418,8 @@ export default function DuelMatch(){
             <Pill label="Turno" value={state.turn === me ? "Sua vez" : "Oponente"} />
             <Pill label="Streak" value={state.streak[me]} />
             <Pill label="Coroas" value={countCrowns(state, me) + "/" + disciplines.length} />
+            <Pill label="Seus acertos" value={`${stats[me].correct}/${stats[me].total}`} />
+            <Pill label="Oponente" value={`${stats[opponent].correct}/${stats[opponent].total}`} />
           </div>
           <div style={{ marginTop: 8, display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(120px,1fr))", gap: 6 }}>
             {disciplines.map(d => (
@@ -357,17 +435,18 @@ export default function DuelMatch(){
 
         <div className="kpi" style={{ gridColumn:"span 12" }}>
           <div style={{ fontWeight: 900 }}>Poderes</div>
-          <div className="sub">Bombas removem 2 alternativas, +tempo adiciona 15s, pular passa a vez, dupla chance dá 2 tentativas.</div>
+          <div className="sub">Bombas removem 2 alternativas, +tempo adiciona 15s, pular descarta a questão, dupla chance dá 2 tentativas.</div>
           <div className="row" style={{ marginTop: 8, flexWrap:"wrap" }}>
-            <PowerBtn label="Bomba" count={state.powers[me].bomb} onClick={() => applyPower("bomb")} disabled={!myQuestion} />
-            <PowerBtn label="+Tempo" count={state.powers[me].extraTime} onClick={() => applyPower("extraTime")} disabled={!myQuestion} />
-            <PowerBtn label="Pular" count={state.powers[me].skip} onClick={() => applyPower("skip")} disabled={!myQuestion} />
-            <PowerBtn label="Dupla" count={state.powers[me].double} onClick={() => applyPower("double")} disabled={!myQuestion} />
+            <PowerBtn icon="💣" label="Bomba" count={state.powers[me].bomb} onClick={() => applyPower("bomb")} disabled={!myQuestion} />
+            <PowerBtn icon="⏱" label="+Tempo" count={state.powers[me].extraTime} onClick={() => applyPower("extraTime")} disabled={!myQuestion} />
+            <PowerBtn icon="⏭" label="Pular" count={state.powers[me].skip} onClick={() => applyPower("skip")} disabled={!myQuestion} />
+            <PowerBtn icon="🎯" label="Dupla" count={state.powers[me].double} onClick={() => applyPower("double")} disabled={!myQuestion} />
           </div>
         </div>
       </div>
 
       {notice && <div className="pill" style={{ marginTop: 10, color:"var(--warn-500)" }}>{notice}</div>}
+      {crownNotice && <div className="pill" style={{ marginTop: 10, color:"var(--accent-500)", boxShadow:"0 0 16px rgba(255,159,28,.35)" }}>{crownNotice}</div>}
 
       {state.pendingCrown?.player === me && (
         <div style={{ marginTop: 12 }}>
@@ -375,11 +454,14 @@ export default function DuelMatch(){
             <div style={{ fontWeight: 900 }}>Escolha a coroa</div>
             <div className="sub">Você deve acertar a questão da categoria escolhida para conquistar a coroa.</div>
             <div style={{ marginTop: 10, display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))", gap: 8 }}>
-              {disciplines.map(d => (
-                <button key={d} className="btn" onClick={() => selectCrownCategory(d)}>
-                  {d}
-                </button>
-              ))}
+              {disciplines.map(d => {
+                const owned = state.crowns[d]?.[me];
+                return (
+                  <button key={d} className="btn" onClick={() => selectCrownCategory(d)} disabled={owned}>
+                    {d} {owned ? "✓" : ""}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -447,6 +529,9 @@ export default function DuelMatch(){
           <div className="card" style={{ padding: 16, width: "min(520px, 92vw)" }}>
             <div className="h3">Roleta do Duelo</div>
             <div className="sub">Gire para sortear a próxima disciplina.</div>
+            <div className="pill" style={{ marginTop: 8, color:"var(--accent-500)" }}>
+              {spinCrown ? "Coroa direta ativada!" : "Chance de coroa direta: 12%"}
+            </div>
             <div style={{ marginTop: 12 }}>
               <Wheel onPick={onWheelPick} forcePick={spinTarget ?? undefined} showHint={false} disciplines={disciplines} />
             </div>
@@ -466,10 +551,10 @@ function Pill({ label, value }: { label: string; value: React.ReactNode }){
   );
 }
 
-function PowerBtn({ label, count, onClick, disabled }: { label: string; count: number; onClick: ()=>void; disabled?: boolean }){
+function PowerBtn({ label, count, onClick, disabled, icon }: { label: string; count: number; onClick: ()=>void; disabled?: boolean; icon?: string }){
   return (
     <button className="btn" onClick={onClick} disabled={disabled || count <= 0} style={{ background:"rgba(255,255,255,.06)" }}>
-      {label} ({count})
+      {icon ? `${icon} ` : ""}{label} ({count})
     </button>
   );
 }
@@ -487,39 +572,12 @@ function initialLocalState(): DuelState{
     powers: {
       host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
       guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }
-    }
+    },
+    stats: { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
+    bags: { host: [], guest: [] },
+    recent: { host: [], guest: [] }
   };
   return base;
-}
-
-function monteCarloPick(disciplines: Discipline[], pool: Question[]): Discipline{
-  if (!disciplines.length) return "Português";
-  const weights = disciplines.map(d => pool.filter(q => q.discipline === d).length || 1);
-  const trials = 120;
-  const counts = new Map<Discipline, number>();
-  for (let i = 0; i < trials; i++){
-    const pick = weightedPick(disciplines, weights);
-    counts.set(pick, (counts.get(pick) ?? 0) + 1);
-  }
-  let best = disciplines[0];
-  let bestCount = -1;
-  counts.forEach((v, k) => {
-    if (v > bestCount){
-      best = k;
-      bestCount = v;
-    }
-  });
-  return best;
-}
-
-function weightedPick(disciplines: Discipline[], weights: number[]): Discipline{
-  const total = weights.reduce((a, b) => a + b, 0);
-  let r = Math.random() * total;
-  for (let i = 0; i < disciplines.length; i++){
-    r -= weights[i];
-    if (r <= 0) return disciplines[i];
-  }
-  return disciplines[disciplines.length - 1];
 }
 
 function pickQuestionId(pool: Question[], used: Set<string>, category: Discipline): string | null{
@@ -530,6 +588,34 @@ function pickQuestionId(pool: Question[], used: Set<string>, category: Disciplin
     return fallback[Math.floor(Math.random() * fallback.length)].id;
   }
   return filtered[Math.floor(Math.random() * filtered.length)].id;
+}
+
+function prepareSpin(state: DuelState, player: Role, pool: Question[], disciplines: Discipline[]){
+  const bags = state.bags ?? { host: [], guest: [] };
+  const recentBase = state.recent ?? { host: [], guest: [] };
+  const bag = bags[player]?.length ? [...bags[player]] : buildBag(disciplines);
+  const recent = recentBase[player] ?? [];
+  let pick = bag.find(d => !recent.includes(d)) ?? bag[0];
+  if (!pick) pick = disciplines[0] ?? "Português";
+  const nextBag = bag.filter((_, i) => i !== bag.indexOf(pick));
+  const nextRecent = [...recent, pick].slice(-2);
+  const base: DuelState = {
+    ...state,
+    bags: { ...bags, [player]: nextBag },
+    recent: { ...recentBase, [player]: nextRecent }
+  };
+  const unowned = unownedCategories(base, player);
+  const willCrown = unowned.length > 0 && Math.random() < 0.12;
+  return { category: pick, base, willCrown };
+}
+
+function buildBag(disciplines: Discipline[]){
+  const out = [...disciplines];
+  for (let i = out.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
 }
 
 function pickWrongKey(q?: Question | null){
@@ -549,6 +635,10 @@ function shuffle<T>(arr: T[]): T[]{
 
 function countCrowns(state: DuelState, player: Role){
   return Object.values(state.crowns).filter(v => v?.[player]).length;
+}
+
+function unownedCategories(state: DuelState, player: Role){
+  return Object.keys(state.crowns).filter((k) => !state.crowns[k as Discipline]?.[player]) as Discipline[];
 }
 
 function nextWinner(state: DuelState, room: DuelRoom, me: Role, clientId: string){

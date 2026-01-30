@@ -16,10 +16,12 @@ import Ranking from "./pages/Ranking";
 import { useTheme } from "./services/theme";
 import UpdateToast from "./components/UpdateToast";
 import AppIcon from "./components/AppIcon";
+import { usePwaInstall } from "./services/pwaInstall";
 
 export default function App(){
   const { theme, toggle } = useTheme();
   const themeLabel = theme === "light" ? "Claro" : theme === "dark" ? "Escuro" : theme;
+  const { canInstall, promptInstall } = usePwaInstall();
 
   return (
     <div data-theme={theme}>
@@ -31,6 +33,9 @@ export default function App(){
             <div className="sub">PWA offline-first. Duelo online opcional via Supabase.</div>
           </div>
           <div className="row" style={{ gap: 8, flexWrap:"wrap" }}>
+            {canInstall && (
+              <button className="btn" onClick={promptInstall}>Instalar</button>
+            )}
             <Link className="btn" to="/login">Login</Link>
             <Link className="btn" to="/ranking">Ranking</Link>
             <Link className="btn" to="/perfil">Perfil</Link>

@@ -23,6 +23,9 @@ export type DuelState = {
     host: { bomb: number; extraTime: number; skip: number; double: number };
     guest: { bomb: number; extraTime: number; skip: number; double: number };
   };
+  stats: { host: { correct: number; total: number }; guest: { correct: number; total: number } };
+  bags: { host: Discipline[]; guest: Discipline[] };
+  recent: { host: Discipline[]; guest: Discipline[] };
 };
 
 export type DuelRoom = {
@@ -67,7 +70,10 @@ function initialState(): DuelState{
     powers: {
       host: { bomb: 2, extraTime: 2, skip: 2, double: 2 },
       guest: { bomb: 2, extraTime: 2, skip: 2, double: 2 }
-    }
+    },
+    stats: { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
+    bags: { host: [], guest: [] },
+    recent: { host: [], guest: [] }
   };
 }
 

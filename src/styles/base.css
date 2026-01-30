@@ -106,6 +106,9 @@ button{font-family:inherit}
   background: linear-gradient(135deg, var(--brand-500), var(--accent-500));
   box-shadow: 0 14px 35px rgba(24,210,163,.35);
 }
+.btnPrimary.wheelBtn{
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
 .input{width:100%; padding:12px 14px; border-radius:14px; border:1px solid var(--line-200); background: rgba(255,255,255,.07); color: var(--ink-900); outline:none;}
 .input:focus{border-color: rgba(24,210,163,.55); box-shadow: 0 0 0 4px rgba(24,210,163,.18)}
 .kpi{
@@ -155,6 +158,12 @@ button{font-family:inherit}
 @keyframes floatIn{
   from{transform: translateY(6px); opacity:.6}
   to{transform: translateY(0); opacity:1}
+}
+
+@keyframes pulseGlow{
+  0%{box-shadow: 0 0 0 rgba(24,210,163,.0), 0 12px 30px rgba(24,210,163,.25)}
+  50%{box-shadow: 0 0 18px rgba(255,159,28,.35), 0 16px 40px rgba(24,210,163,.35)}
+  100%{box-shadow: 0 0 0 rgba(24,210,163,.0), 0 12px 30px rgba(24,210,163,.25)}
 }
 
 @media (prefers-reduced-motion: reduce){
