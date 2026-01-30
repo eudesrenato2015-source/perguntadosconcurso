@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { safeGet, safeSet } from "../lib/storage";
 
 const KEY = "rota190:theme";
 type ThemeId = string;
@@ -7,13 +8,13 @@ export function useTheme(){
   const [theme, setTheme] = useState<ThemeId>("dark");
 
   useEffect(() => {
-    const saved = localStorage.getItem(KEY);
+    const saved = safeGet(KEY);
     if (saved) setTheme(saved);
     document.documentElement.dataset.theme = saved ?? "dark";
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(KEY, theme);
+    safeSet(KEY, theme);
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 

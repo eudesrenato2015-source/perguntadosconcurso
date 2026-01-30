@@ -1,4 +1,5 @@
 import type { Question, QuestionPack } from "../types";
+import { safeGet, safeSet, safeRemove } from "../lib/storage";
 
 function normalizeText(text: string){
   return text
@@ -27,7 +28,7 @@ const KEY = "rota190:activePacks";
 const USER_KEY = "rota190:userPacks";
 
 function loadUserPacks(): QuestionPack[]{
-  const raw = localStorage.getItem(USER_KEY);
+  const raw = safeGet(USER_KEY);
   if (!raw) return [];
   try {
     const parsed = JSON.parse(raw) as QuestionPack[];
@@ -56,7 +57,7 @@ function normalizeIds(raw: unknown): string[]{
 }
 
 export function getActivePackIds(): string[]{
-  const raw = localStorage.getItem(KEY);
+  const raw = safeGet(KEY);
   const allPackIds = getAllPacks().map(p => p.id);
   if (!raw) return allPackIds;
   try {
@@ -71,10 +72,10 @@ export function getActivePackIds(): string[]{
 export function setActivePackIds(ids: string[]){
   const next = normalizeIds(ids);
   if (!next.length){
-    localStorage.removeItem(KEY);
+    safeRemove(KEY);
     return;
   }
-  localStorage.setItem(KEY, JSON.stringify(next));
+  safeSet(KEY, JSON.stringify(next));
 }
 
 export function getActivePacks(){
@@ -109,7 +110,7 @@ export function getAllQuestions(): Question[]{
 export function addUserPack(pack: QuestionPack){
   const packs = loadUserPacks();
   const next = [...packs.filter(p => p.id !== pack.id), pack];
-  localStorage.setItem(USER_KEY, JSON.stringify(next));
+  safeSet(USER_KEY, JSON.stringify(next));
   const active = new Set(getActivePackIds());
   active.add(pack.id);
   setActivePackIds(Array.from(active));
@@ -117,7 +118,7 @@ export function addUserPack(pack: QuestionPack){
 
 export function removeUserPack(id: string){
   const packs = loadUserPacks().filter(p => p.id !== id);
-  localStorage.setItem(USER_KEY, JSON.stringify(packs));
+  safeSet(USER_KEY, JSON.stringify(packs));
   const active = new Set(getActivePackIds());
   if (active.has(id)){
     active.delete(id);

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
+import { safeGet, safeSet } from "../lib/storage";
 
 const KEY = "rota190:sfx";
 let ctx: AudioContext | null = null;
@@ -71,16 +72,12 @@ export const sfx = {
 
 export function useSfxEnabled(){
   const [enabled, setEnabled] = useState(() => {
-    try {
-      const raw = localStorage.getItem(KEY);
-      return raw ? raw === "1" : true;
-    } catch {
-      return true;
-    }
+    const raw = safeGet(KEY);
+    return raw ? raw === "1" : true;
   });
 
   useEffect(() => {
-    try { localStorage.setItem(KEY, enabled ? "1" : "0"); } catch {}
+    safeSet(KEY, enabled ? "1" : "0");
   }, [enabled]);
 
   const toggle = () => {

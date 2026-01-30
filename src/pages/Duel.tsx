@@ -91,7 +91,7 @@ export default function Duel(){
   }, [online]);
 
   const addRoomToList = (code: string) => {
-    const listRaw = localStorage.getItem("rota190:rooms");
+    const listRaw = safeGet("rota190:rooms");
     const list = listRaw ? (JSON.parse(listRaw) as string[]) : [];
     const next = [code, ...list.filter(c => c !== code)].slice(0, 8);
     safeSet("rota190:rooms", JSON.stringify(next));

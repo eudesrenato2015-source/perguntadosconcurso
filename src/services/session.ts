@@ -1,20 +1,21 @@
 import type { RunSession, RunMode, Discipline } from "../types";
 import { uid } from "../lib/uid";
+import { safeGet, safeSet, safeRemove } from "../lib/storage";
 
 const KEY = "rota190:run";
 
 export function getSession(): RunSession | null{
-  const raw = localStorage.getItem(KEY);
+  const raw = safeGet(KEY);
   if (!raw) return null;
   try { return JSON.parse(raw) as RunSession; } catch { return null; }
 }
 
 export function setSession(s: RunSession){
-  localStorage.setItem(KEY, JSON.stringify(s));
+  safeSet(KEY, JSON.stringify(s));
 }
 
 export function clearSession(){
-  localStorage.removeItem(KEY);
+  safeRemove(KEY);
 }
 
 export function newSession(

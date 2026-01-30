@@ -1,5 +1,6 @@
 ﻿import { addXp } from "./profile";
 import { onlineEnabled } from "./online";
+import { safeGet, safeSet } from "../lib/storage";
 
 export type PlayerState = {
   xp: number;
@@ -43,7 +44,7 @@ function todayKey(){
 }
 
 function readState(): PlayerState{
-  const raw = localStorage.getItem(KEY);
+  const raw = safeGet(KEY);
   if (!raw) return { ...defaultState };
   try {
     const parsed = JSON.parse(raw) as PlayerState;
@@ -63,7 +64,7 @@ function emitThemeChange(themeId: string){
 }
 
 function writeState(next: PlayerState){
-  localStorage.setItem(KEY, JSON.stringify(next));
+  safeSet(KEY, JSON.stringify(next));
 }
 
 export function getPlayerState(): PlayerState{
@@ -124,7 +125,7 @@ export function applyTheme(themeId: string){
   const state = readState();
   state.activeTheme = themeId;
   writeState(state);
-  localStorage.setItem("rota190:theme", themeId);
+  safeSet("rota190:theme", themeId);
   emitThemeChange(themeId);
   return state;
 }

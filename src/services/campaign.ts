@@ -1,4 +1,5 @@
 ﻿import type { Discipline } from "../types";
+import { safeGet, safeSet } from "../lib/storage";
 
 export type DistrictProgress = {
   level: number;
@@ -32,7 +33,7 @@ function blankProgress(): CampaignState{
 }
 
 function readState(): CampaignState{
-  const raw = localStorage.getItem(KEY);
+  const raw = safeGet(KEY);
   if (!raw) return blankProgress();
   try {
     const parsed = JSON.parse(raw) as CampaignState;
@@ -49,7 +50,7 @@ function readState(): CampaignState{
 }
 
 function writeState(state: CampaignState){
-  localStorage.setItem(KEY, JSON.stringify(state));
+  safeSet(KEY, JSON.stringify(state));
 }
 
 export function getCampaignState(): CampaignState{
