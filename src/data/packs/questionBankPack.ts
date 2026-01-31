@@ -5,8 +5,8 @@ function stripAccents(text: string){
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function inferDiscipline(source?: string | null, statement?: string | null): Discipline {
-  const src = `${source ?? ""} ${statement ?? ""}`.toLowerCase();
+function inferDiscipline(source?: string | null, statement?: string | null, subject?: string | null): Discipline {
+  const src = `${subject ?? ""} ${source ?? ""} ${statement ?? ""}`.toLowerCase();
   const t = stripAccents(src);
   const hasPortugues = [
     "portugues", "lingua portuguesa", "gramatica", "ortografia", "acentuacao",
@@ -21,7 +21,7 @@ function inferDiscipline(source?: string | null, statement?: string | null): Dis
   if (t.includes("penal") || t.includes("processo penal") || t.includes("crime") || t.includes("tipicidade") || t.includes("culpabilidade")) return "Penal/Proc Penal";
   if (t.includes("direitos humanos") || t.includes("criminolog") || t.includes("pacto") || t.includes("tratado")) return "DH/Criminologia";
   if (t.includes("informatica") || t.includes("logica") || t.includes("rlm") || t.includes("rede") || t.includes("seguranca da informacao")) return "Informática/RLM";
-  if (t.includes("seguranca") || t.includes("defesa pessoal") || t.includes("vigilancia") || t.includes("controle de acesso")) return "Segurança Orgânica";
+  if (t.includes("seguranca") || t.includes("defesa pessoal") || t.includes("vigilancia") || t.includes("controle de acesso") || t.includes("escolta") || t.includes("incendio") || t.includes("socorrista") || t.includes("inteligencia")) return "Segurança Orgânica";
   if (t.includes("historia") || t.includes("geografia") || t.includes("brasil colonia") || t.includes("republica")) return "História";
   return "Administrativo";
 }
@@ -35,9 +35,9 @@ function difficultyFor(text: string){
 }
 
 function toQuestion(bank: BankQuestion): Question {
-  const discipline = inferDiscipline(bank.source ?? null, bank.statement);
-  const subject = bank.source || "Geral";
-  const topic = bank.source || "Geral";
+  const discipline = inferDiscipline(bank.source ?? null, bank.statement, (bank as any).subject ?? null);
+  const subject = (bank as any).subject || bank.source || "Geral";
+  const topic = (bank as any).subject || bank.source || "Geral";
   const options: Question["options"] = [];
   const choiceMap = bank.choices || { a: "", b: "", c: "", d: "" };
   const entries: Array<["A"|"B"|"C"|"D"|"E", string | undefined]> = [
