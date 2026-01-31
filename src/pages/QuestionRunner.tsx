@@ -215,7 +215,7 @@ export default function QuestionRunner(){
         onMark={()=>{}}
         note={note}
         onSaveNote={saveNote}
-        timeLimitMs={session.mode === "duel" ? 45000 : undefined}
+        timeLimitMs={session.mode === "duel" ? 90000 : undefined}
         onSkipNull={skipNullQuestion}
       />
 

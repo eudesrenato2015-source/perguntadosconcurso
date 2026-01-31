@@ -1,3 +1,5 @@
+// @ts-nocheck
+// @ts-nocheck
 // Auto-generated question bank
 export type ChoiceMap = { a:string; b:string; c:string; d:string; e?:string };
 export type Question = { id:string; subject?:string|null; source?:string|null; qnum?:string|null; statement:string; choices:ChoiceMap; answer?:('a'|'b'|'c'|'d'|'e'|null) };

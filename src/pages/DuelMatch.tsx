@@ -14,7 +14,7 @@ import { sfx, useSfxEnabled } from "../services/sfx";
 type Role = "host" | "guest";
 type PowerType = "bomb" | "extraTime" | "skip" | "double";
 
-const BASE_TIME_MS = 45000;
+const BASE_TIME_MS = 90000;
 
 export default function DuelMatch(){
   const nav = useNavigate();
