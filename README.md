@@ -133,3 +133,8 @@ O arquivo `vercel.json` garante que rotas como `/duelo` nao deem 404 no refresh.
 4. Ambos entram no jogo e a roleta passa a cada turno.
 
 Dica: no navegador, abra DevTools > Network > WS e confira que `realtime/v1` retorna status 101.
+
+## Deploy trigger
+
+Deploy trigger: updated on 2026-01-31.
+
