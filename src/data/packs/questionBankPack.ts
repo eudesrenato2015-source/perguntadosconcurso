@@ -54,6 +54,7 @@ function toQuestion(bank: BankQuestion): Question {
   });
   const answer = bank.answer ? bank.answer.toUpperCase() as "A"|"B"|"C"|"D"|"E" : null;
   const hasAnswer = !!answer;
+  const isTF = options.length <= 2;
 
   return {
     id: bank.id,
@@ -61,7 +62,7 @@ function toQuestion(bank: BankQuestion): Question {
     subject,
     topic,
     difficulty: difficultyFor(bank.statement),
-    type: "MCQ",
+    type: isTF ? "TF" : "MCQ",
     style: "FGV",
     statement: bank.statement,
     options,
