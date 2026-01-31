@@ -33,6 +33,7 @@ export type Question = {
   statement: string;
   options: { key: "A"|"B"|"C"|"D"|"E"; text: string }[];
   correctKey: "A"|"B"|"C"|"D"|"E";
+  hasAnswer?: boolean;
   explanation: {
     summary: string;
     whyCorrect: string;

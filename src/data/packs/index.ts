@@ -1,5 +1,5 @@
-﻿import { importedPdfPack } from "./importedFromPdfs";
+﻿import { questionBankPack } from "./questionBankPack";
 
 export const questionPacks = [
-  importedPdfPack
+  questionBankPack
 ];

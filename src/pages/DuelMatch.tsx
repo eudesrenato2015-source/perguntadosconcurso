@@ -63,7 +63,7 @@ export default function DuelMatch(){
   const [reveal, setReveal] = useState<{ q: Question; correct: boolean; selectedKey: string } | null>(null);
   const revealTimerRef = useRef<number | null>(null);
 
-  const activePool = useMemo(() => getActiveQuestions(), []);
+  const activePool = useMemo(() => getActiveQuestions().filter(q => q.hasAnswer !== false), []);
   const questionMap = useMemo(() => new Map(activePool.map(q => [q.id, q])), [activePool]);
   const disciplines = useMemo(() => {
     const set = new Set(activePool.map(q => q.discipline));
@@ -457,6 +457,9 @@ export default function DuelMatch(){
 
   const onSubmit = async ({ selectedKey, timeSpentMs }: { selectedKey: string; timeSpentMs: number }) => {
     if (!state || !currentQ || !current) return { isCorrect: false };
+    if (currentQ.hasAnswer === false){
+      return { isCorrect: true };
+    }
     const chosen = selectedKey || "TIMEOUT";
     const isCorrect = chosen === currentQ.correctKey;
 

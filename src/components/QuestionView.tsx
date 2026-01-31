@@ -33,7 +33,8 @@ export default function QuestionView({
   const [timedOut, setTimedOut] = useState(false);
   const [retryNotice, setRetryNotice] = useState<string | null>(null);
   const timeoutFiredRef = useRef(false);
-  const correctOption = q.options.find(o => o.key === q.correctKey);
+  const hasAnswer = q.hasAnswer !== false;
+  const correctOption = hasAnswer ? q.options.find(o => o.key === q.correctKey) : undefined;
 
   const defaultKeys: Array<"A"|"B"|"C"|"D"|"E"> = ["A","B","C","D","E"];
   const showKeys: Array<"A"|"B"|"C"|"D"|"E"> = q.type === "TF"
@@ -46,6 +47,10 @@ export default function QuestionView({
     if (!submitted){
       if (selected === k) return "selected";
       return "idle";
+    }
+    if (!hasAnswer){
+      if (selected === k) return "selected";
+      return "disabled";
     }
     if (k === q.correctKey) return "correct";
     if (selected === k) return "wrong";
@@ -154,7 +159,7 @@ export default function QuestionView({
 
       <div className="row" style={{ marginTop: 12, flexWrap:"wrap" }}>
         <button className={"btn " + (!selected ? "" : "btnPrimary")} disabled={!selected || submitted} onClick={submit}>
-          {submitted ? (timedOut ? "Tempo esgotado" : (correct ? "Acertou ✓" : "Errou ✖")) : "Confirmar"}
+          {submitted ? (timedOut ? "Tempo esgotado" : (hasAnswer ? (correct ? "Acertou ✓" : "Errou ✖") : "Enviado")) : "Confirmar"}
         </button>
 
         <button className="btn" onClick={() => { setMarked(m=>{ const nx = !m; onMark(nx); return nx; }); }} disabled={submitted}>
@@ -185,7 +190,7 @@ export default function QuestionView({
       {retryNotice && (
         <div className="pill" style={{ marginTop: 10, color:"var(--warn-500)" }}>{retryNotice}</div>
       )}
-      {submitted && (
+      {submitted && hasAnswer && (
         <div className="card" style={{ marginTop: 10, padding: 12 }}>
           <div style={{ fontWeight: 900, color: correct ? "var(--ok-500)" : "var(--warn-500)" }}>
             {timedOut ? "Tempo esgotado!" : (correct ? "Resposta correta!" : "Resposta incorreta")}
@@ -195,6 +200,15 @@ export default function QuestionView({
               Correta: <b>{q.correctKey}</b> — {correctOption?.text ?? ""}
             </div>
           )}
+        </div>
+      )}
+
+      {submitted && !hasAnswer && (
+        <div className="card" style={{ marginTop: 10, padding: 12 }}>
+          <div style={{ fontWeight: 900 }}>Treino sem gabarito</div>
+          <div style={{ marginTop: 6, color:"var(--ink-700)" }}>
+            Essa questão não possui resposta oficial no banco.
+          </div>
         </div>
       )}
 

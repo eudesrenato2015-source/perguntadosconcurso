@@ -103,7 +103,12 @@ export default function QuestionRunner(){
 
   const submit = async ({ selectedKey, timeSpentMs, markedForReview, confidence }: { selectedKey: string; timeSpentMs: number; markedForReview: boolean; confidence?: 1|2|3|4|5 }) => {
     const chosen = selectedKey || "TIMEOUT";
-    const isCorrect = chosen === q.correctKey;
+    const hasAnswer = q.hasAnswer !== false;
+    const isCorrect = hasAnswer ? (chosen === q.correctKey) : true;
+
+    if (!hasAnswer){
+      return { isCorrect: true };
+    }
     await putAttempt({
       id: uid("att"),
       questionId: q.id,
