@@ -8,14 +8,21 @@ function stripAccents(text: string){
 function inferDiscipline(source?: string | null, statement?: string | null): Discipline {
   const src = `${source ?? ""} ${statement ?? ""}`.toLowerCase();
   const t = stripAccents(src);
-  if (t.includes("portugues") || t.includes("lingua portuguesa")) return "Português";
-  if (t.includes("constitucional") || t.includes("constituicao") || t.includes("cf")) return "Constitucional";
-  if (t.includes("administrativo") || t.includes("licita") || t.includes("ato administrativo")) return "Administrativo";
-  if (t.includes("penal") || t.includes("processo penal") || t.includes("crime")) return "Penal/Proc Penal";
-  if (t.includes("direitos humanos") || t.includes("criminolog")) return "DH/Criminologia";
-  if (t.includes("informatica") || t.includes("logica") || t.includes("rlm")) return "Informática/RLM";
-  if (t.includes("seguranca")) return "Segurança Orgânica";
-  if (t.includes("historia") || t.includes("geografia")) return "História";
+  const hasPortugues = [
+    "portugues", "lingua portuguesa", "gramatica", "ortografia", "acentuacao",
+    "crase", "concordancia", "regencia", "pontuacao", "sintaxe", "morfologia",
+    "semantica", "interpreta", "texto", "coesao", "coerencia", "figura de linguagem",
+    "voz ativa", "voz passiva", "substantivo", "adjetivo", "verbo", "pronome"
+  ].some(k => t.includes(k));
+  if (hasPortugues) return "Português";
+
+  if (t.includes("constitucional") || t.includes("constituicao") || t.includes("cf") || t.includes("art. 5") || t.includes("direitos fundamentais")) return "Constitucional";
+  if (t.includes("administrativo") || t.includes("licit") || t.includes("ato administrativo") || t.includes("poderes da administracao") || t.includes("improbidade") || t.includes("servidor") || t.includes("processo administrativo") || t.includes("lei 8666") || t.includes("8.666")) return "Administrativo";
+  if (t.includes("penal") || t.includes("processo penal") || t.includes("crime") || t.includes("tipicidade") || t.includes("culpabilidade")) return "Penal/Proc Penal";
+  if (t.includes("direitos humanos") || t.includes("criminolog") || t.includes("pacto") || t.includes("tratado")) return "DH/Criminologia";
+  if (t.includes("informatica") || t.includes("logica") || t.includes("rlm") || t.includes("rede") || t.includes("seguranca da informacao")) return "Informática/RLM";
+  if (t.includes("seguranca") || t.includes("defesa pessoal") || t.includes("vigilancia") || t.includes("controle de acesso")) return "Segurança Orgânica";
+  if (t.includes("historia") || t.includes("geografia") || t.includes("brasil colonia") || t.includes("republica")) return "História";
   return "Administrativo";
 }
 
