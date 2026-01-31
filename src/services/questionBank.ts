@@ -75,7 +75,10 @@ export function getById(id: string): BankQuestion | undefined {
 
 export function getBySubject(subject: string): BankQuestion[]{
   const target = subject.toLowerCase();
-  return QUESTIONS.filter(q => (q.subject ?? "").toLowerCase().includes(target));
+  return QUESTIONS.filter(q => {
+    const src = `${q.source ?? ""} ${q.statement ?? ""}`.toLowerCase();
+    return src.includes(target);
+  });
 }
 
 export function getRandom({ subject, n }: { subject?: string; n?: number } = {}): BankQuestion[]{
@@ -100,7 +103,7 @@ export function grade({ id, marked }: GradeInput): GradeResult {
     answer,
     correct: answer ? correct : null,
     timestamp: Date.now(),
-    subject: q?.subject ?? null
+    subject: q?.source ?? null
   };
 
   const history = loadHistory();
@@ -109,8 +112,8 @@ export function grade({ id, marked }: GradeInput): GradeResult {
 
   if (answer){
     const metrics = loadMetrics();
-    const key = (q?.subject ?? "Geral").toLowerCase();
-    const current = metrics[key] ?? { subject: q?.subject ?? "Geral", correct: 0, wrong: 0, last20: [] };
+    const key = (q?.source ?? "Geral").toLowerCase();
+    const current = metrics[key] ?? { subject: q?.source ?? "Geral", correct: 0, wrong: 0, last20: [] };
     if (correct) current.correct += 1; else current.wrong += 1;
     current.last20 = [...current.last20, entry].slice(-20);
     metrics[key] = current;

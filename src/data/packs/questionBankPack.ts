@@ -5,8 +5,8 @@ function stripAccents(text: string){
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function inferDiscipline(subject?: string | null, statement?: string | null): Discipline {
-  const src = `${subject ?? ""} ${statement ?? ""}`.toLowerCase();
+function inferDiscipline(source?: string | null, statement?: string | null): Discipline {
+  const src = `${source ?? ""} ${statement ?? ""}`.toLowerCase();
   const t = stripAccents(src);
   if (t.includes("portugues") || t.includes("lingua portuguesa")) return "Português";
   if (t.includes("constitucional") || t.includes("constituicao") || t.includes("cf")) return "Constitucional";
@@ -28,9 +28,9 @@ function difficultyFor(text: string){
 }
 
 function toQuestion(bank: BankQuestion): Question {
-  const discipline = inferDiscipline(bank.subject, bank.statement);
-  const subject = bank.subject || "Geral";
-  const topic = bank.subject || "Geral";
+  const discipline = inferDiscipline(bank.source ?? null, bank.statement);
+  const subject = bank.source || "Geral";
+  const topic = bank.source || "Geral";
   const options: Question["options"] = [];
   const choiceMap = bank.choices || { a: "", b: "", c: "", d: "" };
   const entries: Array<["A"|"B"|"C"|"D"|"E", string | undefined]> = [
