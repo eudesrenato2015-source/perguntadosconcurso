@@ -70,12 +70,12 @@ export function getAll(): BankQuestion[]{
 }
 
 export function getById(id: string): BankQuestion | undefined {
-  return QUESTIONS.find(q => q.id === id);
+  return QUESTIONS.find((q: BankQuestion) => q.id === id);
 }
 
 export function getBySubject(subject: string): BankQuestion[]{
   const target = subject.toLowerCase();
-  return QUESTIONS.filter(q => {
+  return QUESTIONS.filter((q: BankQuestion) => {
     const src = `${(q as any).subject ?? ""} ${q.source ?? ""} ${q.statement ?? ""}`.toLowerCase();
     return src.includes(target);
   });
