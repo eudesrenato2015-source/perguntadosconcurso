@@ -13,6 +13,8 @@ function inferDiscipline(source?: string | null, statement?: string | null, subj
     if (raw.includes("direito_constitucional")) return "Constitucional";
     if (raw.includes("informatica")) return "Informática/RLM";
     if (raw.includes("raciocinio_logico")) return "Informática/RLM";
+    if (raw.includes("penal") || raw.includes("processo_penal")) return "Penal/Proc Penal";
+    if (raw.includes("direitos_humanos") || raw.includes("criminologia")) return "DH/Criminologia";
     if (raw.includes("historia")) return "História";
     if (raw.includes("seguranca_organica")) return "Segurança Orgânica";
   }
@@ -34,10 +36,24 @@ function difficultyFor(text: string){
   return 5 as const;
 }
 
+function subjectLabel(subject?: string | null){
+  const raw = (subject ?? "").toLowerCase();
+  if (raw.includes("portugues")) return "Língua Portuguesa";
+  if (raw.includes("direito_constitucional")) return "Direito Constitucional";
+  if (raw.includes("direito_administrativo")) return "Direito Administrativo";
+  if (raw.includes("penal") || raw.includes("processo_penal")) return "Direito Penal / Proc Penal";
+  if (raw.includes("direitos_humanos") || raw.includes("criminologia")) return "Direitos Humanos / Criminologia";
+  if (raw.includes("raciocinio_logico")) return "Raciocínio Lógico";
+  if (raw.includes("informatica")) return "Informática";
+  if (raw.includes("seguranca_organica")) return "Segurança Orgânica";
+  if (raw.includes("historia")) return "História";
+  return subject || "Geral";
+}
+
 function toQuestion(bank: BankQuestion): Question {
   const discipline = inferDiscipline(bank.source ?? null, bank.statement, (bank as any).subject ?? null);
-  const subject = (bank as any).subject || bank.source || "Geral";
-  const topic = (bank as any).subject || bank.source || "Geral";
+  const subject = subjectLabel((bank as any).subject ?? bank.source ?? null);
+  const topic = subject;
   const options: Question["options"] = [];
   const choiceMap = bank.choices || { a: "", b: "", c: "", d: "" };
   const entries: Array<["A"|"B"|"C"|"D"|"E", string | undefined]> = [
