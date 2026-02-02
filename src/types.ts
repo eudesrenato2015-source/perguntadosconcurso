@@ -3,7 +3,6 @@
   | "Constitucional"
   | "Administrativo"
   | "Penal/Proc Penal"
-  | "DH/Criminologia"
   | "Informática/RLM"
   | "Segurança Orgânica"
   | "História";

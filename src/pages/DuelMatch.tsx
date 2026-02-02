@@ -242,6 +242,15 @@ export default function DuelMatch(){
   }, [isOnline, room?.state]);
 
   useEffect(() => {
+    if (!isOnline || !room?.state || room.winner_id) return;
+    const winner = nextWinner(room.state, room, me, clientId);
+    if (!winner) return;
+    updateRoomState(room.code, room.state, room.version, winner)
+      .then((next) => setRoom(next))
+      .catch(() => {});
+  }, [isOnline, room?.state, room?.winner_id, room?.version, me, clientId]);
+
+  useEffect(() => {
     if (!currentQ) return;
     setHiddenKeys([]);
     setExtraTime(0);
@@ -451,6 +460,10 @@ export default function DuelMatch(){
     if (!skipped) awardAttemptXP({ isCorrect, timeSpentMs });
     if (!skipped && sfxEnabled){
       isCorrect ? sfx.correct() : sfx.wrong();
+    }
+    if (!isOnline){
+      const winnerRole = localWinnerFromState(next);
+      if (winnerRole) setLocalWinner(winnerRole);
     }
     await updateState(next);
   };

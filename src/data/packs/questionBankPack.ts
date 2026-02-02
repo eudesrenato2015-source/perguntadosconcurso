@@ -14,7 +14,7 @@ function inferDiscipline(source?: string | null, statement?: string | null, subj
     if (raw.includes("informatica")) return "Informática/RLM";
     if (raw.includes("raciocinio_logico")) return "Informática/RLM";
     if (raw.includes("penal") || raw.includes("processo_penal")) return "Penal/Proc Penal";
-    if (raw.includes("direitos_humanos") || raw.includes("criminologia")) return "DH/Criminologia";
+    if (raw.includes("direitos_humanos") || raw.includes("criminologia")) return "Segurança Orgânica";
     if (raw.includes("historia")) return "História";
     if (raw.includes("seguranca_organica")) return "Segurança Orgânica";
   }

@@ -875,7 +875,7 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-e_book_portugues_pc_rj_fgv-65",
-      "discipline": "DH/Criminologia",
+      "discipline": "Segurança Orgânica",
       "subject": "Direitos Humanos/Criminologia",
       "topic": "Direitos e políticas públicas",
       "difficulty": 3,
@@ -9168,7 +9168,7 @@ export const importedPdfPack: QuestionPack = {
     },
     {
       "id": "pdf-questoes_e_gabaritos_unico_corrigido-trf1_2024_-_tecnico_judiciario_(agente_da_policia_judicial)_-_tipo_3_(amarela)-59",
-      "discipline": "DH/Criminologia",
+      "discipline": "Segurança Orgânica",
       "subject": "Direitos Humanos/Criminologia",
       "topic": "Direitos e políticas públicas",
       "difficulty": 4,

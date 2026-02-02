@@ -848,7 +848,7 @@ const templates: Template[] = [
   // Direitos Humanos / Criminologia
   makeMCQTemplate({
     id: "dh-tratados",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Tratados de DH",
     topic: "tratados de direitos humanos",
     difficulty: 4,
@@ -876,7 +876,7 @@ const templates: Template[] = [
   }),
   makeMCQTemplate({
     id: "dh-convencionalidade",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Controle de Convencionalidade",
     topic: "controle de convencionalidade",
     difficulty: 4,
@@ -904,7 +904,7 @@ const templates: Template[] = [
   }),
   makeMCQTemplate({
     id: "dh-uso-forca",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Uso da Força",
     topic: "uso proporcional da força",
     difficulty: 3,
@@ -932,7 +932,7 @@ const templates: Template[] = [
   }),
   makeMCQTemplate({
     id: "dh-criminologia",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Criminologia",
     topic: "teorias criminológicas",
     difficulty: 3,
@@ -960,7 +960,7 @@ const templates: Template[] = [
   }),
   makeTFTemplate({
     id: "dh-execucao",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Execução Penal",
     topic: "execução penal e direitos do preso",
     difficulty: 3,

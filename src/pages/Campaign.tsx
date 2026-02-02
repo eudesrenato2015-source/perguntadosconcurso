@@ -10,7 +10,6 @@ const districts: { discipline: Discipline; title: string; color: string; blurb: 
   { discipline:"Constitucional", title:"Distrito das Normas", color:"var(--cat-const)", blurb:"CF, direitos e princípios." },
   { discipline:"Administrativo", title:"Distrito da Administração", color:"var(--cat-adm)", blurb:"Atos, poderes e responsabilidades." },
   { discipline:"Penal/Proc Penal", title:"Distrito da Lei", color:"var(--cat-penal)", blurb:"Procedimento, segurança e disciplina." },
-  { discipline:"DH/Criminologia", title:"Distrito da Proteção", color:"var(--cat-dh)", blurb:"DH, criminologia e mediação." },
   { discipline:"Informática/RLM", title:"Distrito Digital", color:"var(--cat-ti)", blurb:"TI, lógica e segurança." },
   { discipline:"Segurança Orgânica", title:"Distrito da Segurança", color:"var(--cat-seg)", blurb:"Segurança orgânica e protocolos." },
   { discipline:"História", title:"Distrito da História", color:"var(--cat-hist)", blurb:"História do Brasil e de Goiás." }

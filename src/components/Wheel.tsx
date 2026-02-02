@@ -9,7 +9,6 @@ const sliceMap: Record<Discipline, Slice> = {
   "Constitucional": { key: "Constitucional", label: "Const.", colorVar: "var(--cat-const)" },
   "Administrativo": { key: "Administrativo", label: "Adm.", colorVar: "var(--cat-adm)" },
   "Penal/Proc Penal": { key: "Penal/Proc Penal", label: "Penal", colorVar: "var(--cat-penal)" },
-  "DH/Criminologia": { key: "DH/Criminologia", label: "DH", colorVar: "var(--cat-dh)" },
   "Informática/RLM": { key: "Informática/RLM", label: "TI/RLM", colorVar: "var(--cat-ti)" },
   "Segurança Orgânica": { key: "Segurança Orgânica", label: "Seg.", colorVar: "var(--cat-seg)" },
   "História": { key: "História", label: "Hist.", colorVar: "var(--cat-hist)" }

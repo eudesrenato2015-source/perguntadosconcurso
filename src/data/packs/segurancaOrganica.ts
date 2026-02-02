@@ -1,7 +1,7 @@
 ﻿import type { QuestionPack } from "../../types";
 import { seedQuestions } from "../seedQuestions";
 
-export const segurancaOrganicaPack: QuestionPack = {
+export const segurancaOrgânicaPack: QuestionPack = {
   id: "pack-seg-organica-base",
   name: "Segurança Orgânica - Base",
   discipline: "Segurança Orgânica",

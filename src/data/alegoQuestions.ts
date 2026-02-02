@@ -568,7 +568,7 @@ const templates: Template[] = [
   },
   {
     id: "go-real",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Realidade de Goiás",
     topics: ["geografia", "história", "cultura", "política"],
     type: "MCQ",
@@ -583,7 +583,7 @@ const templates: Template[] = [
   },
   {
     id: "go-eco",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Realidade de Goiás",
     topics: ["economia", "setores produtivos"],
     type: "MCQ",
@@ -598,7 +598,7 @@ const templates: Template[] = [
   },
   {
     id: "go-soc",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Realidade de Goiás",
     topics: ["cultura", "política", "sociedade"],
     type: "MCQ",
@@ -673,7 +673,7 @@ const templates: Template[] = [
   },
   {
     id: "relacoes",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Relações Humanas e Atendimento",
     topics: ["comunicação", "conflitos"],
     type: "MCQ",
@@ -808,7 +808,7 @@ const templates: Template[] = [
   },
   {
     id: "incidentes",
-    discipline: "DH/Criminologia",
+    discipline: "Segurança Orgânica",
     subject: "Incidentes Críticos e Negociação",
     topics: ["negociação", "comando unificado", "isolamento"],
     type: "MCQ",
