@@ -20,9 +20,9 @@ const BASE_TIME_MS = 90000;
 export default function DuelMatch(){
   const nav = useNavigate();
   const [params] = useSearchParams();
-  const code = params.get("code")?.toUpperCase() ?? "";
-  const mode = params.get("mode") ?? (code ? "online" : "ghost");
-  const ghostProfile = params.get("ghost") ?? "Equilibrado";
+  const code = params.get("code")?.toUpperCase() ? "";
+  const mode = params.get("mode") ? (code ? "online" : "ghost");
+  const ghostProfile = params.get("ghost") ? "Equilibrado";
   const resumeKey = "rota190:lastRoomCode";
   const roomsKey = "rota190:rooms";
   const safeGet = (key: string) => {
@@ -76,14 +76,14 @@ export default function DuelMatch(){
   const me: Role = isOnline ? (room?.host_id === clientId ? "host" : "guest") : "host";
   const opponent: Role = me === "host" ? "guest" : "host";
 
-  const state = isOnline ? room?.state ?? null : localState;
+  const state = isOnline ? room?.state ? null : localState;
   const current = state?.current;
-  const currentQ = current?.questionId ? questionMap.get(current.questionId) ?? null : null;
+  const currentQ = current?.questionId ? questionMap.get(current.questionId) ? null : null;
   const myTurn = state?.turn === me;
   const myQuestion = current?.player === me;
-  const winnerId = isOnline ? room?.winner_id ?? null : null;
-  const stats = state?.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
-  const chat = state?.chat ?? [];
+  const winnerId = isOnline ? room?.winner_id ? null : null;
+  const stats = state?.stats ? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
+  const chat = state?.chat ? [];
   const availableDisciplines = useMemo(() => {
     return matchDisciplines.length ? matchDisciplines : DISCIPLINES;
   }, [matchDisciplines]);
@@ -150,12 +150,12 @@ export default function DuelMatch(){
         const latest = await fetchRoomRecord(code);
         if (latest) setRoom(latest);
         if (!latest){
-          setLoadError("Sala nÃÂ£o encontrada ou expirada.");
+          setLoadError("Sala no encontrada ou expirada.");
         }
         if (latest?.code) safeSet(resumeKey, latest.code);
         if (latest?.code) addRoomToList(latest.code);
       } catch (err: any){
-        console.error("[duel] connect failed", err?.message ?? err);
+        console.error("[duel] connect failed", err?.message ? err);
         setNotice("Falha ao conectar na sala.");
         setLoadError("Falha ao conectar. Verifique sua internet e tente novamente.");
       }
@@ -199,7 +199,7 @@ export default function DuelMatch(){
       safeNotify("Sua vez no duelo", "Gire a roleta para continuar.");
       lastTurnRef.current = "turn";
     } else if (isMyCrown && lastTurnRef.current !== "crown"){
-      safeNotify("Coroa disponÃÂ­vel!", "Escolha a categoria para disputar a coroa.");
+      safeNotify("Coroa disponvel!", "Escolha a categoria para disputar a coroa.");
       lastTurnRef.current = "crown";
     } else if (!isMyTurn && !isMyCrown) {
       lastTurnRef.current = "none";
@@ -222,7 +222,7 @@ export default function DuelMatch(){
     if (room.state) return;
     const init = initialLocalState(matchDisciplines);
     updateRoomState(room.code, init, room.version).then((next) => setRoom(next)).catch((err: any) => {
-      console.error("[duel] init state failed", err?.message ?? err);
+      console.error("[duel] init state failed", err?.message ? err);
     });
   }, [isOnline, room?.code, room?.version, room?.state]);
 
@@ -232,10 +232,10 @@ export default function DuelMatch(){
     if (st.stats && st.bags && st.recent && st.chat) return;
     const patched: DuelState = {
       ...st,
-      stats: st.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
-      bags: st.bags ?? { host: [], guest: [] },
-      recent: st.recent ?? { host: [], guest: [] },
-      chat: st.chat ?? []
+      stats: st.stats ? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } },
+      bags: st.bags ? { host: [], guest: [] },
+      recent: st.recent ? { host: [], guest: [] },
+      chat: st.chat ? []
     };
     updateRoomState(room.code, patched, room.version).then((next) => setRoom(next)).catch(() => {});
   }, [isOnline, room?.state]);
@@ -273,7 +273,7 @@ export default function DuelMatch(){
     if (same) return;
     const nextCrowns = {} as DuelState["crowns"];
     desired.forEach((d) => {
-      nextCrowns[d] = state.crowns[d] ?? { host: false, guest: false };
+      nextCrowns[d] = state.crowns[d] ? { host: false, guest: false };
     });
     const patched: DuelState = { ...state, disciplines: desired, crowns: nextCrowns };
     if (!isOnline){
@@ -294,7 +294,7 @@ export default function DuelMatch(){
       const updated = await updateRoomState(room.code, next, room.version, nextWinner(next, room, me, clientId));
       setRoom(updated);
     } catch (err: any){
-      console.error("[duel] state update failed", err?.message ?? err);
+      console.error("[duel] state update failed", err?.message ? err);
       const latest = await fetchRoomRecord(room.code);
       if (latest) setRoom(latest);
     }
@@ -305,7 +305,7 @@ export default function DuelMatch(){
     const text = chatText.trim();
     if (!text) return;
     const message = { id: uid("msg"), role: me, text: text.slice(0, 220), at: Date.now() };
-    const nextChat = [...(state.chat ?? []), message].slice(-30);
+    const nextChat = [...(state.chat ? []), message].slice(-30);
     setChatText("");
     try {
       await updateState({ ...state, chat: nextChat });
@@ -313,7 +313,7 @@ export default function DuelMatch(){
       try {
         const latest = await fetchRoomRecord(room.code);
         if (latest?.state){
-          const merged = [...(latest.state.chat ?? []), message].slice(-30);
+          const merged = [...(latest.state.chat ? []), message].slice(-30);
           await updateState({ ...latest.state, chat: merged });
         }
       } catch {}
@@ -332,16 +332,16 @@ export default function DuelMatch(){
   };
 
   const startQuestion = async (category: Discipline, crown: boolean, base?: DuelState) => {
-    const s = base ?? ensureState();
+    const s = base ? ensureState();
     const used = new Set(s.used);
     const picked = pickQuestion(activePool, used, category);
     if (!picked){
-      setNotice("Sem questÃÂµes disponÃÂ­veis.");
+      setNotice("Sem questes disponveis.");
       return;
     }
     used.add(picked.id);
-    const recentBase = s.recent ?? { host: [], guest: [] };
-    const nextRecent = [...(recentBase[s.turn] ?? []), picked.discipline].slice(-3);
+    const recentBase = s.recent ? { host: [], guest: [] };
+    const nextRecent = [...(recentBase[s.turn] ? []), picked.discipline].slice(-3);
     const next: DuelState = {
       ...s,
       current: { questionId: picked.id, category: picked.discipline, crown, player: s.turn },
@@ -357,17 +357,17 @@ export default function DuelMatch(){
   const onWheelPick = async (category: Discipline) => {
     setSpinOpen(false);
     if (!state) return;
-    const base = pendingSpinRef.current?.base ?? state;
+    const base = pendingSpinRef.current?.base ? state;
     await startQuestion(category, false, base);
   };
 
   const onWheelCrown = async () => {
     setSpinOpen(false);
     if (!state) return;
-    const base = pendingSpinRef.current?.base ?? state;
+    const base = pendingSpinRef.current?.base ? state;
     const unowned = unownedCategories(base, base.turn);
     if (!unowned.length){
-      await startQuestion(base.recent?.[base.turn]?.slice(-1)[0] ?? matchDisciplines[0] ?? "PortuguÃÂªs", false, base);
+      await startQuestion(base.recent?.[base.turn]?.slice(-1)[0] ?? matchDisciplines[0] ?? "Português", false, base);
       return;
     }
     const next: DuelState = { ...base, pendingCrown: { player: base.turn, reason: "wheel" } };
@@ -413,7 +413,7 @@ export default function DuelMatch(){
   };
 
   const skipCurrentQuestion = async (base?: DuelState) => {
-    const source = base ?? state;
+    const source = base ? state;
     if (!source || !current) return;
     const next: DuelState = {
       ...source,
@@ -424,7 +424,7 @@ export default function DuelMatch(){
   };
 
   const resolveAnswer = async (isCorrect: boolean, selectedKey: string, timeSpentMs: number, skipped = false, baseState?: DuelState) => {
-    const source = baseState ?? state;
+    const source = baseState ? state;
     if (!source || !current || !currentQ) return;
     const next = { ...source };
     const player = current.player;
@@ -447,7 +447,7 @@ export default function DuelMatch(){
     if (isCorrect){
       next.streak = { ...next.streak, [player]: next.streak[player] + 1 };
       if (current.crown){
-        const baseCrowns = next.crowns[current.category] ?? { host: false, guest: false };
+        const baseCrowns = next.crowns[current.category] ? { host: false, guest: false };
         next.crowns = {
           ...next.crowns,
           [current.category]: { ...baseCrowns, [player]: true }
@@ -467,7 +467,7 @@ export default function DuelMatch(){
       next.turn = opponent;
     }
 
-    const baseStats = next.stats ?? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
+    const baseStats = next.stats ? { host: { correct: 0, total: 0 }, guest: { correct: 0, total: 0 } };
     next.stats = {
       ...baseStats,
       [player]: {
@@ -534,20 +534,20 @@ export default function DuelMatch(){
   useEffect(() => {
     if (mode !== "ghost") return;
     if (!state || !current || current.player !== "guest") return;
-    const accuracy = ghostProfile === "Preciso" ? 0.82 : ghostProfile === "RÃÂ¡pido" ? 0.6 : 0.7;
-    const timeMs = ghostProfile === "RÃÂ¡pido" ? 4000 : ghostProfile === "Preciso" ? 8000 : 6000;
+    const accuracy = ghostProfile === "Preciso" ? 0.82 : ghostProfile === "Rpido" ? 0.6 : 0.7;
+    const timeMs = ghostProfile === "Rpido" ? 4000 : ghostProfile === "Preciso" ? 8000 : 6000;
     const delay = timeMs * (0.7 + Math.random() * 0.6);
     const id = window.setTimeout(async () => {
       const isCorrect = Math.random() < accuracy;
-      const key = isCorrect ? currentQ?.correctKey ?? "A" : pickWrongKey(currentQ);
-      await resolveAnswer(isCorrect, key ?? "A", Math.round(delay));
+      const key = isCorrect ? currentQ?.correctKey ? "A" : pickWrongKey(currentQ);
+      await resolveAnswer(isCorrect, key ? "A", Math.round(delay));
     }, delay);
     return () => window.clearTimeout(id);
   }, [mode, current?.questionId, current?.player]);
 
   const skipNullQuestion = async () => {
     if (!state || !current) return;
-    const blockId = currentQ?.id ?? current.questionId;
+    const blockId = currentQ?.id ? current.questionId;
     if (blockId){
       blockQuestion(blockId);
     }
@@ -563,7 +563,7 @@ export default function DuelMatch(){
     if (loadError){
       return (
         <div style={{ padding: 16 }}>
-          <div className="h2">NÃÂ£o foi possÃÂ­vel carregar a sala</div>
+          <div className="h2">No foi possvel carregar a sala</div>
           <div className="sub">{loadError}</div>
           <div className="row" style={{ marginTop: 10, flexWrap:"wrap" }}>
             <button className="btn btnPrimary" onClick={() => nav("/duelo")}>Voltar</button>
@@ -582,7 +582,7 @@ export default function DuelMatch(){
   if (!activePool.length){
     return (
       <div style={{ padding: 16 }}>
-        <div className="h2">Sem questÃÂµes ativas</div>
+        <div className="h2">Sem questes ativas</div>
         <div className="sub">Ative packs no Perfil para iniciar o duelo.</div>
         <button className="btn btnPrimary" onClick={() => nav("/perfil")}>Ir para Perfil</button>
       </div>
@@ -592,10 +592,10 @@ export default function DuelMatch(){
   if (current && !currentQ){
     return (
       <div style={{ padding: 16 }}>
-        <div className="h2">QuestÃÂÃÂ£o invÃÂÃÂ¡lida</div>
-        <div className="sub">Essa questÃÂÃÂ£o veio sem texto ou com erro. VocÃÂÃÂª pode pular e ela serÃÂÃÂ¡ removida do banco local.</div>
+        <div className="h2">Questo invlida</div>
+        <div className="sub">Essa questo veio sem texto ou com erro. Voc pode pular e ela ser removida do banco local.</div>
         <div className="row" style={{ marginTop: 12 }}>
-          <button className="btn btnPrimary" onClick={skipNullQuestion}>Pular questÃÂÃÂ£o nula</button>
+          <button className="btn btnPrimary" onClick={skipNullQuestion}>Pular questo nula</button>
           <button className="btn" onClick={() => nav("/duelo")}>Voltar</button>
         </div>
       </div>
@@ -605,15 +605,15 @@ export default function DuelMatch(){
   if (isOnline && room && room.status !== "started"){
     return (
       <div style={{ padding: 16 }}>
-        <div className="h2">Aguardando inÃÂ­cio</div>
-        <div className="sub">A sala ainda nÃÂ£o iniciou a partida. Aguarde o host iniciar.</div>
+        <div className="h2">Aguardando incio</div>
+        <div className="sub">A sala ainda no iniciou a partida. Aguarde o host iniciar.</div>
         <div className="row" style={{ marginTop: 10, flexWrap:"wrap" }}>
           {room.host_id === clientId && (
             <button className="btn btnPrimary" onClick={async () => {
               try {
                 await startRoomRecord(room.code);
               } catch (err: any){
-                console.error("[duel] start room failed", err?.message ?? err);
+                console.error("[duel] start room failed", err?.message ? err);
                 setNotice("Falha ao iniciar a sala.");
               }
             }}>Iniciar agora</button>
@@ -632,7 +632,7 @@ export default function DuelMatch(){
     return (
       <div style={{ padding: 16 }}>
         <div className="h2">Duelo encerrado</div>
-        <div className="sub">Vencedor: {winnerId === clientId ? "VocÃÂª" : "Oponente"}</div>
+        <div className="sub">Vencedor: {winnerId === clientId ? "Voc" : "Oponente"}</div>
         <button className="btn btnPrimary" onClick={() => nav("/duelo")}>Voltar</button>
       </div>
     );
@@ -645,7 +645,7 @@ export default function DuelMatch(){
     return (
       <div style={{ padding: 16 }}>
         <div className="h2">Duelo encerrado</div>
-        <div className="sub">Vencedor: {localWinner === "host" ? "VocÃÂª" : "Fantasma"}</div>
+        <div className="sub">Vencedor: {localWinner === "host" ? "Voc" : "Fantasma"}</div>
         <button className="btn btnPrimary" onClick={() => nav("/duelo")}>Voltar</button>
       </div>
     );
@@ -656,12 +656,12 @@ export default function DuelMatch(){
       <div className="row" style={{ justifyContent:"space-between", alignItems:"center" }}>
         <div>
           <div className="h2">Duelo</div>
-          <div className="sub">Quem errar passa a vez. 3 acertos = coroa. Coroa sÃÂ³ se ganha acertando.</div>
+          <div className="sub">Quem errar passa a vez. 3 acertos = coroa. Coroa s se ganha acertando.</div>
         </div>
         <div className="row">
           {"Notification" in window && (
             <button className="btn" onClick={requestNotification} disabled={notifyEnabled}>
-              {notifyEnabled ? "NotificaÃÂ§ÃÂµes: ligadas" : "Ativar notificaÃÂ§ÃÂµes"}
+              {notifyEnabled ? "Notificaes: ligadas" : "Ativar notificaes"}
             </button>
           )}
           <button className="btn" onClick={toggleSfx}>{sfxEnabled ? "Som: ligado" : "Som: desligado"}</button>
@@ -673,7 +673,7 @@ export default function DuelMatch(){
 
       {crownAnim && (
         <div className="crownBurst">
-          <div className="crownBadge">Ã°ÂÂÂ</div>
+          <div className="crownBadge"></div>
           <div className="crownText">Coroa conquistada!</div>
         </div>
       )}
@@ -697,7 +697,7 @@ export default function DuelMatch(){
                   <div key={d} className="pill" style={{ display:"flex", justifyContent:"space-between" }}>
                     <span>{d}</span>
                     <span style={{ color: state.crowns[d]?.[me] ? "var(--ok-500)" : "var(--ink-500)" }}>
-                      {state.crowns[d]?.[me] ? "Ã¢ÂÂ" : "Ã¢ÂÂ"}
+                      {state.crowns[d]?.[me] ? "" : ""}
                     </span>
                   </div>
                 ))}
@@ -710,7 +710,7 @@ export default function DuelMatch(){
                   <div key={d} className="pill" style={{ display:"flex", justifyContent:"space-between" }}>
                     <span>{d}</span>
                     <span style={{ color: state.crowns[d]?.[opponent] ? "var(--warn-500)" : "var(--ink-500)" }}>
-                      {state.crowns[d]?.[opponent] ? "Ã¢ÂÂ" : "Ã¢ÂÂ"}
+                      {state.crowns[d]?.[opponent] ? "" : ""}
                     </span>
                   </div>
                 ))}
@@ -721,12 +721,12 @@ export default function DuelMatch(){
 
         <div className="kpi" style={{ gridColumn:"span 12" }}>
           <div style={{ fontWeight: 900 }}>Poderes</div>
-          <div className="sub">Bombas removem 2 alternativas, +tempo adiciona 15s, pular descarta a questÃÂ£o, dupla chance dÃÂ¡ 2 tentativas.</div>
+          <div className="sub">Bombas removem 2 alternativas, +tempo adiciona 15s, pular descarta a questo, dupla chance d 2 tentativas.</div>
           <div className="row" style={{ marginTop: 8, flexWrap:"wrap" }}>
-            <PowerBtn icon="Ã°ÂÂÂ£" label="Bomba" count={state.powers[me].bomb} onClick={() => applyPower("bomb")} disabled={!myQuestion} />
-            <PowerBtn icon="Ã¢ÂÂ±" label="+Tempo" count={state.powers[me].extraTime} onClick={() => applyPower("extraTime")} disabled={!myQuestion} />
-            <PowerBtn icon="Ã¢ÂÂ­" label="Pular" count={state.powers[me].skip} onClick={() => applyPower("skip")} disabled={!myQuestion} />
-            <PowerBtn icon="Ã°ÂÂÂ¯" label="Dupla" count={state.powers[me].double} onClick={() => applyPower("double")} disabled={!myQuestion} />
+            <PowerBtn icon="" label="Bomba" count={state.powers[me].bomb} onClick={() => applyPower("bomb")} disabled={!myQuestion} />
+            <PowerBtn icon="" label="+Tempo" count={state.powers[me].extraTime} onClick={() => applyPower("extraTime")} disabled={!myQuestion} />
+            <PowerBtn icon="" label="Pular" count={state.powers[me].skip} onClick={() => applyPower("skip")} disabled={!myQuestion} />
+            <PowerBtn icon="" label="Dupla" count={state.powers[me].double} onClick={() => applyPower("double")} disabled={!myQuestion} />
           </div>
         </div>
       </div>
@@ -738,14 +738,14 @@ export default function DuelMatch(){
         <div style={{ marginTop: 12 }}>
           <div className="card" style={{ padding: 14 }}>
             <div style={{ fontWeight: 900 }}>Escolha a coroa</div>
-            <div className="sub">VocÃÂª deve acertar a questÃÂ£o da categoria escolhida para conquistar a coroa.</div>
+            <div className="sub">Voc deve acertar a questo da categoria escolhida para conquistar a coroa.</div>
             <div style={{ marginTop: 10, display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))", gap: 8 }}>
               {matchDisciplines.map(d => {
                 const owned = state.crowns[d]?.[me];
                 const hasAvailable = hasAvailableQuestion(activePool, state.used, d);
                 return (
                   <button key={d} className="btn" onClick={() => selectCrownCategory(d)} disabled={owned || !hasAvailable}>
-                    {d} {owned ? "Ã¢ÂÂ" : ""}
+                    {d} {owned ? "" : ""}
                   </button>
                 );
               })}
@@ -768,7 +768,7 @@ export default function DuelMatch(){
         <div style={{ marginTop: 12 }} className="card">
           <div style={{ padding: 14 }}>
             <div style={{ fontWeight: 900 }}>Aguardando oponente...</div>
-            <div className="sub">O outro jogador estÃÂ¡ girando a roleta.</div>
+            <div className="sub">O outro jogador est girando a roleta.</div>
           </div>
         </div>
       )}
@@ -777,7 +777,7 @@ export default function DuelMatch(){
         <div style={{ marginTop: 12 }} className="card">
           <div style={{ padding: 14 }}>
             <div style={{ fontWeight: 900 }}>Oponente respondendo</div>
-            <div className="sub">Categoria: {current.category} {current.crown ? "Ã¢ÂÂ¢ Coroa" : ""}</div>
+            <div className="sub">Categoria: {current.category} {current.crown ? " Coroa" : ""}</div>
           </div>
         </div>
       )}
@@ -798,7 +798,7 @@ export default function DuelMatch(){
           onSkipNull={skipNullQuestion}
           headerSlot={current.crown ? (
             <div className="pill" style={{ marginBottom: 10, color:"var(--warn-500)" }}>
-              QuestÃÂ£o de coroa Ã¢ÂÂ¢ {current.category}
+              Questo de coroa  {current.category}
             </div>
           ) : undefined}
         />
@@ -807,11 +807,11 @@ export default function DuelMatch(){
       {reveal && (
         <div className="card" style={{ marginTop: 10, padding: 12 }}>
           <div style={{ fontWeight: 900, color: reveal.correct ? "var(--ok-500)" : "var(--warn-500)" }}>
-            {reveal.correct ? "VocÃÂÃÂª acertou!" : "VocÃÂÃÂª errou!"}
+            {reveal.correct ? "Voc acertou!" : "Voc errou!"}
           </div>
           {!reveal.correct && (
             <div style={{ marginTop: 6 }}>
-              Correta: <b>{reveal.q.correctKey}</b> ÃÂ¢Ã¢ÂÂ¬Ã¢ÂÂ {reveal.q.options.find(o => o.key === reveal.q.correctKey)?.text ?? ""}
+              Correta: <b>{reveal.q.correctKey}</b>  {reveal.q.options.find(o => o.key === reveal.q.correctKey)?.text ? ""}
             </div>
           )}
         </div>
@@ -826,7 +826,7 @@ export default function DuelMatch(){
               {chat.map(msg => (
                 <div key={msg.id} className="pill" style={{ display:"flex", gap: 8, justifyContent:"space-between" }}>
                   <span>
-                    <b>{msg.role === me ? "VocÃÂª" : "Oponente"}:</b> {msg.text}
+                    <b>{msg.role === me ? "Voc" : "Oponente"}:</b> {msg.text}
                   </span>
                   <span style={{ color:"var(--ink-500)" }}>
                     {new Date(msg.at).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}
@@ -868,9 +868,9 @@ export default function DuelMatch(){
         }}>
           <div className="card" style={{ padding: 16, width: "min(520px, 92vw)" }}>
             <div className="h3">Roleta do Duelo</div>
-            <div className="sub">Gire para sortear a prÃÂ³xima disciplina.</div>
+            <div className="sub">Gire para sortear a prxima disciplina.</div>
             <div className="pill" style={{ marginTop: 8, color:"var(--accent-500)" }}>
-              HÃÂÃÂ¡ uma fatia de coroa direta na roleta.
+              H uma fatia de coroa direta na roleta.
             </div>
             <div style={{ marginTop: 12 }}>
               <Wheel
@@ -956,9 +956,9 @@ function hasAvailableQuestion(pool: Question[], usedIds: string[], category: Dis
 function prepareSpin(state: DuelState, player: Role, pool: Question[], disciplines: Discipline[]){
   const options = disciplines.filter(d => pool.some(q => q.discipline === d));
   const baseOptions = options.length ? options : disciplines;
-  const pick = baseOptions[randomInt(baseOptions.length)] ?? baseOptions[0] ?? DISCIPLINES[0];
-  const recentBase = state.recent ?? { host: [], guest: [] };
-  const nextRecent = [...(recentBase[player] ?? []), pick].slice(-3);
+  const pick = baseOptions[randomInt(baseOptions.length)] ? baseOptions[0] ? DISCIPLINES[0];
+  const recentBase = state.recent ? { host: [], guest: [] };
+  const nextRecent = [...(recentBase[player] ? []), pick].slice(-3);
   const base: DuelState = {
     ...state,
     recent: { ...recentBase, [player]: nextRecent }

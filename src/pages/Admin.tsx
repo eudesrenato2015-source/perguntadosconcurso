@@ -15,6 +15,10 @@ export default function Admin(){
   const [query, setQuery] = useState("");
   const [discipline, setDiscipline] = useState<Discipline | "Todas">("Todas");
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [bulkDiscipline, setBulkDiscipline] = useState<Discipline | "">("");
+  const [bulkSubject, setBulkSubject] = useState("");
+  const [bulkTopic, setBulkTopic] = useState("");
   const [saving, setSaving] = useState(false);
   const overridesVersion = useQuestionOverridesVersion();
 
@@ -42,6 +46,77 @@ export default function Admin(){
     if (!selectedId) return null;
     return all.find(q => q.id === selectedId) ?? null;
   }, [all, selectedId]);
+
+  const toggleSelect = (id: string) => {
+    setSelectedIds((prev) => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+  };
+
+  const clearSelection = () => setSelectedIds([]);
+
+  const applyBulkUpdate = async () => {
+    if (selectedIds.length === 0) return;
+    setSaving(true);
+    setNotice(null);
+    try {
+      for (const id of selectedIds){
+        const q = all.find(item => item.id === id);
+        if (!q) continue;
+        const patch: QuestionPatch = {
+          id,
+          discipline: bulkDiscipline ? bulkDiscipline : q.discipline,
+          subject: bulkSubject.trim() ? bulkSubject.trim() : q.subject,
+          topic: bulkTopic.trim() ? bulkTopic.trim() : q.topic
+        };
+        await upsertQuestionOverride(patch);
+      }
+      setNotice(`Atualizadas ${selectedIds.length} questões.`);
+    } catch (err){
+      console.error(err);
+      setNotice("Falha ao aplicar alterações em lote.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const bulkDelete = async () => {
+    if (selectedIds.length === 0) return;
+    setSaving(true);
+    setNotice(null);
+    try {
+      for (const id of selectedIds){
+        if (customIds.has(id)){
+          await deleteQuestionCustom(id);
+        } else {
+          await upsertQuestionOverride({ id, deleted: true });
+        }
+      }
+      setNotice(`Excluídas ${selectedIds.length} questões.`);
+      clearSelection();
+    } catch (err){
+      console.error(err);
+      setNotice("Falha ao excluir em lote.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const bulkRestore = async () => {
+    if (selectedIds.length === 0) return;
+    setSaving(true);
+    setNotice(null);
+    try {
+      for (const id of selectedIds){
+        if (customIds.has(id)) continue;
+        await deleteQuestionOverride(id);
+      }
+      setNotice(`Revertidas ${selectedIds.length} questões (quando havia override).`);
+    } catch (err){
+      console.error(err);
+      setNotice("Falha ao reverter em lote.");
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const [edit, setEdit] = useState<null | {
     id: string;
@@ -159,6 +234,31 @@ export default function Admin(){
           </div>
 
           <div className="card" style={{ padding: 12, marginTop: 12 }}>
+            <div style={{ fontWeight: 900 }}>Edição em lote</div>
+            <div className="sub">Selecionadas: {selectedIds.length}</div>
+            <div className="sub" style={{ marginTop: 8 }}>Disciplina</div>
+            <select className="input" value={bulkDiscipline} onChange={(e)=>setBulkDiscipline(e.target.value as any)}>
+              <option value="">(manter)</option>
+              {DISCIPLINES.map(d => <option key={d} value={d}>{d}</option>)}
+            </select>
+            <div className="sub" style={{ marginTop: 8 }}>Assunto</div>
+            <input className="input" value={bulkSubject} onChange={(e)=>setBulkSubject(e.target.value)} placeholder="(manter)" />
+            <div className="sub" style={{ marginTop: 8 }}>Tópico</div>
+            <input className="input" value={bulkTopic} onChange={(e)=>setBulkTopic(e.target.value)} placeholder="(manter)" />
+            <div className="row" style={{ marginTop: 10, gap: 8, flexWrap: "wrap" }}>
+              <button className="btn btnPrimary" onClick={applyBulkUpdate} disabled={saving || selectedIds.length === 0}>
+                Aplicar em lote
+              </button>
+              <button className="btn" onClick={bulkRestore} disabled={saving || selectedIds.length === 0}>
+                Reverter alterações
+              </button>
+              <button className="btn" onClick={bulkDelete} disabled={saving || selectedIds.length === 0}>
+                Excluir selecionadas
+              </button>
+            </div>
+          </div>
+
+          <div className="card" style={{ padding: 12, marginTop: 12 }}>
             <div style={{ fontWeight: 900 }}>Importar JSON</div>
             <div className="sub">Aceita array de quest?es no formato do app.</div>
             <input
@@ -217,15 +317,22 @@ export default function Admin(){
           </div>
           <div className="card" style={{ padding: 12, marginTop: 12, maxHeight: 520, overflowY: "auto" }}>
             {filtered.map(q => (
-              <button
-                key={q.id}
-                className="btn"
-                style={{ width: "100%", textAlign: "left", marginBottom: 8, background: q.id === selectedId ? "rgba(24,210,163,.18)" : "rgba(255,255,255,.06)" }}
-                onClick={() => setSelectedId(q.id)}
-              >
-                <div style={{ fontWeight: 800 }}>{q.discipline}</div>
-                <div className="sub" style={{ marginTop: 4 }}>{q.statement.slice(0, 120)}</div>
-              </button>
+              <div key={q.id} className="row" style={{ alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
+                <input
+                  type="checkbox"
+                  checked={selectedIds.includes(q.id)}
+                  onChange={() => toggleSelect(q.id)}
+                  aria-label="Selecionar questão"
+                />
+                <button
+                  className="btn"
+                  style={{ flex: 1, textAlign: "left", background: q.id === selectedId ? "rgba(24,210,163,.18)" : "rgba(255,255,255,.06)" }}
+                  onClick={() => setSelectedId(q.id)}
+                >
+                  <div style={{ fontWeight: 800 }}>{q.discipline}</div>
+                  <div className="sub" style={{ marginTop: 4 }}>{q.statement.slice(0, 120)}</div>
+                </button>
+              </div>
             ))}
           </div>
         </div>
