@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useEffect } from "react";
 import { NavLink, Route, Routes, Link } from "react-router-dom";
 import Arena from "./pages/Arena";
 import Duel from "./pages/Duel";
@@ -13,13 +13,22 @@ import Dashboard from "./pages/Dashboard";
 import ImportPage from "./pages/Import";
 import Login from "./pages/Login";
 import Ranking from "./pages/Ranking";
+import Admin from "./pages/Admin";
 import { useTheme } from "./services/theme";
 import UpdateToast from "./components/UpdateToast";
 import AppIcon from "./components/AppIcon";
 import { usePwaInstall } from "./services/pwaInstall";
+import { loadQuestionOverrides, subscribeQuestionOverrides, loadQuestionCustoms, subscribeQuestionCustoms } from "./services/questionOverrides";
 
 export default function App(){
   const { theme, toggle } = useTheme();
+  useEffect(() => {
+    loadQuestionOverrides();
+    loadQuestionCustoms();
+    const unsubOverrides = subscribeQuestionOverrides();
+    const unsubCustoms = subscribeQuestionCustoms();
+    return () => { unsubOverrides(); unsubCustoms(); };
+  }, []);
   const themeLabel = theme === "light" ? "Claro" : theme === "dark" ? "Escuro" : theme;
   const { canInstall, promptInstall } = usePwaInstall();
 
@@ -29,8 +38,8 @@ export default function App(){
       <div className="container">
         <div className="row" style={{ justifyContent:"space-between", marginBottom: 12, alignItems:"flex-start", flexWrap:"wrap" }}>
           <div>
-            <div className="h1">Rota 190</div>
-            <div className="sub">PWA offline-first. Duelo online opcional via Supabase.</div>
+            <div className="h1">Jogo do Concurseiro</div>
+            <div className="sub">by: Eldes Renato Cardoso da Silva Alvarenga</div>
           </div>
           <div className="row" style={{ gap: 8, flexWrap:"wrap" }}>
             {canInstall && (
@@ -38,6 +47,7 @@ export default function App(){
             )}
             <Link className="btn" to="/login">Login</Link>
             <Link className="btn" to="/ranking">Ranking</Link>
+            <Link className="btn" to="/admin">Admin</Link>
             <Link className="btn" to="/perfil">Perfil</Link>
             <Link className="btn" to="/importar">Importar</Link>
             <button className="btn" onClick={toggle} aria-label="Alternar tema">
@@ -61,6 +71,7 @@ export default function App(){
             <Route path="/resultado" element={<Result />} />
             <Route path="/login" element={<Login />} />
             <Route path="/ranking" element={<Ranking />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<div style={{ padding: 16 }}>Página não encontrada.</div>} />
           </Routes>
         </div>

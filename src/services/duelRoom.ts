@@ -16,6 +16,7 @@ export type DuelState = {
   turn: "host" | "guest";
   streak: { host: number; guest: number };
   crowns: Record<Discipline, { host: boolean; guest: boolean }>;
+  disciplines?: Discipline[];
   current?: { questionId: string; category: Discipline; crown: boolean; player: "host"|"guest" };
   used: string[];
   pendingCrown?: { player: "host"|"guest"; reason: "streak"|"wheel" };
@@ -70,6 +71,7 @@ function initialState(): DuelState{
   const crowns = {} as Record<Discipline, { host: boolean; guest: boolean }>;
   DISCIPLINES.forEach(d => { crowns[d] = { host: false, guest: false }; });
   return {
+    disciplines: DISCIPLINES,
     turn: "host",
     streak: { host: 0, guest: 0 },
     crowns,

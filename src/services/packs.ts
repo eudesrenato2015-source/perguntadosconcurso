@@ -1,5 +1,6 @@
 import type { Question, QuestionPack } from "../types";
 import { safeGet, safeSet, safeRemove } from "../lib/storage";
+import { applyQuestionOverride, getCustomQuestions } from "./questionOverrides";
 
 function normalizeText(text: string){
   return text
@@ -19,7 +20,7 @@ function questionKey(q: Question){
 const BLOCK_KEY = "rota190:blockedQuestions";
 
 function isValidQuestion(q: Question){
-  if (!q.statement || !q.options || q.options.length < 4) return false;
+  if (!q.statement || !q.options || q.options.length < 2) return false;
   if (q.statement.includes("???")) return false;
   if (q.options.some(o => !o.text || o.text.includes("???"))) return false;
   const opts = q.options.map(o => normalizeText(o.text));
@@ -113,11 +114,21 @@ export function getActiveQuestions(): Question[]{
   const blocked = getBlockedSet();
   getActivePacks().forEach(pack => {
     pack.questions.forEach(q => {
-      if (!isValidQuestion(q)) return;
-      if (blocked.has(q.id)) return;
-      const key = questionKey(q);
-      if (!map.has(key)) map.set(key, q);
+      const merged = applyQuestionOverride(q);
+      if (!merged) return;
+      if (!isValidQuestion(merged)) return;
+      if (blocked.has(merged.id)) return;
+      const key = questionKey(merged);
+      if (!map.has(key)) map.set(key, merged);
     });
+  });
+  getCustomQuestions().forEach(q => {
+    const merged = applyQuestionOverride(q);
+    if (!merged) return;
+    if (!isValidQuestion(merged)) return;
+    if (blocked.has(merged.id)) return;
+    const key = questionKey(merged);
+    if (!map.has(key)) map.set(key, merged);
   });
   return Array.from(map.values());
 }
@@ -127,11 +138,21 @@ export function getAllQuestions(): Question[]{
   const blocked = getBlockedSet();
   getAllPacks().forEach(pack => {
     pack.questions.forEach(q => {
-      if (!isValidQuestion(q)) return;
-      if (blocked.has(q.id)) return;
-      const key = questionKey(q);
-      if (!map.has(key)) map.set(key, q);
+      const merged = applyQuestionOverride(q);
+      if (!merged) return;
+      if (!isValidQuestion(merged)) return;
+      if (blocked.has(merged.id)) return;
+      const key = questionKey(merged);
+      if (!map.has(key)) map.set(key, merged);
     });
+  });
+  getCustomQuestions().forEach(q => {
+    const merged = applyQuestionOverride(q);
+    if (!merged) return;
+    if (!isValidQuestion(merged)) return;
+    if (blocked.has(merged.id)) return;
+    const key = questionKey(merged);
+    if (!map.has(key)) map.set(key, merged);
   });
   return Array.from(map.values());
 }

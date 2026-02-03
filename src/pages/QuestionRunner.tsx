@@ -11,6 +11,7 @@ import { awardAttemptXP } from "../services/progress";
 import { closeDuelChannel, sendDuelEvent, subscribeDuelEvents } from "../services/online";
 import Wheel from "../components/Wheel";
 import { sfx, useSfxEnabled } from "../services/sfx";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 export default function QuestionRunner(){
   const nav = useNavigate();
@@ -22,14 +23,15 @@ export default function QuestionRunner(){
   const [spinVisible, setSpinVisible] = useState(false);
   const [spinTarget, setSpinTarget] = useState<Discipline | null>(null);
   const { enabled: sfxEnabled, toggle: toggleSfx } = useSfxEnabled();
-  const activePool = useMemo(() => getActiveQuestions(), []);
+  const overridesVersion = useQuestionOverridesVersion();
+  const activePool = useMemo(() => getActiveQuestions(), [overridesVersion]);
   const activeDisciplines = useMemo(() => {
     const set = new Set(activePool.map(item => item.discipline));
     return Array.from(set.values());
   }, [activePool]);
 
   const qId = session?.queue?.[session.index ?? 0];
-  const allQuestions = useMemo(() => getAllQuestions(), []);
+  const allQuestions = useMemo(() => getAllQuestions(), [overridesVersion]);
   const questionMap = useMemo(() => new Map(allQuestions.map(item => [item.id, item])), [allQuestions]);
 
   useEffect(() => {

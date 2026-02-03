@@ -76,10 +76,10 @@ export default function Wheel({
   const spin = () => {
     if (disabled || spinning || !slices.length) return;
     setSpinning(true);
-    const extra = 360 * (3 + Math.floor(Math.random()*3));
+    const extra = 360 * (3 + randomInt(3));
     const forcedIndex = forcePick ? slices.findIndex(s => s.key === forcePick) : -1;
     const crownIndex = forceCrown ? slices.findIndex(s => s.key === "__CROWN__") : -1;
-    const target = crownIndex >= 0 ? crownIndex : forcedIndex >= 0 ? forcedIndex : Math.floor(Math.random() * slices.length);
+    const target = crownIndex >= 0 ? crownIndex : forcedIndex >= 0 ? forcedIndex : randomInt(slices.length);
     const step = 360 / slices.length;
     const desired = 360 - (target*step + step/2);
     const final = rot + extra + desired;
@@ -167,4 +167,14 @@ export default function Wheel({
       )}
     </div>
   );
+}
+
+function randomInt(max: number){
+  if (max <= 0) return 0;
+  if (typeof crypto !== "undefined" && crypto.getRandomValues){
+    const arr = new Uint32Array(1);
+    crypto.getRandomValues(arr);
+    return Number(arr[0] % max);
+  }
+  return Math.floor(Math.random() * max);
 }

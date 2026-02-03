@@ -5,6 +5,7 @@ import { newSession } from "../services/session";
 import { useNavigate } from "react-router-dom";
 import { DISCIPLINES } from "../data/disciplines";
 import { getActiveQuestions } from "../services/packs";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 const disciplines: (Discipline|"Todas")[] = ["Todas", ...DISCIPLINES];
 const types: ("Todas"|"MCQ"|"TF")[] = ["Todas","MCQ","TF"];
@@ -15,20 +16,14 @@ export default function Library(){
   const nav = useNavigate();
   const [q, setQ] = useState("");
   const [discipline, setDiscipline] = useState<Discipline|"Todas">("Todas");
-  const [topic, setTopic] = useState<string>("Todos");
   const [type, setType] = useState<"Todas"|"MCQ"|"TF">("Todas");
   const [difficulty, setDifficulty] = useState<"Todas"|1|2|3|4|5>("Todas");
   const [style, setStyle] = useState<"Todas"|ExamStyle>("Todas");
+  const overridesVersion = useQuestionOverridesVersion();
 
-  const pool = useMemo(() => getActiveQuestions(), []);
+  const pool = useMemo(() => getActiveQuestions(), [overridesVersion]);
 
-  const topicOptions = useMemo(() => {
-    const base = discipline === "Todas" ? pool : pool.filter(p => p.discipline === discipline);
-    const set = new Set(base.map(q => q.topic));
-    return ["Todos", ...Array.from(set).sort()];
-  }, [pool, discipline]);
-
-  const results = useMemo(() => filterQuestions({ q, discipline, topic, type, difficulty, style, pool }), [q, discipline, topic, type, difficulty, style, pool]);
+  const results = useMemo(() => filterQuestions({ q, discipline, type, difficulty, style, pool }), [q, discipline, type, difficulty, style, pool]);
 
   const startOne = (item: Question) => {
     newSession("library", [item.id], { discipline: item.discipline, label: "Biblioteca • 1 questão" });
@@ -50,10 +45,9 @@ export default function Library(){
 
       <div className="grid" style={{ gridTemplateColumns:"repeat(12, 1fr)" }}>
         <div style={{ gridColumn:"span 12" }}>
-          <input className="input" value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar no enunciado/assunto/tópico" />
+          <input className="input" value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar no enunciado/assunto" />
         </div>
-        <Select label="Disciplina" value={discipline} onChange={(v) => { setDiscipline(v); setTopic("Todos"); }} options={disciplines} span={3} />
-        <Select label="Tópico" value={topic} onChange={setTopic} options={topicOptions} span={3} />
+        <Select label="Disciplina" value={discipline} onChange={(v) => { setDiscipline(v); }} options={disciplines} span={3} />
         <Select label="Tipo" value={type} onChange={setType} options={types} span={2} />
         <Select label="Dificuldade" value={difficulty} onChange={setDifficulty} options={diffs} span={2} />
         <Select label="Estilo" value={style} onChange={setStyle} options={styles} span={2} />

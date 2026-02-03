@@ -70,7 +70,6 @@ export function pickByDiscipline(discipline: Discipline, count = 5, opts?: { shu
 export function filterQuestions(opts: {
   q?: string;
   discipline?: Discipline | "Todas";
-  topic?: string | "Todos" | "Todas";
   type?: "MCQ"|"TF"|"Todas";
   difficulty?: number | "Todas";
   style?: "Todas" | ExamStyle;
@@ -80,7 +79,6 @@ export function filterQuestions(opts: {
   const base = opts.pool ?? getActiveQuestions();
   return base.filter(item => {
     if (opts.discipline && opts.discipline !== "Todas" && item.discipline !== opts.discipline) return false;
-    if (opts.topic && opts.topic !== "Todos" && opts.topic !== "Todas" && item.topic !== opts.topic) return false;
     if (opts.type && opts.type !== "Todas" && item.type !== opts.type) return false;
     if (opts.difficulty && opts.difficulty !== "Todas" && item.difficulty !== opts.difficulty) return false;
     if (opts.style && opts.style !== "Todas" && item.style !== opts.style) return false;

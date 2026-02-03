@@ -1,6 +1,6 @@
-﻿# Rota 190 PWA
+﻿# Jogo do Concurseiro
 
-Aplicativo PWA offline-first com modo de duelo online opcional via Supabase Realtime.
+by: Eldes Renato Cardoso da Silva Alvarenga
 
 ## Rodar local
 ```bash
@@ -76,8 +76,37 @@ create table if not exists public.daily_xp (
 );
 ```
 
+### Overrides de questões (Admin)
+Tabela usada para editar questões globalmente (propaga para todos).
+```sql
+create table if not exists public.question_overrides (
+  id text primary key,
+  patch jsonb not null,
+  updated_by uuid references auth.users (id),
+  updated_at timestamptz not null default now()
+);
+
+create trigger question_overrides_updated_at
+before update on public.question_overrides
+for each row execute function public.touch_updated_at();
+```
+
 ### Habilitar Realtime
-No Supabase, em **Database > Replication** (ou Realtime), adicione `duel_rooms` na publication (ex.: `supabase_realtime`).
+No Supabase, em **Database > Replication** (ou Realtime), adicione `duel_rooms`, `question_overrides` e `question_customs` na publication (ex.: `supabase_realtime`).
+
+### Quest?es customizadas (Admin)
+```sql
+create table if not exists public.question_customs (
+  id text primary key,
+  data jsonb not null,
+  created_by uuid references auth.users (id),
+  updated_at timestamptz not null default now()
+);
+
+create trigger question_customs_updated_at
+before update on public.question_customs
+for each row execute function public.touch_updated_at();
+```
 
 ### RLS (politicas minimas)
 Se RLS estiver ativo, use estas politicas basicas:
@@ -85,6 +114,8 @@ Se RLS estiver ativo, use estas politicas basicas:
 alter table public.duel_rooms enable row level security;
 alter table public.profiles enable row level security;
 alter table public.daily_xp enable row level security;
+alter table public.question_overrides enable row level security;
+alter table public.question_customs enable row level security;
 
 create policy "duel_select"
   on public.duel_rooms for select
@@ -121,6 +152,22 @@ create policy "daily_xp_upsert"
 create policy "daily_xp_update"
   on public.daily_xp for update
   using (auth.uid() = user_id);
+
+create policy "question_overrides_select"
+  on public.question_overrides for select
+  using (true);
+
+create policy "question_overrides_insert"
+  on public.question_overrides for insert
+  with check (auth.email() = 'eudesrenato2015@gmail.com');
+
+create policy "question_overrides_update"
+  on public.question_overrides for update
+  using (auth.email() = 'eudesrenato2015@gmail.com');
+
+create policy "question_overrides_delete"
+  on public.question_overrides for delete
+  using (auth.email() = 'eudesrenato2015@gmail.com');
 ```
 
 ## Vercel (SPA rewrite)

@@ -3,6 +3,7 @@ import { dueSR, listAttempts, listSR } from "../services/db";
 import { newSession } from "../services/session";
 import { useNavigate } from "react-router-dom";
 import { getActiveQuestions } from "../services/packs";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 export default function Review(){
   const nav = useNavigate();
@@ -10,6 +11,7 @@ export default function Review(){
   const [due, setDue] = useState<string[]>([]);
   const [wrong, setWrong] = useState<string[]>([]);
   const [calendar, setCalendar] = useState<{ day: string; count: number }[]>([]);
+  const overridesVersion = useQuestionOverridesVersion();
 
   useEffect(() => {
     (async () => {
@@ -51,7 +53,7 @@ export default function Review(){
   const preview = useMemo(() => {
     const pool = getActiveQuestions();
     return ids.slice(0, 6).map(id => pool.find(q => q.id === id)).filter(Boolean) as any[];
-  }, [ids]);
+  }, [ids, overridesVersion]);
 
   return (
     <div style={{ padding: 16 }}>

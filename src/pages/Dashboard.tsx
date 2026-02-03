@@ -6,12 +6,14 @@ import { newSession } from "../services/session";
 import { getActiveQuestions } from "../services/packs";
 import { getPlayerState } from "../services/progress";
 import StatIcon from "../components/StatIcon";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 export default function Dashboard(){
   const nav = useNavigate();
+  const overridesVersion = useQuestionOverridesVersion();
   const [attempts, setAttempts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const pool = useMemo(() => getActiveQuestions(), []);
+  const pool = useMemo(() => getActiveQuestions(), [overridesVersion]);
   const player = getPlayerState();
 
   useEffect(() => {

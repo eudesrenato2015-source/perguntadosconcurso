@@ -6,12 +6,14 @@ import { newSession } from "../services/session";
 import type { Discipline } from "../types";
 import { useNavigate } from "react-router-dom";
 import { getActiveQuestions } from "../services/packs";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 export default function Arena(){
   const nav = useNavigate();
+  const overridesVersion = useQuestionOverridesVersion();
   const [lastPick, setLastPick] = useState<Discipline | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
-  const activePool = React.useMemo(() => getActiveQuestions(), []);
+  const activePool = React.useMemo(() => getActiveQuestions(), [overridesVersion]);
   const availableDisciplines = React.useMemo(() => {
     const set = new Set(activePool.map(q => q.discipline));
     return Array.from(set.values());

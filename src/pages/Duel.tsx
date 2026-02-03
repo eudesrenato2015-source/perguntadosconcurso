@@ -15,6 +15,7 @@ import {
   type DuelRoomConfig
 } from "../services/duelRoom";
 import { getAuthUser, onAuthChange } from "../services/auth";
+import { useQuestionOverridesVersion } from "../hooks/useQuestionOverrides";
 
 type GhostProfile = "Rápido"|"Preciso"|"Equilibrado";
 
@@ -37,6 +38,7 @@ export default function Duel(){
   const [authOk, setAuthOk] = useState(false);
   const clientId = useMemo(() => getDuelClientId(), []);
   const channelCleanupRef = useRef<null | (()=>void)>(null);
+  const overridesVersion = useQuestionOverridesVersion();
   const startRequestedRef = useRef(false);
   const timeoutRef = useRef<number | null>(null);
   const autoJoinRef = useRef(false);
@@ -51,7 +53,7 @@ export default function Duel(){
     try { localStorage.removeItem(key); } catch {}
   };
 
-  const activePool = useMemo(() => getActiveQuestions(), []);
+  const activePool = useMemo(() => getActiveQuestions(), [overridesVersion]);
   const availableDisciplines = useMemo(() => {
     const set = new Set(activePool.map(q => q.discipline));
     return Array.from(set.values());
